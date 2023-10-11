@@ -12,7 +12,7 @@ Data on RSV incidence and household transmission are limited. To describe RSV in
 ## Data availability
 Individual-level data cannot be publicly shared because of ethical restrictions and the potential for identifying included individuals. Accessing individual participant data and a data dictionary defining each field in the dataset would require provision of protocol and ethics approval for the proposed use. To request individual participant data access, please submit a proposal to Prof Cheryl Cohen (cherylc@nicd.ac.za) who will respond within 1 month of request. Upon approval, data can be made available through a data sharing agreement.
 However, aggregate data to reproduce the figures are available in this repository, along with the code and log files for the analysis. 
-All statistical analyses were conducted using Stata version 14.1 (Stata Corp LP, College Station, Texas, USA), and we therefore provide the code and logs in Stata format (.do and .smcl), which is viewable on this GitHub repo.
+All statistical analyses were conducted using Stata version 14.1 (Stata Corp LP, College Station, Texas, USA), and we therefore provide the code and logs in Stata format (.do and .smcl). Logs were also translated to .txt files.
 
 ## Aggregate data to reproduce figures
 Provided in file: [Cohen PHIRST RSV Figure data.xlsx](https://github.com/crdm-nicd/phirst_rsv/blob/main/Cohen%20PHIRST%20RSV%20Figure%20data.xlsx)
