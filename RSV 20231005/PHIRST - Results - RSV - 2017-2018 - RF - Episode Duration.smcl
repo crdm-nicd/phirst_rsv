@@ -1,0 +1,2731 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. 
+. ********************************************************
+. ********************************************************
+. *PHIRST: RSV Episode Duration - Risk Factors - Analysis*
+. ********************************************************
+. ********************************************************
+. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Univariate analysis*
+. *All*
+. sum edur
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        400        6.53    5.678001          0         50
+{txt}
+{com}. sum edur, d
+
+                            {txt}edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        400
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        400
+
+{txt}50%    {res}        5                      {txt}Mean          {res}     6.53
+                        {txt}Largest       Std. dev.     {res} 5.678001
+{txt}75%    {res}        9             30
+{txt}90%    {res}       12             32       {txt}Variance      {res}  32.2397
+{txt}95%    {res}       16             36       {txt}Skewness      {res} 2.588696
+{txt}99%    {res}       28             50       {txt}Kurtosis      {res} 14.82848
+{txt}
+{com}. 
+. sort indid
+{txt}
+{com}. 
+. gen gr21=0
+{txt}
+{com}. replace gr21=1 if edur>21 & edur!=.
+{txt}(12 real changes made)
+
+{com}. tab gr21
+
+       {txt}gr21 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        388       97.00       97.00
+{txt}          1 {c |}{res}         12        3.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        400      100.00
+{txt}
+{com}. 
+. tab agecat5 gr21, col chi
+{txt}
+{c TLC}{hline 19}{c TRC}
+{c |} Key{col 21}{c |}
+{c LT}{hline 19}{c RT}
+{c |}{space 5}{it:frequency}{col 21}{c |}
+{c |}{space 1}{it:column percentage}{col 21}{c |}
+{c BLC}{hline 19}{c BRC}
+
+  agegroup {c |}
+  <1, 1-4, {c |}
+     5-12, {c |}
+    13-18, {c |}
+    19-44, {c |}         gr21
+45-64, 65+ {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+        <1 {c |}{res}         9          3 {txt}{c |}{res}        12 
+           {txt}{c |}{res}      2.32      25.00 {txt}{c |}{res}      3.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       1-4 {c |}{res}        91          4 {txt}{c |}{res}        95 
+           {txt}{c |}{res}     23.45      33.33 {txt}{c |}{res}     23.75 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+      5-12 {c |}{res}       109          2 {txt}{c |}{res}       111 
+           {txt}{c |}{res}     28.09      16.67 {txt}{c |}{res}     27.75 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     13-18 {c |}{res}        64          1 {txt}{c |}{res}        65 
+           {txt}{c |}{res}     16.49       8.33 {txt}{c |}{res}     16.25 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     19-44 {c |}{res}        66          1 {txt}{c |}{res}        67 
+           {txt}{c |}{res}     17.01       8.33 {txt}{c |}{res}     16.75 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     45-64 {c |}{res}        44          0 {txt}{c |}{res}        44 
+           {txt}{c |}{res}     11.34       0.00 {txt}{c |}{res}     11.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       65+ {c |}{res}         5          1 {txt}{c |}{res}         6 
+           {txt}{c |}{res}      1.29       8.33 {txt}{c |}{res}      1.50 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       388         12 {txt}{c |}{res}       400 
+           {txt}{c |}{res}    100.00     100.00 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}6{txt}) = {res} 27.1970  {txt} Pr = {res}0.000
+{txt}
+{com}. 
+. 
+. 
+. *
+. *Year*
+. bysort year: sum edur, d
+
+{txt}{hline}
+-> year = 2017
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        182
+{txt}25%    {res}        4              0       {txt}Sum of wgt. {res}        182
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.813187
+                        {txt}Largest       Std. dev.     {res} 5.125846
+{txt}75%    {res}        9             24
+{txt}90%    {res}       12             25       {txt}Variance      {res}  26.2743
+{txt}95%    {res}       14             30       {txt}Skewness      {res} 1.900908
+{txt}99%    {res}       30             32       {txt}Kurtosis      {res} 8.745815
+
+{txt}{hline}
+-> year = 2018
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        218
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}        218
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.293578
+                        {txt}Largest       Std. dev.     {res} 6.102508
+{txt}75%    {res}        9             25
+{txt}90%    {res}       12             26       {txt}Variance      {res}  37.2406
+{txt}95%    {res}       17             36       {txt}Skewness      {res} 2.933211
+{txt}99%    {res}       26             50       {txt}Kurtosis      {res} 17.11338
+
+{txt}
+{com}. sts graph, by(year)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.year || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     0.42
+{txt}Log likelihood = {res}-1081.0724{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.5166
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.093491{col 26}{space 2} .1506708{col 37}{space 1}    0.65{col 46}{space 3}0.517{col 54}{space 4} .8346972{col 67}{space 3} 1.432521
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0460882{col 26}{space 2} .0085685{col 37}{space 1}  -16.55{col 46}{space 3}0.000{col 54}{space 4} .0320139{col 67}{space 3}   .06635
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4307318{col 26}{space 2} .0509227{col 54}{space 4} .3309252{col 67}{space 3} .5305384
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.73e-33{col 26}{space 2} 3.38e-17{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2119267{col 26}{space 2} .0945627{col 54}{space 4} .0883844{col 67}{space 3} .5081545
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 12.91{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0002
+{txt}
+{com}. *
+. *Site*
+. bysort site: sum edur, d
+
+{txt}{hline}
+-> site = Agincourt
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        209
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        209
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.454545
+                        {txt}Largest       Std. dev.     {res}  5.75285
+{txt}75%    {res}        9             22
+{txt}90%    {res}       12             23       {txt}Variance      {res} 33.09528
+{txt}95%    {res}       15             36       {txt}Skewness      {res} 3.153953
+{txt}99%    {res}       23             50       {txt}Kurtosis      {res}  20.6939
+
+{txt}{hline}
+-> site = Klerksdorp
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        191
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        191
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.612565
+                        {txt}Largest       Std. dev.     {res} 5.608889
+{txt}75%    {res}        9             25
+{txt}90%    {res}       12             26       {txt}Variance      {res} 31.45963
+{txt}95%    {res}       18             30       {txt}Skewness      {res} 1.923441
+{txt}99%    {res}       30             32       {txt}Kurtosis      {res} 7.795422
+
+{txt}
+{com}. sts graph, by(site)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.site || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     0.16
+{txt}Log likelihood = {res}-1081.2041{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.6893
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} .9467724{col 26}{space 2} .1295172{col 37}{space 1}   -0.40{col 46}{space 3}0.689{col 54}{space 4} .7241064{col 67}{space 3} 1.237909
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0497176{col 26}{space 2} .0090081{col 37}{space 1}  -16.57{col 46}{space 3}0.000{col 54}{space 4} .0348567{col 67}{space 3} .0709144
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4301375{col 26}{space 2} .0510309{col 54}{space 4} .3301188{col 67}{space 3} .5301562
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 3.58e-35{col 26}{space 2} 7.45e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2095342{col 26}{space 2} .0949479{col 54}{space 4} .0862071{col 67}{space 3}  .509292
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 12.50{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0002
+{txt}
+{com}. *
+. *Age*
+. bysort agecat5: sum edur, d
+
+{txt}{hline}
+-> agecat5 = <1
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              2
+{txt}10%    {res}        2              2       {txt}Obs         {res}         12
+{txt}25%    {res}      2.5              3       {txt}Sum of wgt. {res}         12
+
+{txt}50%    {res}      5.5                      {txt}Mean          {res}    11.25
+                        {txt}Largest       Std. dev.     {res} 11.77922
+{txt}75%    {res}       21             17
+{txt}90%    {res}       26             25       {txt}Variance      {res}   138.75
+{txt}95%    {res}       36             26       {txt}Skewness      {res} .9954376
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res} 2.549334
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}         95
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         95
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.410526
+                        {txt}Largest       Std. dev.     {res} 5.925952
+{txt}75%    {res}        9             23
+{txt}90%    {res}       14             23       {txt}Variance      {res} 35.11691
+{txt}95%    {res}       20             30       {txt}Skewness      {res} 1.855303
+{txt}99%    {res}       32             32       {txt}Kurtosis      {res} 7.376044
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        111
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        111
+
+{txt}50%    {res}        6                      {txt}Mean          {res}  6.63964
+                        {txt}Largest       Std. dev.     {res} 4.377199
+{txt}75%    {res}        9             16
+{txt}90%    {res}       11             21       {txt}Variance      {res} 19.15987
+{txt}95%    {res}       13             22       {txt}Skewness      {res} 1.121737
+{txt}99%    {res}       22             23       {txt}Kurtosis      {res} 5.262209
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              1       {txt}Obs         {res}         65
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         65
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.153846
+                        {txt}Largest       Std. dev.     {res} 4.504271
+{txt}75%    {res}        8             15
+{txt}90%    {res}       12             16       {txt}Variance      {res} 20.28846
+{txt}95%    {res}       15             17       {txt}Skewness      {res} 1.466793
+{txt}99%    {res}       24             24       {txt}Kurtosis      {res}  5.74841
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         67
+{txt}25%    {res}        2              1       {txt}Sum of wgt. {res}         67
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 5.507463
+                        {txt}Largest       Std. dev.     {res} 6.693219
+{txt}75%    {res}        6             13
+{txt}90%    {res}       11             14       {txt}Variance      {res} 44.79919
+{txt}95%    {res}       13             18       {txt}Skewness      {res} 4.592116
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res} 30.39227
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         44
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}         44
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 5.090909
+                        {txt}Largest       Std. dev.     {res} 4.113609
+{txt}75%    {res}        8             12
+{txt}90%    {res}       12             13       {txt}Variance      {res} 16.92178
+{txt}95%    {res}       13             13       {txt}Skewness      {res} .7737476
+{txt}99%    {res}       16             16       {txt}Kurtosis      {res} 2.828488
+
+{txt}{hline}
+-> agecat5 = 65+
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              1
+{txt}10%    {res}        0              4       {txt}Obs         {res}          6
+{txt}25%    {res}        1              4       {txt}Sum of wgt. {res}          6
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 7.166667
+                        {txt}Largest       Std. dev.     {res}   9.2826
+{txt}75%    {res}        9              4
+{txt}90%    {res}       25              4       {txt}Variance      {res} 86.16667
+{txt}95%    {res}       25              9       {txt}Skewness      {res} 1.372727
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 3.408242
+
+{txt}
+{com}. sts graph, by(agecat5)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg b5.agecat5 || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}6{txt}){col 67}={res}{col 70}    16.67
+{txt}Log likelihood = {res}-1072.3526{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0106
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} .3148634{col 26}{space 2}  .120412{col 37}{space 1}   -3.02{col 46}{space 3}0.003{col 54}{space 4} .1487991{col 67}{space 3} .6662605
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} .6431374{col 26}{space 2} .1380023{col 37}{space 1}   -2.06{col 46}{space 3}0.040{col 54}{space 4} .4223338{col 67}{space 3} .9793811
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} .7283713{col 26}{space 2} .1556298{col 37}{space 1}   -1.48{col 46}{space 3}0.138{col 54}{space 4} .4791573{col 67}{space 3} 1.107204
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} .9081012{col 26}{space 2} .2074546{col 37}{space 1}   -0.42{col 46}{space 3}0.673{col 54}{space 4} .5803344{col 67}{space 3} 1.420987
+{txt}{space 6}19-44  {c |}{col 14}{res}{space 2} 1.021949{col 26}{space 2} .2357083{col 37}{space 1}    0.09{col 46}{space 3}0.925{col 54}{space 4} .6502841{col 67}{space 3} 1.606036
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6660136{col 26}{space 2} .3542293{col 37}{space 1}   -0.76{col 46}{space 3}0.445{col 54}{space 4} .2348329{col 67}{space 3} 1.888893
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0587245{col 26}{space 2} .0134463{col 37}{space 1}  -12.38{col 46}{space 3}0.000{col 54}{space 4} .0374902{col 67}{space 3}  .091986
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4517768{col 26}{space 2} .0493363{col 54}{space 4} .3550795{col 67}{space 3} .5484741
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.09e-35{col 26}{space 2} 6.65e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1915558{col 26}{space 2}  .085608{col 54}{space 4} .0797785{col 67}{space 3} .4599439
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 13.38{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0001
+{txt}
+{com}. *
+. *Sex*
+. bysort sex: sum edur, d
+
+{txt}{hline}
+-> sex = Male
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        160
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        160
+
+{txt}50%    {res}        5                      {txt}Mean          {res}   6.1875
+                        {txt}Largest       Std. dev.     {res}  5.11403
+{txt}75%    {res}        9             23
+{txt}90%    {res}       12             23       {txt}Variance      {res}  26.1533
+{txt}95%    {res}       14             25       {txt}Skewness      {res} 1.734374
+{txt}99%    {res}       25             30       {txt}Kurtosis      {res} 7.372722
+
+{txt}{hline}
+-> sex = Female
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        240
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        240
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.758333
+                        {txt}Largest       Std. dev.     {res} 6.024352
+{txt}75%    {res}        9             26
+{txt}90%    {res}     12.5             32       {txt}Variance      {res} 36.29282
+{txt}95%    {res}       17             36       {txt}Skewness      {res} 2.884355
+{txt}99%    {res}       32             50       {txt}Kurtosis      {res} 16.73039
+
+{txt}
+{com}. sts graph, by(sex)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.sex || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     0.23
+{txt}Log likelihood = {res}-1081.171{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.6339
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2}  .944776{col 26}{space 2} .1127073{col 37}{space 1}   -0.48{col 46}{space 3}0.634{col 54}{space 4} .7477985{col 67}{space 3} 1.193639
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0500847{col 26}{space 2} .0091765{col 37}{space 1}  -16.34{col 46}{space 3}0.000{col 54}{space 4} .0349742{col 67}{space 3} .0717235
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4301967{col 26}{space 2} .0509735{col 54}{space 4} .3302906{col 67}{space 3} .5301029
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.30e-38{col 26}{space 2} 9.22e-21{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2082801{col 26}{space 2} .0946828{col 54}{space 4}  .085447{col 67}{space 3}   .50769
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 12.31{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0002
+{txt}
+{com}. *
+. *HIV*
+. bysort hivfinal: sum edur, d
+
+{txt}{hline}
+-> hivfinal = Negative
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        339
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        339
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.445428
+                        {txt}Largest       Std. dev.     {res} 5.087908
+{txt}75%    {res}        9             25
+{txt}90%    {res}       12             26       {txt}Variance      {res} 25.88681
+{txt}95%    {res}       16             30       {txt}Skewness      {res} 1.864092
+{txt}99%    {res}       25             36       {txt}Kurtosis      {res} 8.687744
+
+{txt}{hline}
+-> hivfinal = Positive
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         48
+{txt}25%    {res}        2              1       {txt}Sum of wgt. {res}         48
+
+{txt}50%    {res}        5                      {txt}Mean          {res}    6.875
+                        {txt}Largest       Std. dev.     {res} 8.850111
+{txt}75%    {res}        8             18
+{txt}90%    {res}       14             24       {txt}Variance      {res} 78.32447
+{txt}95%    {res}       24             32       {txt}Skewness      {res} 3.102351
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res} 14.10491
+
+{txt}{hline}
+-> hivfinal = .
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              3       {txt}Obs         {res}         13
+{txt}25%    {res}        4              4       {txt}Sum of wgt. {res}         13
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.461538
+                        {txt}Largest       Std. dev.     {res} 5.868211
+{txt}75%    {res}       10             10
+{txt}90%    {res}       12             11       {txt}Variance      {res}  34.4359
+{txt}95%    {res}       23             12       {txt}Skewness      {res} 1.376327
+{txt}99%    {res}       23             23       {txt}Kurtosis      {res} 4.798305
+
+{txt}
+{com}. sts graph, by(hivfinal)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.hivfinal || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       369
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      168{col 50}    184.5{col 61}      201
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     160{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     0.12
+{txt}Log likelihood = {res}-1042.6579{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.7343
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}hivfinal {c |}
+{space 3}Positive  {c |}{col 14}{res}{space 2} .9385646{col 26}{space 2}  .175351{col 37}{space 1}   -0.34{col 46}{space 3}0.734{col 54}{space 4} .6507813{col 67}{space 3} 1.353609
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0486665{col 26}{space 2} .0083998{col 37}{space 1}  -17.51{col 46}{space 3}0.000{col 54}{space 4} .0346987{col 67}{space 3} .0682571
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4324475{col 26}{space 2} .0516571{col 54}{space 4} .3312015{col 67}{space 3} .5336935
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 7.34e-35{col 26}{space 2} 1.19e-18{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2}  .209027{col 26}{space 2} .0969956{col 54}{space 4} .0841814{col 67}{space 3} .5190254
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 11.08{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0004
+{txt}
+{com}. *
+. *UMC*
+. bysort underill: sum edur, d
+
+{txt}{hline}
+-> underill = No
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        388
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        388
+
+{txt}50%    {res}        5                      {txt}Mean          {res}  6.46134
+                        {txt}Largest       Std. dev.     {res} 5.633148
+{txt}75%    {res}        9             30
+{txt}90%    {res}       12             32       {txt}Variance      {res} 31.73235
+{txt}95%    {res}       16             36       {txt}Skewness      {res} 2.655193
+{txt}99%    {res}       30             50       {txt}Kurtosis      {res} 15.56018
+
+{txt}{hline}
+-> underill = Yes
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}         12
+{txt}25%    {res}      3.5              4       {txt}Sum of wgt. {res}         12
+
+{txt}50%    {res}      6.5                      {txt}Mean          {res}     8.75
+                        {txt}Largest       Std. dev.     {res} 6.890375
+{txt}75%    {res}     11.5             10
+{txt}90%    {res}       18             13       {txt}Variance      {res} 47.47727
+{txt}95%    {res}       25             18       {txt}Skewness      {res} 1.253556
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 3.619819
+
+{txt}
+{com}. sts graph, by(underill)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.underill || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     1.25
+{txt}Log likelihood = {res}-1080.6157{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.2642
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}underill {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} .6839407{col 26}{space 2} .2326806{col 37}{space 1}   -1.12{col 46}{space 3}0.264{col 54}{space 4} .3511032{col 67}{space 3}   1.3323
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0488774{col 26}{space 2} .0082147{col 37}{space 1}  -17.96{col 46}{space 3}0.000{col 54}{space 4} .0351601{col 67}{space 3} .0679464
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4308256{col 26}{space 2} .0508012{col 54}{space 4} .3312572{col 67}{space 3} .5303941
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.74e-35{col 26}{space 2} 3.34e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2052435{col 26}{space 2} .0929748{col 54}{space 4} .0844651{col 67}{space 3} .4987258
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 12.60{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0002
+{txt}
+{com}. *
+. *BMI*
+. bysort bmicat: sum edur, d
+
+{txt}{hline}
+-> bmicat = Underweight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         28
+{txt}25%    {res}        2              1       {txt}Sum of wgt. {res}         28
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.535714
+                        {txt}Largest       Std. dev.     {res} 5.301866
+{txt}75%    {res}      9.5             13
+{txt}90%    {res}       17             17       {txt}Variance      {res} 28.10979
+{txt}95%    {res}       17             17       {txt}Skewness      {res} 1.179053
+{txt}99%    {res}       21             21       {txt}Kurtosis      {res} 3.685833
+
+{txt}{hline}
+-> bmicat = Normal weight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        261
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        261
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.942529
+                        {txt}Largest       Std. dev.     {res} 6.237646
+{txt}75%    {res}        9             30
+{txt}90%    {res}       12             32       {txt}Variance      {res} 38.90822
+{txt}95%    {res}       19             36       {txt}Skewness      {res} 2.698881
+{txt}99%    {res}       32             50       {txt}Kurtosis      {res} 14.39192
+
+{txt}{hline}
+-> bmicat = Overweight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         48
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}         48
+
+{txt}50%    {res}        5                      {txt}Mean          {res}   5.3125
+                        {txt}Largest       Std. dev.     {res} 3.603522
+{txt}75%    {res}        8             11
+{txt}90%    {res}       10             12       {txt}Variance      {res} 12.98537
+{txt}95%    {res}       12             13       {txt}Skewness      {res} .4821917
+{txt}99%    {res}       14             14       {txt}Kurtosis      {res} 2.492933
+
+{txt}{hline}
+-> bmicat = Obese
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         62
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}         62
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.741935
+                        {txt}Largest       Std. dev.     {res} 4.479225
+{txt}75%    {res}        9             13
+{txt}90%    {res}       11             13       {txt}Variance      {res} 20.06346
+{txt}95%    {res}       13             15       {txt}Skewness      {res} 1.075212
+{txt}99%    {res}       23             23       {txt}Kurtosis      {res} 4.911201
+
+{txt}{hline}
+-> bmicat = .
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        6              6
+{txt} 5%    {res}        6              .
+{txt}10%    {res}        6              .       {txt}Obs         {res}          1
+{txt}25%    {res}        6              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}        6                      {txt}Mean          {res}        6
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}        6              .
+{txt}90%    {res}        6              .       {txt}Variance      {res}        .
+{txt}95%    {res}        6              .       {txt}Skewness      {res}        .
+{txt}99%    {res}        6              6       {txt}Kurtosis      {res}        .
+
+{txt}
+{com}. sts graph, by(bmicat)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg b2.bmicat || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       381
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      178{col 50}    190.5{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}     3.34
+{txt}Log likelihood = {res}-1077.1981{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.3418
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}            _t{col 16}{c |} Haz. ratio{col 28}   Std. err.{col 40}      z{col 48}   P>|z|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}bmicat {c |}
+{space 2}Underweight  {c |}{col 16}{res}{space 2} .8153639{col 28}{space 2} .2210025{col 39}{space 1}   -0.75{col 48}{space 3}0.451{col 56}{space 4} .4793307{col 69}{space 3} 1.386972
+{txt}Normal weight  {c |}{col 16}{res}{space 2} .7600006{col 28}{space 2} .1395885{col 39}{space 1}   -1.49{col 48}{space 3}0.135{col 56}{space 4} .5302427{col 69}{space 3} 1.089314
+{txt}{space 8}Obese  {c |}{col 16}{res}{space 2} .9397918{col 28}{space 2} .2104942{col 39}{space 1}   -0.28{col 48}{space 3}0.782{col 56}{space 4} .6058705{col 69}{space 3} 1.457751
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0597929{col 28}{space 2} .0137742{col 39}{space 1}  -12.23{col 48}{space 3}0.000{col 56}{space 4} .0380682{col 69}{space 3} .0939153
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}/ln_p {c |}{col 16}{res}{space 2} .4262886{col 28}{space 2} .0509635{col 56}{space 4}  .326402{col 69}{space 3} .5261752
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site          {col 16}{txt}{c |}
+{space 5}var(_cons){c |}{col 16}{res}{space 2} 7.06e-35{col 28}{space 2} 1.74e-18{col 56}{space 4}        .{col 69}{space 3}        .
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid     {col 16}{txt}{c |}
+{space 5}var(_cons){c |}{col 16}{res}{space 2} .1831683{col 28}{space 2} .0902836{col 56}{space 4} .0697097{col 69}{space 3} .4812905
+{txt}{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 9.86{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0008
+{txt}
+{com}. *
+. *Cotinine*
+. bysort cotinine: sum edur, d
+
+{txt}{hline}
+-> cotinine = No exposure
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        159
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        159
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.194969
+                        {txt}Largest       Std. dev.     {res} 5.717482
+{txt}75%    {res}        8             20
+{txt}90%    {res}       12             23       {txt}Variance      {res} 32.68959
+{txt}95%    {res}       16             25       {txt}Skewness      {res} 3.488907
+{txt}99%    {res}       25             50       {txt}Kurtosis      {res}  24.1045
+
+{txt}{hline}
+-> cotinine = Passive exposure
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        176
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        176
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.960227
+                        {txt}Largest       Std. dev.     {res} 5.486983
+{txt}75%    {res}       10             23
+{txt}90%    {res}       13             24       {txt}Variance      {res} 30.10698
+{txt}95%    {res}       17             30       {txt}Skewness      {res} 1.624222
+{txt}99%    {res}       30             32       {txt}Kurtosis      {res} 7.002281
+
+{txt}{hline}
+-> cotinine = Active exposure
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         45
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         45
+
+{txt}50%    {res}        5                      {txt}Mean          {res}      5.2
+                        {txt}Largest       Std. dev.     {res} 3.401871
+{txt}75%    {res}        7             11
+{txt}90%    {res}       11             12       {txt}Variance      {res} 11.57273
+{txt}95%    {res}       12             12       {txt}Skewness      {res} .5552761
+{txt}99%    {res}       12             12       {txt}Kurtosis      {res} 2.388773
+
+{txt}{hline}
+-> cotinine = .
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}      1.5              2
+{txt}10%    {res}        2              2       {txt}Obs         {res}         20
+{txt}25%    {res}      2.5              2       {txt}Sum of wgt. {res}         20
+
+{txt}50%    {res}        5                      {txt}Mean          {res}      8.4
+                        {txt}Largest       Std. dev.     {res} 9.516744
+{txt}75%    {res}        8             13
+{txt}90%    {res}     25.5             25       {txt}Variance      {res} 90.56842
+{txt}95%    {res}       31             26       {txt}Skewness      {res} 1.823093
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res} 5.167636
+
+{txt}
+{com}. sts graph, by(cotinine)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.cotinine || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       362
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      167{col 50}    181.0{col 61}      195
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     159{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    10.30
+{txt}Log likelihood = {res}-1009.5053{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0058
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}               _t{col 19}{c |} Haz. ratio{col 31}   Std. err.{col 43}      z{col 51}   P>|z|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}cotinine {c |}
+Passive exposure  {c |}{col 19}{res}{space 2} .7885713{col 31}{space 2}  .108088{col 42}{space 1}   -1.73{col 51}{space 3}0.083{col 59}{space 4} .6027933{col 72}{space 3} 1.031605
+{txt}{space 1}Active exposure  {c |}{col 19}{res}{space 2} 1.470945{col 31}{space 2} .3130318{col 42}{space 1}    1.81{col 51}{space 3}0.070{col 59}{space 4} .9692862{col 72}{space 3} 2.232238
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} .0443961{col 31}{space 2} .0085743{col 42}{space 1}  -16.13{col 51}{space 3}0.000{col 59}{space 4} .0304055{col 72}{space 3} .0648244
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 12}/ln_p {c |}{col 19}{res}{space 2} .4887356{col 31}{space 2} .0517313{col 59}{space 4} .3873441{col 72}{space 3} .5901271
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site             {col 19}{txt}{c |}
+{space 8}var(_cons){c |}{col 19}{res}{space 2} 1.49e-37{col 31}{space 2} 1.49e-20{col 59}{space 4}        .{col 72}{space 3}        .
+{txt}{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid        {col 19}{txt}{c |}
+{space 8}var(_cons){c |}{col 19}{res}{space 2} .2384233{col 31}{space 2} .0986539{col 59}{space 4}   .10596{col 72}{space 3} .5364825
+{txt}{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 17.10{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. *Smoking*
+. bysort cigsmokenow: sum edur, d
+
+{txt}{hline}
+-> cigsmokenow = No
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        125
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}        125
+
+{txt}50%    {res}        4                      {txt}Mean          {res}    5.752
+                        {txt}Largest       Std. dev.     {res} 5.877316
+{txt}75%    {res}        8             16
+{txt}90%    {res}       12             18       {txt}Variance      {res} 34.54284
+{txt}95%    {res}       14             25       {txt}Skewness      {res}  3.90515
+{txt}99%    {res}       25             50       {txt}Kurtosis      {res} 27.65762
+
+{txt}{hline}
+-> cigsmokenow = Yes
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         29
+{txt}25%    {res}        2              1       {txt}Sum of wgt. {res}         29
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 4.655172
+                        {txt}Largest       Std. dev.     {res} 3.319594
+{txt}75%    {res}        6             10
+{txt}90%    {res}       11             11       {txt}Variance      {res}  11.0197
+{txt}95%    {res}       11             11       {txt}Skewness      {res} .6303139
+{txt}99%    {res}       12             12       {txt}Kurtosis      {res} 2.772689
+
+{txt}{hline}
+-> cigsmokenow = <15 years
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        246
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        246
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.146341
+                        {txt}Largest       Std. dev.     {res} 5.714547
+{txt}75%    {res}        9             26
+{txt}90%    {res}       13             30       {txt}Variance      {res} 32.65605
+{txt}95%    {res}       19             32       {txt}Skewness      {res} 1.916008
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res} 8.143307
+
+{txt}
+{com}. sts graph, by(cigsmokenow)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.cigsmokenow || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    13.67
+{txt}Log likelihood = {res}-1074.547{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0011
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}cigsmokenow {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.469178{col 26}{space 2} .3764325{col 37}{space 1}    1.50{col 46}{space 3}0.133{col 54}{space 4} .8891596{col 67}{space 3} 2.427555
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} .7002573{col 26}{space 2} .0892542{col 37}{space 1}   -2.80{col 46}{space 3}0.005{col 54}{space 4} .5454616{col 67}{space 3} .8989822
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0548711{col 26}{space 2}  .010032{col 37}{space 1}  -15.88{col 46}{space 3}0.000{col 54}{space 4} .0383459{col 67}{space 3} .0785178
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4596301{col 26}{space 2} .0500647{col 54}{space 4} .3615051{col 67}{space 3} .5577551
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 8.98e-40{col 26}{space 2} 1.51e-22{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2404107{col 26}{space 2} .0961549{col 54}{space 4} .1097757{col 67}{space 3} .5265036
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 18.00{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. *Alcohol*
+. bysort alcohol: sum edur, d
+
+{txt}{hline}
+-> alcohol = No
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         88
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}         88
+
+{txt}50%    {res}        5                      {txt}Mean          {res}    6.125
+                        {txt}Largest       Std. dev.     {res} 6.180824
+{txt}75%    {res}        8             14
+{txt}90%    {res}       12             16       {txt}Variance      {res} 38.20259
+{txt}95%    {res}       14             18       {txt}Skewness      {res} 4.263772
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res} 30.03545
+
+{txt}{hline}
+-> alcohol = Yes
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         66
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}         66
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 4.772727
+                        {txt}Largest       Std. dev.     {res} 4.345804
+{txt}75%    {res}        6             12
+{txt}90%    {res}       11             13       {txt}Variance      {res} 18.88601
+{txt}95%    {res}       12             15       {txt}Skewness      {res} 1.955078
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 8.690053
+
+{txt}{hline}
+-> alcohol = <15 years
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        246
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        246
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.146341
+                        {txt}Largest       Std. dev.     {res} 5.714547
+{txt}75%    {res}        9             26
+{txt}90%    {res}       13             30       {txt}Variance      {res} 32.65605
+{txt}95%    {res}       19             32       {txt}Skewness      {res} 1.916008
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res} 8.143307
+
+{txt}
+{com}. sts graph, by(alcohol)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.alcohol || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    17.49
+{txt}Log likelihood = {res}-1072.6441{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0002
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}alcohol {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.644215{col 26}{space 2} .3354375{col 37}{space 1}    2.44{col 46}{space 3}0.015{col 54}{space 4} 1.102312{col 67}{space 3} 2.452522
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} .7856631{col 26}{space 2} .1122956{col 37}{space 1}   -1.69{col 46}{space 3}0.091{col 54}{space 4} .5937086{col 67}{space 3} 1.039679
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0471657{col 26}{space 2} .0095795{col 37}{space 1}  -15.04{col 46}{space 3}0.000{col 54}{space 4}  .031677{col 67}{space 3} .0702277
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4718331{col 26}{space 2} .0502373{col 54}{space 4} .3733697{col 67}{space 3} .5702965
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 3.47e-36{col 26}{space 2} 1.40e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2655145{col 26}{space 2}  .102308{col 54}{space 4} .1247681{col 67}{space 3} .5650319
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 20.55{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. *Education*
+. bysort educlevel: sum edur, d
+
+{txt}{hline}
+-> educlevel = <18 years
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}        281
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        281
+
+{txt}50%    {res}        6                      {txt}Mean          {res}        7
+                        {txt}Largest       Std. dev.     {res} 5.512972
+{txt}75%    {res}        9             26
+{txt}90%    {res}       12             30       {txt}Variance      {res} 30.39286
+{txt}95%    {res}       17             32       {txt}Skewness      {res} 1.942012
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res} 8.486475
+
+{txt}{hline}
+-> educlevel = No schooling
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              1       {txt}Obs         {res}         11
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}         11
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 3.454545
+                        {txt}Largest       Std. dev.     {res} 3.777926
+{txt}75%    {res}        4              3
+{txt}90%    {res}        9              4       {txt}Variance      {res} 14.27273
+{txt}95%    {res}       12              9       {txt}Skewness      {res} 1.321364
+{txt}99%    {res}       12             12       {txt}Kurtosis      {res} 3.585711
+
+{txt}{hline}
+-> educlevel = Primary
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         35
+{txt}25%    {res}        2              1       {txt}Sum of wgt. {res}         35
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.542857
+                        {txt}Largest       Std. dev.     {res} 4.182195
+{txt}75%    {res}        9             12
+{txt}90%    {res}       12             13       {txt}Variance      {res} 17.49076
+{txt}95%    {res}       14             14       {txt}Skewness      {res} .7632315
+{txt}99%    {res}       16             16       {txt}Kurtosis      {res} 2.830068
+
+{txt}{hline}
+-> educlevel = Some secondary
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         47
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}         47
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 5.148936
+                        {txt}Largest       Std. dev.     {res} 4.890002
+{txt}75%    {res}        6             13
+{txt}90%    {res}       12             13       {txt}Variance      {res} 23.91212
+{txt}95%    {res}       13             18       {txt}Skewness      {res}  1.94754
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res}  7.72183
+
+{txt}{hline}
+-> educlevel = Secondary completed
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         24
+{txt}25%    {res}      2.5              1       {txt}Sum of wgt. {res}         24
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.958333
+                        {txt}Largest       Std. dev.     {res}  9.73331
+{txt}75%    {res}        8             10
+{txt}90%    {res}       11             11       {txt}Variance      {res} 94.73732
+{txt}95%    {res}       11             11       {txt}Skewness      {res} 3.779772
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res} 17.39162
+
+{txt}{hline}
+-> educlevel = Post secondary
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              3
+{txt}10%    {res}        1              .       {txt}Obs         {res}          2
+{txt}25%    {res}        1              .       {txt}Sum of wgt. {res}          2
+
+{txt}50%    {res}        2                      {txt}Mean          {res}        2
+                        {txt}Largest       Std. dev.     {res} 1.414214
+{txt}75%    {res}        3              .
+{txt}90%    {res}        3              .       {txt}Variance      {res}        2
+{txt}95%    {res}        3              1       {txt}Skewness      {res}        0
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res}        1
+
+{txt}
+{com}. sts graph, by(educlevel)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.educlevel || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}5{txt}){col 67}={res}{col 70}    17.29
+{txt}Log likelihood = {res}-1074.0042{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0040
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                  _t{col 22}{c |} Haz. ratio{col 34}   Std. err.{col 46}      z{col 54}   P>|z|{col 62}     [95% con{col 75}f. interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}educlevel {c |}
+{space 7}No schooling  {c |}{col 22}{res}{space 2}   2.0158{col 34}{space 2} .7721899{col 45}{space 1}    1.83{col 54}{space 3}0.067{col 62}{space 4} .9514344{col 75}{space 3} 4.270868
+{txt}{space 12}Primary  {c |}{col 22}{res}{space 2} 1.324275{col 34}{space 2} .2793087{col 45}{space 1}    1.33{col 54}{space 3}0.183{col 62}{space 4} .8758859{col 75}{space 3} 2.002206
+{txt}{space 5}Some secondary  {c |}{col 22}{res}{space 2}  1.63542{col 34}{space 2} .3137337{col 45}{space 1}    2.56{col 54}{space 3}0.010{col 62}{space 4}  1.12289{col 75}{space 3} 2.381886
+{txt}Secondary completed  {c |}{col 22}{res}{space 2} 1.086676{col 34}{space 2} .2753817{col 45}{space 1}    0.33{col 54}{space 3}0.743{col 62}{space 4}  .661289{col 75}{space 3}   1.7857
+{txt}{space 5}Post secondary  {c |}{col 22}{res}{space 2} 8.958326{col 34}{space 2} 7.127295{col 45}{space 1}    2.76{col 54}{space 3}0.006{col 62}{space 4} 1.883675{col 75}{space 3} 42.60374
+{txt}{space 20} {c |}
+{space 15}_cons {c |}{col 22}{res}{space 2} .0405774{col 34}{space 2} .0073046{col 45}{space 1}  -17.80{col 54}{space 3}0.000{col 62}{space 4} .0285137{col 75}{space 3} .0577449
+{txt}{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}/ln_p {c |}{col 22}{res}{space 2}  .457737{col 34}{space 2} .0507372{col 62}{space 4} .3582939{col 75}{space 3} .5571802
+{txt}{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site                {col 22}{txt}{c |}
+{space 11}var(_cons){c |}{col 22}{res}{space 2} 3.46e-37{col 34}{space 2} 1.82e-20{col 62}{space 4}        .{col 75}{space 3}        .
+{txt}{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid           {col 22}{txt}{c |}
+{space 11}var(_cons){c |}{col 22}{res}{space 2} .2374463{col 34}{space 2} .0989529{col 62}{space 4}  .104915{col 75}{space 3} .5373949
+{txt}{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 15.01{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0001
+{txt}
+{com}. *
+. *Employment*
+. bysort employed: sum edur, d
+
+{txt}{hline}
+-> employed = Unemployed
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         82
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}         82
+
+{txt}50%    {res}        4                      {txt}Mean          {res} 5.414634
+                        {txt}Largest       Std. dev.     {res} 6.718229
+{txt}75%    {res}        6             16
+{txt}90%    {res}       11             18       {txt}Variance      {res}  45.1346
+{txt}95%    {res}       13             25       {txt}Skewness      {res} 4.056479
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res} 25.54823
+
+{txt}{hline}
+-> employed = Ever Employed
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         32
+{txt}25%    {res}      2.5              1       {txt}Sum of wgt. {res}         32
+
+{txt}50%    {res}        5                      {txt}Mean          {res}   5.4375
+                        {txt}Largest       Std. dev.     {res} 3.741119
+{txt}75%    {res}        8             10
+{txt}90%    {res}       10             12       {txt}Variance      {res} 13.99597
+{txt}95%    {res}       12             12       {txt}Skewness      {res} .4693619
+{txt}99%    {res}       14             14       {txt}Kurtosis      {res} 2.357457
+
+{txt}{hline}
+-> employed = Ever Student
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              2
+{txt}10%    {res}        2              6       {txt}Obs         {res}          5
+{txt}25%    {res}        2              6       {txt}Sum of wgt. {res}          5
+
+{txt}50%    {res}        6                      {txt}Mean          {res}      5.4
+                        {txt}Largest       Std. dev.     {res} 3.714835
+{txt}75%    {res}        6              2
+{txt}90%    {res}       11              6       {txt}Variance      {res}     13.8
+{txt}95%    {res}       11              6       {txt}Skewness      {res}  .531268
+{txt}99%    {res}       11             11       {txt}Kurtosis      {res} 2.052773
+
+{txt}{hline}
+-> employed = 4
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}        281
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        281
+
+{txt}50%    {res}        6                      {txt}Mean          {res}        7
+                        {txt}Largest       Std. dev.     {res} 5.512972
+{txt}75%    {res}        9             26
+{txt}90%    {res}       12             30       {txt}Variance      {res} 30.39286
+{txt}95%    {res}       17             32       {txt}Skewness      {res} 1.942012
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res} 8.486475
+
+{txt}
+{com}. sts graph, by(employed)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.employed || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}     8.58
+{txt}Log likelihood = {res}-1077.0731{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0354
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}            _t{col 16}{c |} Haz. ratio{col 28}   Std. err.{col 40}      z{col 48}   P>|z|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}employed {c |}
+Ever Employed  {c |}{col 16}{res}{space 2} 1.074163{col 28}{space 2} .2624366{col 39}{space 1}    0.29{col 48}{space 3}0.770{col 56}{space 4} .6654373{col 69}{space 3} 1.733938
+{txt}{space 1}Ever Student  {c |}{col 16}{res}{space 2} 1.231199{col 28}{space 2}  .625871{col 39}{space 1}    0.41{col 48}{space 3}0.682{col 56}{space 4} .4545969{col 69}{space 3} 3.334497
+{txt}{space 12}4  {c |}{col 16}{res}{space 2} .7099376{col 28}{space 2}  .106918{col 39}{space 1}   -2.27{col 48}{space 3}0.023{col 56}{space 4} .5284788{col 69}{space 3} .9537022
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0588597{col 28}{space 2} .0116409{col 39}{space 1}  -14.32{col 48}{space 3}0.000{col 56}{space 4}  .039946{col 69}{space 3} .0867288
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}/ln_p {c |}{col 16}{res}{space 2} .4486591{col 28}{space 2} .0504989{col 56}{space 4} .3496831{col 69}{space 3} .5476352
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site          {col 16}{txt}{c |}
+{space 5}var(_cons){c |}{col 16}{res}{space 2} 6.42e-38{col 28}{space 2} 6.16e-21{col 56}{space 4}        .{col 69}{space 3}        .
+{txt}{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid     {col 16}{txt}{c |}
+{space 5}var(_cons){c |}{col 16}{res}{space 2} .2376611{col 28}{space 2} .0979621{col 56}{space 4} .1059496{col 69}{space 3} .5331101
+{txt}{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 16.15{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. *Household size*
+. bysort hh_size: sum edur, d
+
+{txt}{hline}
+-> hh_size = 3-5
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        195
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        195
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 7.051282
+                        {txt}Largest       Std. dev.     {res} 6.487691
+{txt}75%    {res}        9             25
+{txt}90%    {res}       14             26       {txt}Variance      {res} 42.09014
+{txt}95%    {res}       21             32       {txt}Skewness      {res} 2.513283
+{txt}99%    {res}       32             50       {txt}Kurtosis      {res} 13.38756
+
+{txt}{hline}
+-> hh_size = 6-10
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        177
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        177
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.079096
+                        {txt}Largest       Std. dev.     {res} 4.933013
+{txt}75%    {res}        8             20
+{txt}90%    {res}       11             24       {txt}Variance      {res} 24.33462
+{txt}95%    {res}       14             30       {txt}Skewness      {res} 2.355521
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res} 12.96264
+
+{txt}{hline}
+-> hh_size = >10
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         28
+{txt}25%    {res}        3              2       {txt}Sum of wgt. {res}         28
+
+{txt}50%    {res}        5                      {txt}Mean          {res}     5.75
+                        {txt}Largest       Std. dev.     {res} 3.384332
+{txt}75%    {res}      8.5             10
+{txt}90%    {res}       11             11       {txt}Variance      {res}  11.4537
+{txt}95%    {res}       11             11       {txt}Skewness      {res} .1609105
+{txt}99%    {res}       12             12       {txt}Kurtosis      {res} 1.995663
+
+{txt}
+{com}. sts graph, by(hh_size)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.hh_size || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}     3.60
+{txt}Log likelihood = {res}-1079.5026{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.1654
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}hh_size {c |}
+{space 7}6-10  {c |}{col 14}{res}{space 2} 1.265723{col 26}{space 2} .1776401{col 37}{space 1}    1.68{col 46}{space 3}0.093{col 54}{space 4} .9613361{col 67}{space 3} 1.666487
+{txt}{space 8}>10  {c |}{col 14}{res}{space 2} 1.439428{col 26}{space 2}  .427156{col 37}{space 1}    1.23{col 46}{space 3}0.220{col 54}{space 4} .8046231{col 67}{space 3}  2.57506
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0426625{col 26}{space 2} .0078956{col 37}{space 1}  -17.04{col 46}{space 3}0.000{col 54}{space 4} .0296833{col 67}{space 3} .0613168
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4309116{col 26}{space 2}  .050461{col 54}{space 4} .3320099{col 67}{space 3} .5298134
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.47e-34{col 26}{space 2} 1.09e-18{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1917558{col 26}{space 2} .0901349{col 54}{space 4} .0763205{col 67}{space 3}  .481788
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 10.82{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0005
+{txt}
+{com}. *
+. *Number of sleeping rooms*
+. bysort numroomsleep: sum edur, d
+
+{txt}{hline}
+-> numroomsleep = 1-2
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        199
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        199
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.095477
+                        {txt}Largest       Std. dev.     {res} 5.513613
+{txt}75%    {res}       10             24
+{txt}90%    {res}       13             25       {txt}Variance      {res} 30.39993
+{txt}95%    {res}       19             26       {txt}Skewness      {res} 1.525338
+{txt}99%    {res}       26             32       {txt}Kurtosis      {res} 6.153943
+
+{txt}{hline}
+-> numroomsleep = 3-4
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        192
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        192
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.041667
+                        {txt}Largest       Std. dev.     {res} 5.900424
+{txt}75%    {res}        8             25
+{txt}90%    {res}       11             30       {txt}Variance      {res} 34.81501
+{txt}95%    {res}       14             36       {txt}Skewness      {res} 3.532488
+{txt}99%    {res}       36             50       {txt}Kurtosis      {res} 22.34787
+
+{txt}{hline}
+-> numroomsleep = >=5
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              2
+{txt}10%    {res}        1              2       {txt}Obs         {res}          9
+{txt}25%    {res}        2              4       {txt}Sum of wgt. {res}          9
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 4.444444
+                        {txt}Largest       Std. dev.     {res} 2.403701
+{txt}75%    {res}        6              5
+{txt}90%    {res}        8              6       {txt}Variance      {res} 5.777778
+{txt}95%    {res}        8              7       {txt}Skewness      {res}-.0421933
+{txt}99%    {res}        8              8       {txt}Kurtosis      {res} 1.772305
+
+{txt}
+{com}. sts graph, by(numroomsleep)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.numroomsleep || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}     6.35
+{txt}Log likelihood = {res}-1078.1535{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0419
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+numroomsleep {c |}
+{space 8}3-4  {c |}{col 14}{res}{space 2} 1.302471{col 26}{space 2} .1813083{col 37}{space 1}    1.90{col 46}{space 3}0.058{col 54}{space 4} .9914665{col 67}{space 3} 1.711032
+{txt}{space 8}>=5  {c |}{col 14}{res}{space 2} 2.474018{col 26}{space 2} 1.162171{col 37}{space 1}    1.93{col 46}{space 3}0.054{col 54}{space 4} .9852597{col 67}{space 3} 6.212338
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}   .04146{col 26}{space 2} .0077453{col 37}{space 1}  -17.04{col 46}{space 3}0.000{col 54}{space 4} .0287483{col 67}{space 3} .0597924
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4353756{col 26}{space 2} .0500655{col 54}{space 4} .3372491{col 67}{space 3} .5335021
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 2.03e-38{col 26}{space 2} 2.85e-21{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2}  .200799{col 26}{space 2} .0880805{col 54}{space 4} .0849927{col 67}{space 3} .4743961
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 13.22{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0001
+{txt}
+{com}. *
+. *Crowding*
+. bysort crowding: sum edur, d
+
+{txt}{hline}
+-> crowding = <=2
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        162
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}        162
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.938272
+                        {txt}Largest       Std. dev.     {res} 7.437267
+{txt}75%    {res}        9             30
+{txt}90%    {res}       15             32       {txt}Variance      {res} 55.31294
+{txt}95%    {res}       23             36       {txt}Skewness      {res} 2.516262
+{txt}99%    {res}       36             50       {txt}Kurtosis      {res} 11.35665
+
+{txt}{hline}
+-> crowding = >2
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        238
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        238
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.252101
+                        {txt}Largest       Std. dev.     {res} 4.063252
+{txt}75%    {res}        9             17
+{txt}90%    {res}       11             18       {txt}Variance      {res} 16.51002
+{txt}95%    {res}       13             23       {txt}Skewness      {res} .9485246
+{txt}99%    {res}       18             24       {txt}Kurtosis      {res} 4.809743
+
+{txt}
+{com}. sts graph, by(crowding)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.crowding || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}     2.06
+{txt}Log likelihood = {res}-1080.304{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.1512
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.219344{col 26}{space 2} .1684778{col 37}{space 1}    1.44{col 46}{space 3}0.151{col 54}{space 4} .9300686{col 67}{space 3} 1.598592
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0435426{col 26}{space 2} .0081124{col 37}{space 1}  -16.82{col 46}{space 3}0.000{col 54}{space 4} .0302224{col 67}{space 3} .0627337
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4234246{col 26}{space 2} .0510677{col 54}{space 4} .3233337{col 67}{space 3} .5235154
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 9.90e-35{col 26}{space 2} 1.20e-18{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1712079{col 26}{space 2} .0913886{col 54}{space 4} .0601399{col 67}{space 3}  .487399
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 7.78{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0026
+{txt}
+{com}. *
+. *Household income*
+. bysort hh_income: sum edur, d
+
+{txt}{hline}
+-> hh_income = 0-R800
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         56
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         56
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.107143
+                        {txt}Largest       Std. dev.     {res} 5.700649
+{txt}75%    {res}        9             17
+{txt}90%    {res}       13             20       {txt}Variance      {res}  32.4974
+{txt}95%    {res}       20             23       {txt}Skewness      {res} 1.747665
+{txt}99%    {res}       30             30       {txt}Kurtosis      {res} 7.014918
+
+{txt}{hline}
+-> hh_income = R801-1600
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        120
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        120
+
+{txt}50%    {res}        6                      {txt}Mean          {res}     7.25
+                        {txt}Largest       Std. dev.     {res} 6.808608
+{txt}75%    {res}      9.5             25
+{txt}90%    {res}     12.5             26       {txt}Variance      {res} 46.35714
+{txt}95%    {res}     19.5             32       {txt}Skewness      {res} 2.962093
+{txt}99%    {res}       32             50       {txt}Kurtosis      {res} 16.28631
+
+{txt}{hline}
+-> hh_income = R1601-3200
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        127
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        127
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.141732
+                        {txt}Largest       Std. dev.     {res} 5.245897
+{txt}75%    {res}        9             19
+{txt}90%    {res}       12             22       {txt}Variance      {res} 27.51944
+{txt}95%    {res}       15             23       {txt}Skewness      {res} 2.235071
+{txt}99%    {res}       23             36       {txt}Kurtosis      {res} 11.13481
+
+{txt}{hline}
+-> hh_income = R3201-6400
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         72
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}         72
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.013889
+                        {txt}Largest       Std. dev.     {res} 4.874461
+{txt}75%    {res}        9             13
+{txt}90%    {res}       11             14       {txt}Variance      {res} 23.76037
+{txt}95%    {res}       13             23       {txt}Skewness      {res} 1.441947
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 6.133143
+
+{txt}{hline}
+-> hh_income = R6401-12800
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        3              3
+{txt} 5%    {res}        3              3
+{txt}10%    {res}        3              4       {txt}Obs         {res}         15
+{txt}25%    {res}        4              4       {txt}Sum of wgt. {res}         15
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.133333
+                        {txt}Largest       Std. dev.     {res} 3.204164
+{txt}75%    {res}        8              8
+{txt}90%    {res}       12              8       {txt}Variance      {res} 10.26667
+{txt}95%    {res}       14             12       {txt}Skewness      {res} 1.358579
+{txt}99%    {res}       14             14       {txt}Kurtosis      {res} 3.849806
+
+{txt}{hline}
+-> hh_income = >R12801
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              5
+{txt}10%    {res}        1              .       {txt}Obs         {res}          2
+{txt}25%    {res}        1              .       {txt}Sum of wgt. {res}          2
+
+{txt}50%    {res}        3                      {txt}Mean          {res}        3
+                        {txt}Largest       Std. dev.     {res} 2.828427
+{txt}75%    {res}        5              .
+{txt}90%    {res}        5              .       {txt}Variance      {res}        8
+{txt}95%    {res}        5              1       {txt}Skewness      {res}        0
+{txt}99%    {res}        5              5       {txt}Kurtosis      {res}        1
+
+{txt}{hline}
+-> hh_income = .
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              2       {txt}Obs         {res}          8
+{txt}25%    {res}      1.5              2       {txt}Sum of wgt. {res}          8
+
+{txt}50%    {res}      3.5                      {txt}Mean          {res}    4.125
+                        {txt}Largest       Std. dev.     {res} 2.948971
+{txt}75%    {res}        7              5
+{txt}90%    {res}        8              7       {txt}Variance      {res} 8.696429
+{txt}95%    {res}        8              7       {txt}Skewness      {res} .1557622
+{txt}99%    {res}        8              8       {txt}Kurtosis      {res} 1.282786
+
+{txt}
+{com}. sts graph, by(hh_income)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.hh_income || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       374
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      177{col 50}    187.0{col 61}      197
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     160{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}5{txt}){col 67}={res}{col 70}     3.99
+{txt}Log likelihood = {res}-1059.5795{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.5503
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}hh_income {c |}
+{space 2}R801-1600  {c |}{col 14}{res}{space 2} 1.028399{col 26}{space 2} .2226795{col 37}{space 1}    0.13{col 46}{space 3}0.897{col 54}{space 4} .6727455{col 67}{space 3} 1.572073
+{txt}{space 1}R1601-3200  {c |}{col 14}{res}{space 2}  1.18866{col 26}{space 2} .2527395{col 37}{space 1}    0.81{col 46}{space 3}0.416{col 54}{space 4}  .783557{col 67}{space 3} 1.803204
+{txt}{space 1}R3201-6400  {c |}{col 14}{res}{space 2} 1.224999{col 26}{space 2} .2901136{col 37}{space 1}    0.86{col 46}{space 3}0.391{col 54}{space 4}  .770101{col 67}{space 3} 1.948605
+{txt}R6401-12800  {c |}{col 14}{res}{space 2} 1.314951{col 26}{space 2} .4950818{col 37}{space 1}    0.73{col 46}{space 3}0.467{col 54}{space 4} .6286815{col 67}{space 3} 2.750355
+{txt}{space 4}>R12801  {c |}{col 14}{res}{space 2} 3.887247{col 26}{space 2}  3.23902{col 37}{space 1}    1.63{col 46}{space 3}0.103{col 54}{space 4} .7592501{col 67}{space 3} 19.90213
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0418899{col 26}{space 2} .0102424{col 37}{space 1}  -12.98{col 46}{space 3}0.000{col 54}{space 4} .0259408{col 67}{space 3} .0676447
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4318231{col 26}{space 2} .0519553{col 54}{space 4} .3299926{col 67}{space 3} .5336535
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.42e-38{col 26}{space 2} 5.45e-21{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1890729{col 26}{space 2} .0938774{col 54}{space 4} .0714489{col 67}{space 3} .5003376
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 9.20{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0012
+{txt}
+{com}. *
+. *RSV types*
+. bysort type: sum edur, d
+
+{txt}{hline}
+-> type = A
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        146
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        146
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.910959
+                        {txt}Largest       Std. dev.     {res} 6.198911
+{txt}75%    {res}        9             23
+{txt}90%    {res}       13             25       {txt}Variance      {res}  38.4265
+{txt}95%    {res}       17             26       {txt}Skewness      {res} 3.001304
+{txt}99%    {res}       26             50       {txt}Kurtosis      {res} 18.53593
+
+{txt}{hline}
+-> type = B
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        233
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        233
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.626609
+                        {txt}Largest       Std. dev.     {res} 5.451398
+{txt}75%    {res}        9             25
+{txt}90%    {res}       12             30       {txt}Variance      {res} 29.71774
+{txt}95%    {res}       16             32       {txt}Skewness      {res} 2.110606
+{txt}99%    {res}       30             36       {txt}Kurtosis      {res}  9.74601
+
+{txt}{hline}
+-> type = Untyped
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         21
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}         21
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 2.809524
+                        {txt}Largest       Std. dev.     {res} 2.040075
+{txt}75%    {res}        5              5
+{txt}90%    {res}        5              5       {txt}Variance      {res} 4.161905
+{txt}95%    {res}        6              6       {txt}Skewness      {res} .0827287
+{txt}99%    {res}        6              6       {txt}Kurtosis      {res} 1.649726
+
+{txt}
+{com}. sts graph, by(type)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.type || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    16.92
+{txt}Log likelihood = {res}-1074.4354{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0002
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}type {c |}
+{space 10}B  {c |}{col 14}{res}{space 2} 1.065762{col 26}{space 2}  .141879{col 37}{space 1}    0.48{col 46}{space 3}0.632{col 54}{space 4}  .821002{col 67}{space 3} 1.383489
+{txt}{space 4}Untyped  {c |}{col 14}{res}{space 2} 3.218915{col 26}{space 2}  .928071{col 37}{space 1}    4.05{col 46}{space 3}0.000{col 54}{space 4} 1.829333{col 67}{space 3} 5.664039
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0427177{col 26}{space 2}  .008183{col 37}{space 1}  -16.46{col 46}{space 3}0.000{col 54}{space 4} .0293461{col 67}{space 3} .0621819
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4413548{col 26}{space 2} .0506844{col 54}{space 4} .3420152{col 67}{space 3} .5406943
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.63e-35{col 26}{space 2} 9.12e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1853114{col 26}{space 2} .0883741{col 54}{space 4} .0727726{col 67}{space 3}  .471885
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 10.79{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0005
+{txt}
+{com}. *
+. *Symptoms*
+. *
+. bysort symany: sum edur, d
+
+{txt}{hline}
+-> symany = No
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        267
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        267
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.629213
+                        {txt}Largest       Std. dev.     {res} 4.980523
+{txt}75%    {res}        8             22
+{txt}90%    {res}       11             23       {txt}Variance      {res} 24.80561
+{txt}95%    {res}       13             24       {txt}Skewness      {res} 3.439623
+{txt}99%    {res}       23             50       {txt}Kurtosis      {res} 26.68693
+
+{txt}{hline}
+-> symany = Yes
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}        133
+{txt}25%    {res}        4              0       {txt}Sum of wgt. {res}        133
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 8.338346
+                        {txt}Largest       Std. dev.     {res} 6.521395
+{txt}75%    {res}       10             26
+{txt}90%    {res}       16             30       {txt}Variance      {res} 42.52859
+{txt}95%    {res}       23             32       {txt}Skewness      {res} 1.721926
+{txt}99%    {res}       32             36       {txt}Kurtosis      {res} 6.714745
+
+{txt}
+{com}. sts graph, by(symany)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.symany || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}    24.50
+{txt}Log likelihood = {res}-1067.4259{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}symany {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} .5047515{col 26}{space 2} .0697141{col 37}{space 1}   -4.95{col 46}{space 3}0.000{col 54}{space 4} .3850466{col 67}{space 3} .6616706
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .052776{col 26}{space 2} .0089424{col 37}{space 1}  -17.36{col 46}{space 3}0.000{col 54}{space 4} .0378624{col 67}{space 3} .0735638
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4892005{col 26}{space 2} .0517226{col 54}{space 4}  .387826{col 67}{space 3}  .590575
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 2.24e-35{col 26}{space 2} 3.93e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2767929{col 26}{space 2} .1105728{col 54}{space 4}  .126508{col 67}{space 3} .6056082
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 18.45{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. bysort symcat: sum edur, d
+
+{txt}{hline}
+-> symcat = 0
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        267
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        267
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.629213
+                        {txt}Largest       Std. dev.     {res} 4.980523
+{txt}75%    {res}        8             22
+{txt}90%    {res}       11             23       {txt}Variance      {res} 24.80561
+{txt}95%    {res}       13             24       {txt}Skewness      {res} 3.439623
+{txt}99%    {res}       23             50       {txt}Kurtosis      {res} 26.68693
+
+{txt}{hline}
+-> symcat = 1
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         55
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         55
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 7.090909
+                        {txt}Largest       Std. dev.     {res}  5.05991
+{txt}75%    {res}        9             12
+{txt}90%    {res}       11             18       {txt}Variance      {res} 25.60269
+{txt}95%    {res}       18             19       {txt}Skewness      {res}  1.87659
+{txt}99%    {res}       30             30       {txt}Kurtosis      {res} 9.410336
+
+{txt}{hline}
+-> symcat = 2+
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        2              1       {txt}Obs         {res}         78
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         78
+
+{txt}50%    {res}      7.5                      {txt}Mean          {res} 9.217949
+                        {txt}Largest       Std. dev.     {res}  7.28394
+{txt}75%    {res}       12             25
+{txt}90%    {res}       20             26       {txt}Variance      {res} 53.05578
+{txt}95%    {res}       25             32       {txt}Skewness      {res} 1.496365
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res} 5.333557
+
+{txt}
+{com}. sts graph, by(symcat)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.symcat || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}2{txt}){col 67}={res}{col 70}    26.88
+{txt}Log likelihood = {res}-1065.7037{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}symcat {c |}
+{space 10}1  {c |}{col 14}{res}{space 2} .6409708{col 26}{space 2} .1169628{col 37}{space 1}   -2.44{col 46}{space 3}0.015{col 54}{space 4} .4482426{col 67}{space 3} .9165653
+{txt}{space 9}2+  {c |}{col 14}{res}{space 2} .4339383{col 26}{space 2} .0713771{col 37}{space 1}   -5.08{col 46}{space 3}0.000{col 54}{space 4} .3143523{col 67}{space 3} .5990173
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0517149{col 26}{space 2} .0088277{col 37}{space 1}  -17.35{col 46}{space 3}0.000{col 54}{space 4} .0370097{col 67}{space 3}  .072263
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4951299{col 26}{space 2} .0519885{col 54}{space 4} .3932343{col 67}{space 3} .5970254
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 3.92e-36{col 26}{space 2} 1.20e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2745755{col 26}{space 2} .1114663{col 54}{space 4} .1239108{col 67}{space 3} .6084354
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 18.23{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. bysort symili: sum edur, d
+
+{txt}{hline}
+-> symili = 0
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        267
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        267
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.629213
+                        {txt}Largest       Std. dev.     {res} 4.980523
+{txt}75%    {res}        8             22
+{txt}90%    {res}       11             23       {txt}Variance      {res} 24.80561
+{txt}95%    {res}       13             24       {txt}Skewness      {res} 3.439623
+{txt}99%    {res}       23             50       {txt}Kurtosis      {res} 26.68693
+
+{txt}{hline}
+-> symili = 1
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         55
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         55
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 7.090909
+                        {txt}Largest       Std. dev.     {res}  5.05991
+{txt}75%    {res}        9             12
+{txt}90%    {res}       11             18       {txt}Variance      {res} 25.60269
+{txt}95%    {res}       18             19       {txt}Skewness      {res}  1.87659
+{txt}99%    {res}       30             30       {txt}Kurtosis      {res} 9.410336
+
+{txt}{hline}
+-> symili = 2+
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        2              1       {txt}Obs         {res}         58
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         58
+
+{txt}50%    {res}      6.5                      {txt}Mean          {res} 8.965517
+                        {txt}Largest       Std. dev.     {res}  7.25226
+{txt}75%    {res}       12             23
+{txt}90%    {res}       20             25       {txt}Variance      {res} 52.59528
+{txt}95%    {res}       25             26       {txt}Skewness      {res} 1.493033
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res} 5.337168
+
+{txt}{hline}
+-> symili = ILI
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              2
+{txt}10%    {res}      2.5              3       {txt}Obs         {res}         20
+{txt}25%    {res}        5              4       {txt}Sum of wgt. {res}         20
+
+{txt}50%    {res}      8.5                      {txt}Mean          {res}     9.95
+                        {txt}Largest       Std. dev.     {res} 7.514722
+{txt}75%    {res}       12             14
+{txt}90%    {res}     19.5             14       {txt}Variance      {res} 56.47105
+{txt}95%    {res}     28.5             25       {txt}Skewness      {res} 1.522879
+{txt}99%    {res}       32             32       {txt}Kurtosis      {res} 5.333925
+
+{txt}
+{com}. sts graph, by(symili)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.symili || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}3{txt}){col 67}={res}{col 70}    27.13
+{txt}Log likelihood = {res}-1065.4457{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}symili {c |}
+{space 10}1  {c |}{col 14}{res}{space 2} .6420675{col 26}{space 2} .1171951{col 37}{space 1}   -2.43{col 46}{space 3}0.015{col 54}{space 4} .4489654{col 67}{space 3} .9182239
+{txt}{space 9}2+  {c |}{col 14}{res}{space 2} .4587238{col 26}{space 2} .0826495{col 37}{space 1}   -4.33{col 46}{space 3}0.000{col 54}{space 4} .3222464{col 67}{space 3} .6530019
+{txt}{space 8}ILI  {c |}{col 14}{res}{space 2} .3706982{col 26}{space 2} .1039105{col 37}{space 1}   -3.54{col 46}{space 3}0.000{col 54}{space 4}  .214003{col 67}{space 3} .6421271
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0516017{col 26}{space 2} .0088195{col 37}{space 1}  -17.34{col 46}{space 3}0.000{col 54}{space 4} .0369131{col 67}{space 3} .0721353
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4960661{col 26}{space 2} .0520297{col 54}{space 4} .3940898{col 67}{space 3} .5980424
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.89e-36{col 26}{space 2} 7.30e-20{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2772986{col 26}{space 2}  .112296{col 54}{space 4} .1253838{col 67}{space 3} .6132731
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 18.28{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. *Ct-Value*
+. *
+. bysort ctcat: sum edur, d
+
+{txt}{hline}
+-> ctcat = >=30
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        156
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}        156
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 3.564103
+                        {txt}Largest       Std. dev.     {res} 2.738447
+{txt}75%    {res}        5             10
+{txt}90%    {res}        7             10       {txt}Variance      {res}  7.49909
+{txt}95%    {res}        8             13       {txt}Skewness      {res} 1.694674
+{txt}99%    {res}       13             19       {txt}Kurtosis      {res} 8.994638
+
+{txt}{hline}
+-> ctcat = <30
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}        244
+{txt}25%    {res}        5              0       {txt}Sum of wgt. {res}        244
+
+{txt}50%    {res}        7                      {txt}Mean          {res}  8.42623
+                        {txt}Largest       Std. dev.     {res} 6.236647
+{txt}75%    {res}       10             30
+{txt}90%    {res}       14             32       {txt}Variance      {res} 38.89577
+{txt}95%    {res}       21             36       {txt}Skewness      {res} 2.421476
+{txt}99%    {res}       32             50       {txt}Kurtosis      {res} 12.99906
+
+{txt}
+{com}. sts graph, by(ctcat)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.ctcat || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}   101.28
+{txt}Log likelihood = {res}-1027.2443{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}ctcat {c |}
+{space 8}<30  {c |}{col 14}{res}{space 2} .2389361{col 26}{space 2} .0339886{col 37}{space 1}  -10.06{col 46}{space 3}0.000{col 54}{space 4}    .1808{col 67}{space 3} .3157658
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}   .07531{col 26}{space 2} .0126612{col 37}{space 1}  -15.38{col 46}{space 3}0.000{col 54}{space 4} .0541686{col 67}{space 3} .1047026
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .5904805{col 26}{space 2} .0508949{col 54}{space 4} .4907283{col 67}{space 3} .6902328
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 6.34e-38{col 26}{space 2} 2.95e-21{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2491456{col 26}{space 2}  .097067{col 54}{space 4} .1160982{col 67}{space 3}  .534664
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 17.82{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. *
+. bysort ctcat1: sum edur, d
+
+{txt}{hline}
+-> ctcat1 = >=35
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         31
+{txt}25%    {res}        1              0       {txt}Sum of wgt. {res}         31
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 2.612903
+                        {txt}Largest       Std. dev.     {res} 1.909231
+{txt}75%    {res}        4              5
+{txt}90%    {res}        5              5       {txt}Variance      {res} 3.645161
+{txt}95%    {res}        6              6       {txt}Skewness      {res} .1304398
+{txt}99%    {res}        6              6       {txt}Kurtosis      {res} 1.919521
+
+{txt}{hline}
+-> ctcat1 = <35
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        369
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        369
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.859079
+                        {txt}Largest       Std. dev.     {res} 5.766911
+{txt}75%    {res}        9             30
+{txt}90%    {res}       12             32       {txt}Variance      {res} 33.25726
+{txt}95%    {res}       17             36       {txt}Skewness      {res} 2.551899
+{txt}99%    {res}       30             50       {txt}Kurtosis      {res} 14.46557
+
+{txt}
+{com}. sts graph, by(ctcat1)
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+{txt}
+{com}. mestreg i.ctcat1 || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}1{txt}){col 67}={res}{col 70}    26.41
+{txt}Log likelihood = {res}-1070.5475{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}ctcat1 {c |}
+{space 8}<35  {c |}{col 14}{res}{space 2} .2900713{col 26}{space 2} .0698576{col 37}{space 1}   -5.14{col 46}{space 3}0.000{col 54}{space 4}   .18093{col 67}{space 3}  .465049
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .1432565{col 26}{space 2} .0355847{col 37}{space 1}   -7.82{col 46}{space 3}0.000{col 54}{space 4} .0880393{col 67}{space 3} .2331051
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .4538527{col 26}{space 2} .0504187{col 54}{space 4} .3550338{col 67}{space 3} .5526716
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.79e-35{col 26}{space 2} 1.53e-18{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .1869185{col 26}{space 2} .0874437{col 54}{space 4} .0747214{col 67}{space 3} .4675834
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 11.36{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0004
+{txt}
+{com}. 
+. 
+. *Multivariable analysis*
+. mestreg i.ctcat i.symcat b5.agecat5 || site: || hhid:, dist(weibull) nolog
+
+{col 9}{txt}Failure {bf:_d}: {res}rsv
+{col 3}{txt}Analysis time {bf:_t}: {res}edur
+
+{txt}Mixed-effects Weibull PH regression{col 49}{txt}Number of obs{col 67}={res}{col 69}       382
+
+{txt}{col 9}Grouping information
+{col 9}{txt}{hline 16}{c TT}{hline 44}
+{col 25}{txt}{c |}{col 31}No. of{col 44}Observations per group
+{col 10}{txt}Group variable{col 25}{c |}{col 31}groups{col 41}Minimum{col 52}Average{col 63}Maximum
+{col 9}{txt}{hline 16}{c +}{hline 44}
+{col 20}{res}site{col 25}{txt}{c |}{res}{col 29}       2{col 39}      179{col 50}    191.0{col 61}      203
+{col 20}{res}hhid{col 25}{txt}{c |}{res}{col 29}     165{col 39}        1{col 50}      2.3{col 61}        9
+{col 9}{txt}{hline 16}{c BT}{hline 44}
+
+{txt}Integration method: {res}mvaghermite{col 49}{txt}Integration pts.{col 67}={col 78}{res}7
+
+{col 49}{txt}Wald chi2({res}9{txt}){col 67}={res}{col 70}   115.34
+{txt}Log likelihood = {res}-1016.8683{col 49}{txt}Prob > chi2{col 67}={res}{col 73}0.0000
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}ctcat {c |}
+{space 8}<30  {c |}{col 14}{res}{space 2}   .26308{col 26}{space 2}  .038351{col 37}{space 1}   -9.16{col 46}{space 3}0.000{col 54}{space 4} .1976981{col 67}{space 3} .3500849
+{txt}{space 12} {c |}
+{space 6}symcat {c |}
+{space 10}1  {c |}{col 14}{res}{space 2} .7770647{col 26}{space 2} .1463268{col 37}{space 1}   -1.34{col 46}{space 3}0.180{col 54}{space 4} .5372419{col 67}{space 3} 1.123944
+{txt}{space 9}2+  {c |}{col 14}{res}{space 2} .5893615{col 26}{space 2} .0991526{col 37}{space 1}   -3.14{col 46}{space 3}0.002{col 54}{space 4} .4238165{col 67}{space 3} .8195693
+{txt}{space 12} {c |}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} .5071014{col 26}{space 2} .2052651{col 37}{space 1}   -1.68{col 46}{space 3}0.093{col 54}{space 4} .2293742{col 67}{space 3} 1.121102
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} .9051198{col 26}{space 2} .2040452{col 37}{space 1}   -0.44{col 46}{space 3}0.658{col 54}{space 4} .5818565{col 67}{space 3} 1.407979
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2}  .782527{col 26}{space 2} .1721158{col 37}{space 1}   -1.11{col 46}{space 3}0.265{col 54}{space 4} .5084856{col 67}{space 3} 1.204259
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} .9076797{col 26}{space 2} .2116527{col 37}{space 1}   -0.42{col 46}{space 3}0.678{col 54}{space 4}  .574711{col 67}{space 3} 1.433559
+{txt}{space 6}19-44  {c |}{col 14}{res}{space 2} 1.047094{col 26}{space 2}  .246173{col 37}{space 1}    0.20{col 46}{space 3}0.845{col 54}{space 4} .6604914{col 67}{space 3} 1.659985
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6586729{col 26}{space 2} .3644621{col 37}{space 1}   -0.75{col 46}{space 3}0.451{col 54}{space 4} .2226774{col 67}{space 3} 1.948334
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0836596{col 26}{space 2} .0193616{col 37}{space 1}  -10.72{col 46}{space 3}0.000{col 54}{space 4} .0531521{col 67}{space 3} .1316775
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}/ln_p {c |}{col 14}{res}{space 2} .6259675{col 26}{space 2} .0506313{col 54}{space 4}  .526732{col 67}{space 3}  .725203
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site        {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} 1.20e-36{col 26}{space 2} 1.06e-19{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}{res}site>hhid   {col 14}{txt}{c |}
+{space 3}var(_cons){c |}{col 14}{res}{space 2} .2636426{col 26}{space 2} .0997911{col 54}{space 4} .1255533{col 67}{space 3} .5536089
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {help eform_option:Estimates are transformed} only in the first equation to hazard ratios.{p_end}
+{p 0 6 2}Note: {bf:_cons} estimates baseline hazard (conditional on zero random effects){txt}.{p_end}
+{txt}LR test vs. Weibull model: {txt}{help j_chibar##|_new:chibar2(01) =}{res} 20.49{col 55}{txt}Prob >= chibar2 = {res}{col 73}0.0000
+{txt}
+{com}. 
+. *Figures
+. tab edur ctcat
+
+           {txt}{c |}         ctcat
+      edur {c |}      >=30        <30 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         0 {c |}{res}        14          4 {txt}{c |}{res}        18 
+{txt}         1 {c |}{res}        21         12 {txt}{c |}{res}        33 
+{txt}         2 {c |}{res}        26          9 {txt}{c |}{res}        35 
+{txt}         3 {c |}{res}        27         13 {txt}{c |}{res}        40 
+{txt}         4 {c |}{res}        17         17 {txt}{c |}{res}        34 
+{txt}         5 {c |}{res}        24         28 {txt}{c |}{res}        52 
+{txt}         6 {c |}{res}        11         23 {txt}{c |}{res}        34 
+{txt}         7 {c |}{res}         4         17 {txt}{c |}{res}        21 
+{txt}         8 {c |}{res}         5         19 {txt}{c |}{res}        24 
+{txt}         9 {c |}{res}         2         23 {txt}{c |}{res}        25 
+{txt}        10 {c |}{res}         3         21 {txt}{c |}{res}        24 
+{txt}        11 {c |}{res}         0         14 {txt}{c |}{res}        14 
+{txt}        12 {c |}{res}         0         10 {txt}{c |}{res}        10 
+{txt}        13 {c |}{res}         1          5 {txt}{c |}{res}         6 
+{txt}        14 {c |}{res}         0          5 {txt}{c |}{res}         5 
+{txt}        15 {c |}{res}         0          3 {txt}{c |}{res}         3 
+{txt}        16 {c |}{res}         0          3 {txt}{c |}{res}         3 
+{txt}        17 {c |}{res}         0          2 {txt}{c |}{res}         2 
+{txt}        18 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        19 {c |}{res}         1          1 {txt}{c |}{res}         2 
+{txt}        20 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        21 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        22 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        23 {c |}{res}         0          3 {txt}{c |}{res}         3 
+{txt}        24 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        25 {c |}{res}         0          2 {txt}{c |}{res}         2 
+{txt}        26 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        30 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        32 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        36 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}        50 {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       156        244 {txt}{c |}{res}       400 
+{txt}
+{com}. tab edur symcat
+
+           {txt}{c |}              symcat
+      edur {c |}         0          1         2+ {c |}     Total
+{hline 11}{c +}{hline 33}{c +}{hline 10}
+         0 {c |}{res}        14          3          1 {txt}{c |}{res}        18 
+{txt}         1 {c |}{res}        26          3          4 {txt}{c |}{res}        33 
+{txt}         2 {c |}{res}        25          4          6 {txt}{c |}{res}        35 
+{txt}         3 {c |}{res}        34          2          4 {txt}{c |}{res}        40 
+{txt}         4 {c |}{res}        26          2          6 {txt}{c |}{res}        34 
+{txt}         5 {c |}{res}        39          5          8 {txt}{c |}{res}        52 
+{txt}         6 {c |}{res}        20          8          6 {txt}{c |}{res}        34 
+{txt}         7 {c |}{res}        12          5          4 {txt}{c |}{res}        21 
+{txt}         8 {c |}{res}        15          5          4 {txt}{c |}{res}        24 
+{txt}         9 {c |}{res}        14          6          5 {txt}{c |}{res}        25 
+{txt}        10 {c |}{res}        13          5          6 {txt}{c |}{res}        24 
+{txt}        11 {c |}{res}         8          2          4 {txt}{c |}{res}        14 
+{txt}        12 {c |}{res}         7          2          1 {txt}{c |}{res}        10 
+{txt}        13 {c |}{res}         3          0          3 {txt}{c |}{res}         6 
+{txt}        14 {c |}{res}         1          0          4 {txt}{c |}{res}         5 
+{txt}        15 {c |}{res}         3          0          0 {txt}{c |}{res}         3 
+{txt}        16 {c |}{res}         0          0          3 {txt}{c |}{res}         3 
+{txt}        17 {c |}{res}         1          0          1 {txt}{c |}{res}         2 
+{txt}        18 {c |}{res}         0          1          0 {txt}{c |}{res}         1 
+{txt}        19 {c |}{res}         1          1          0 {txt}{c |}{res}         2 
+{txt}        20 {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+{txt}        21 {c |}{res}         1          0          0 {txt}{c |}{res}         1 
+{txt}        22 {c |}{res}         1          0          0 {txt}{c |}{res}         1 
+{txt}        23 {c |}{res}         1          0          2 {txt}{c |}{res}         3 
+{txt}        24 {c |}{res}         1          0          0 {txt}{c |}{res}         1 
+{txt}        25 {c |}{res}         0          0          2 {txt}{c |}{res}         2 
+{txt}        26 {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+{txt}        30 {c |}{res}         0          1          0 {txt}{c |}{res}         1 
+{txt}        32 {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+{txt}        36 {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+{txt}        50 {c |}{res}         1          0          0 {txt}{c |}{res}         1 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+     Total {c |}{res}       267         55         78 {txt}{c |}{res}       400 
+{txt}
+{com}. tab edur agecat5
+
+           {txt}{c |}               agegroup <1, 1-4, 5-12, 13-18, 19-44, 45-64, 65+
+      edur {c |}        <1        1-4       5-12      13-18      19-44      45-64        65+ {c |}     Total
+{hline 11}{c +}{hline 77}{c +}{hline 10}
+         0 {c |}{res}         0          3          4          2          2          6          1 {txt}{c |}{res}        18 
+{txt}         1 {c |}{res}         1          6          8          2         12          3          1 {txt}{c |}{res}        33 
+{txt}         2 {c |}{res}         2          6          6          9          9          3          0 {txt}{c |}{res}        35 
+{txt}         3 {c |}{res}         1          7         10          8          7          7          0 {txt}{c |}{res}        40 
+{txt}         4 {c |}{res}         1         10          7          5          5          4          2 {txt}{c |}{res}        34 
+{txt}         5 {c |}{res}         1         10         16         12          7          6          0 {txt}{c |}{res}        52 
+{txt}         6 {c |}{res}         1         10          9          3          9          2          0 {txt}{c |}{res}        34 
+{txt}         7 {c |}{res}         0          4         11          4          1          1          0 {txt}{c |}{res}        21 
+{txt}         8 {c |}{res}         1          8          4          5          3          3          0 {txt}{c |}{res}        24 
+{txt}         9 {c |}{res}         0          9          9          3          2          1          1 {txt}{c |}{res}        25 
+{txt}        10 {c |}{res}         0          6          9          4          2          3          0 {txt}{c |}{res}        24 
+{txt}        11 {c |}{res}         0          2          8          1          3          0          0 {txt}{c |}{res}        14 
+{txt}        12 {c |}{res}         0          2          4          1          1          2          0 {txt}{c |}{res}        10 
+{txt}        13 {c |}{res}         0          2          1          0          1          2          0 {txt}{c |}{res}         6 
+{txt}        14 {c |}{res}         0          1          1          2          1          0          0 {txt}{c |}{res}         5 
+{txt}        15 {c |}{res}         0          2          0          1          0          0          0 {txt}{c |}{res}         3 
+{txt}        16 {c |}{res}         0          0          1          1          0          1          0 {txt}{c |}{res}         3 
+{txt}        17 {c |}{res}         1          0          0          1          0          0          0 {txt}{c |}{res}         2 
+{txt}        18 {c |}{res}         0          0          0          0          1          0          0 {txt}{c |}{res}         1 
+{txt}        19 {c |}{res}         0          2          0          0          0          0          0 {txt}{c |}{res}         2 
+{txt}        20 {c |}{res}         0          1          0          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        21 {c |}{res}         0          0          1          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        22 {c |}{res}         0          0          1          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        23 {c |}{res}         0          2          1          0          0          0          0 {txt}{c |}{res}         3 
+{txt}        24 {c |}{res}         0          0          0          1          0          0          0 {txt}{c |}{res}         1 
+{txt}        25 {c |}{res}         1          0          0          0          0          0          1 {txt}{c |}{res}         2 
+{txt}        26 {c |}{res}         1          0          0          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        30 {c |}{res}         0          1          0          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        32 {c |}{res}         0          1          0          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        36 {c |}{res}         1          0          0          0          0          0          0 {txt}{c |}{res}         1 
+{txt}        50 {c |}{res}         0          0          0          0          1          0          0 {txt}{c |}{res}         1 
+{txt}{hline 11}{c +}{hline 77}{c +}{hline 10}
+     Total {c |}{res}        12         95        111         65         67         44          6 {txt}{c |}{res}       400 
+{txt}
+{com}. 
+. qui log close
+{smcl}
+{com}{sf}{ul off}

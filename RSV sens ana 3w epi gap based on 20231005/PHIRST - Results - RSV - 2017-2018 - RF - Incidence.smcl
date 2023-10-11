@@ -1,0 +1,2746 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *************************************************
+. *************************************************
+. *PHIRST: RSV Incidence - Risk Factors - Analysis*
+. *************************************************
+. *************************************************
+. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. ******************************************************
+. *Factors associated with RSV incidence (all episodes)*
+. ******************************************************
+. 
+. *Rates by exposure (per 100 person week)*
+. *
+. *Year*
+. stptime, per(100) by(year) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+      year{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      2017{col 12}{c |}{col 16}{res}  21968.14{col 29}     178{col 39}      0.81{col 51}     0.70{col 63}     0.94
+      {txt}2018{col 12}{c |}{col 16}{res}  21782.57{col 29}     211{col 39}      0.97{col 51}     0.85{col 63}     1.11
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Site*
+. stptime, per(100) by(siteid) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}  21974.57{col 29}     203{col 39}      0.92{col 51}     0.81{col 63}     1.06
+         {txt}K{col 12}{c |}{col 16}{res}  21776.14{col 29}     186{col 39}      0.85{col 51}     0.74{col 63}     0.99
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Age*
+. stptime, per(100) by(agecat5) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   agecat5{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        <1{col 12}{c |}{col 16}{res}    862.43{col 29}      12{col 39}      1.39{col 51}     0.79{col 63}     2.45
+       {txt}1-4{col 12}{c |}{col 16}{res}   6127.86{col 29}      90{col 39}      1.47{col 51}     1.19{col 63}     1.81
+      {txt}5-12{col 12}{c |}{col 16}{res}  11877.14{col 29}     111{col 39}      0.93{col 51}     0.78{col 63}     1.13
+     {txt}13-18{col 12}{c |}{col 16}{res}   6340.43{col 29}      62{col 39}      0.98{col 51}     0.76{col 63}     1.25
+     {txt}19-44{col 12}{c |}{col 16}{res}  11341.71{col 29}      64{col 39}      0.56{col 51}     0.44{col 63}     0.72
+     {txt}45-64{col 12}{c |}{col 16}{res}   5444.00{col 29}      44{col 39}      0.81{col 51}     0.60{col 63}     1.09
+       {txt}65+{col 12}{c |}{col 16}{res}   1757.14{col 29}       6{col 39}      0.34{col 51}     0.15{col 63}     0.76
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Sex*
+. stptime, per(100) by(sex) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+       sex{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      Male{col 12}{c |}{col 16}{res}  17034.71{col 29}     156{col 39}      0.92{col 51}     0.78{col 63}     1.07
+    {txt}Female{col 12}{c |}{col 16}{res}  26716.00{col 29}     233{col 39}      0.87{col 51}     0.77{col 63}     0.99
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *HIV*
+. stptime, per(100) by(hivfinal) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2,797 missing values generated)
+
+Estimated person-time and incidence rates
+
+  hivfinal{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+  Negative{col 12}{c |}{col 16}{res}  35698.29{col 29}     332{col 39}      0.93{col 51}     0.84{col 63}     1.04
+  {txt}Positive{col 12}{c |}{col 16}{res}   6517.00{col 29}      45{col 39}      0.69{col 51}     0.52{col 63}     0.92
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  42215.29{col 29}     377{col 39}      0.89{col 51}     0.81{col 63}     0.99
+{txt}
+{com}. *
+. *UMC*
+. stptime, per(100) by(underill) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  underill{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  42666.43{col 29}     377{col 39}      0.88{col 51}     0.80{col 63}     0.98
+       {txt}Yes{col 12}{c |}{col 16}{res}   1084.29{col 29}      12{col 39}      1.11{col 51}     0.63{col 63}     1.95
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *BMI*
+. stptime, per(100) by(bmicat) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(68 missing values generated)
+
+Estimated person-time and incidence rates
+
+    bmicat{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Underwe~t{col 12}{c |}{col 16}{res}   3405.00{col 29}      28{col 39}      0.82{col 51}     0.57{col 63}     1.19
+ {txt}Normal ~t{col 12}{c |}{col 16}{res}  25977.43{col 29}     253{col 39}      0.97{col 51}     0.86{col 63}     1.10
+ {txt}Overwei~t{col 12}{c |}{col 16}{res}   6537.86{col 29}      47{col 39}      0.72{col 51}     0.54{col 63}     0.96
+     {txt}Obese{col 12}{c |}{col 16}{res}   7780.57{col 29}      60{col 39}      0.77{col 51}     0.60{col 63}     0.99
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43700.86{col 29}     388{col 39}      0.89{col 51}     0.80{col 63}     0.98
+{txt}
+{com}. *
+. *Cotinine*
+. stptime, per(100) by(cotinine) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2,984 missing values generated)
+
+Estimated person-time and incidence rates
+
+  cotinine{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ No expo~e{col 12}{c |}{col 16}{res}  17192.43{col 29}     155{col 39}      0.90{col 51}     0.77{col 63}     1.06
+ {txt}Passive~e{col 12}{c |}{col 16}{res}  18217.29{col 29}     171{col 39}      0.94{col 51}     0.81{col 63}     1.09
+ {txt}Active ~e{col 12}{c |}{col 16}{res}   6574.86{col 29}      43{col 39}      0.65{col 51}     0.49{col 63}     0.88
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  41984.57{col 29}     369{col 39}      0.88{col 51}     0.79{col 63}     0.97
+{txt}
+{com}. *
+. *Smoking*
+. stptime, per(100) by(cigsmokenow) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ cigsmok~w{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  19145.71{col 29}     123{col 39}      0.64{col 51}     0.54{col 63}     0.77
+       {txt}Yes{col 12}{c |}{col 16}{res}   3542.71{col 29}      27{col 39}      0.76{col 51}     0.52{col 63}     1.11
+ {txt}<15 years{col 12}{c |}{col 16}{res}  21062.29{col 29}     239{col 39}      1.13{col 51}     1.00{col 63}     1.29
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Alcohol*
+. stptime, per(100) by(alcohol) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   alcohol{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  14247.86{col 29}      87{col 39}      0.61{col 51}     0.49{col 63}     0.75
+       {txt}Yes{col 12}{c |}{col 16}{res}   8440.57{col 29}      63{col 39}      0.75{col 51}     0.58{col 63}     0.96
+ {txt}<15 years{col 12}{c |}{col 16}{res}  21062.29{col 29}     239{col 39}      1.13{col 51}     1.00{col 63}     1.29
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Education*
+. stptime, per(100) by(educlevel) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ educlevel{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ <18 years{col 12}{c |}{col 16}{res}  24742.00{col 29}     273{col 39}      1.10{col 51}     0.98{col 63}     1.24
+ {txt}No scho~g{col 12}{c |}{col 16}{res}   2065.43{col 29}      11{col 39}      0.53{col 51}     0.29{col 63}     0.96
+   {txt}Primary{col 12}{c |}{col 16}{res}   4412.86{col 29}      33{col 39}      0.75{col 51}     0.53{col 63}     1.05
+ {txt}Some se~y{col 12}{c |}{col 16}{res}   7215.71{col 29}      46{col 39}      0.64{col 51}     0.48{col 63}     0.85
+ {txt}Seconda~d{col 12}{c |}{col 16}{res}   4710.71{col 29}      24{col 39}      0.51{col 51}     0.34{col 63}     0.76
+ {txt}Post se~y{col 12}{c |}{col 16}{res}    604.00{col 29}       2{col 39}      0.33{col 51}     0.08{col 63}     1.32
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Employment*
+. stptime, per(100) by(employed) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  employed{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Unemplo~d{col 12}{c |}{col 16}{res}  10547.29{col 29}      80{col 39}      0.76{col 51}     0.61{col 63}     0.94
+ {txt}Ever Em~d{col 12}{c |}{col 16}{res}   7256.57{col 29}      31{col 39}      0.43{col 51}     0.30{col 63}     0.61
+ {txt}Ever St~t{col 12}{c |}{col 16}{res}   1204.86{col 29}       5{col 39}      0.41{col 51}     0.17{col 63}     1.00
+         {txt}4{col 12}{c |}{col 16}{res}  24742.00{col 29}     273{col 39}      1.10{col 51}     0.98{col 63}     1.24
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Household size*
+. stptime, per(100) by(hh_size) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   hh_size{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       3-5{col 12}{c |}{col 16}{res}  22722.29{col 29}     190{col 39}      0.84{col 51}     0.73{col 63}     0.96
+      {txt}6-10{col 12}{c |}{col 16}{res}  18026.71{col 29}     172{col 39}      0.95{col 51}     0.82{col 63}     1.11
+       {txt}>10{col 12}{c |}{col 16}{res}   3001.71{col 29}      27{col 39}      0.90{col 51}     0.62{col 63}     1.31
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Number of sleeping rooms*
+. stptime, per(100) by(numroomsleep) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ numroom~p{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       1-2{col 12}{c |}{col 16}{res}  21548.57{col 29}     195{col 39}      0.90{col 51}     0.79{col 63}     1.04
+       {txt}3-4{col 12}{c |}{col 16}{res}  20039.57{col 29}     185{col 39}      0.92{col 51}     0.80{col 63}     1.07
+       {txt}>=5{col 12}{c |}{col 16}{res}   2162.57{col 29}       9{col 39}      0.42{col 51}     0.22{col 63}     0.80
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. *
+. *Crowding*
+. stptime, per(100) by(crowding) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  crowding{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       <=2{col 12}{c |}{col 16}{res}  19694.29{col 29}     158{col 39}      0.80{col 51}     0.69{col 63}     0.94
+        {txt}>2{col 12}{c |}{col 16}{res}  24056.43{col 29}     231{col 39}      0.96{col 51}     0.84{col 63}     1.09
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     389{col 39}      0.89{col 51}     0.81{col 63}     0.98
+{txt}
+{com}. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. 
+. *Rates by exposure (per 100 person year)*
+. *
+. *Year*
+. stptime, per(100) by(year) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+      year{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      2017{col 12}{c |}{col 16}{res}    421.31{col 29}     178{col 39}     42.25{col 51}    36.48{col 63}    48.94
+      {txt}2018{col 12}{c |}{col 16}{res}    417.75{col 29}     211{col 39}     50.51{col 51}    44.13{col 63}    57.81
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Site*
+. stptime, per(100) by(siteid) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}    421.43{col 29}     203{col 39}     48.17{col 51}    41.98{col 63}    55.27
+         {txt}K{col 12}{c |}{col 16}{res}    417.62{col 29}     186{col 39}     44.54{col 51}    38.58{col 63}    51.42
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Age*
+. stptime, per(100) by(agecat5) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   agecat5{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        <1{col 12}{c |}{col 16}{res}     16.54{col 29}      12{col 39}     72.55{col 51}    41.20{col 63}   127.75
+       {txt}1-4{col 12}{c |}{col 16}{res}    117.52{col 29}      90{col 39}     76.58{col 51}    62.29{col 63}    94.16
+      {txt}5-12{col 12}{c |}{col 16}{res}    227.78{col 29}     111{col 39}     48.73{col 51}    40.46{col 63}    58.69
+     {txt}13-18{col 12}{c |}{col 16}{res}    121.60{col 29}      62{col 39}     50.99{col 51}    39.75{col 63}    65.40
+     {txt}19-44{col 12}{c |}{col 16}{res}    217.51{col 29}      64{col 39}     29.42{col 51}    23.03{col 63}    37.59
+     {txt}45-64{col 12}{c |}{col 16}{res}    104.41{col 29}      44{col 39}     42.14{col 51}    31.36{col 63}    56.63
+       {txt}65+{col 12}{c |}{col 16}{res}     33.70{col 29}       6{col 39}     17.80{col 51}     8.00{col 63}    39.63
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. stptime, per(100) by(agecat3) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   agecat3{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        <5{col 12}{c |}{col 16}{res}    134.06{col 29}     102{col 39}     76.09{col 51}    62.66{col 63}    92.38
+       {txt}>=5{col 12}{c |}{col 16}{res}    704.99{col 29}     287{col 39}     40.71{col 51}    36.26{col 63}    45.70
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Sex*
+. stptime, per(100) by(sex) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+       sex{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      Male{col 12}{c |}{col 16}{res}    326.69{col 29}     156{col 39}     47.75{col 51}    40.82{col 63}    55.86
+    {txt}Female{col 12}{c |}{col 16}{res}    512.36{col 29}     233{col 39}     45.48{col 51}    40.00{col 63}    51.71
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *HIV*
+. stptime, per(100) by(hivfinal) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2,797 missing values generated)
+
+Estimated person-time and incidence rates
+
+  hivfinal{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+  Negative{col 12}{c |}{col 16}{res}    684.62{col 29}     332{col 39}     48.49{col 51}    43.55{col 63}    54.00
+  {txt}Positive{col 12}{c |}{col 16}{res}    124.98{col 29}      45{col 39}     36.00{col 51}    26.88{col 63}    48.22
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    809.61{col 29}     377{col 39}     46.57{col 51}    42.09{col 63}    51.51
+{txt}
+{com}. *
+. *UMC*
+. stptime, per(100) by(underill) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  underill{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    818.26{col 29}     377{col 39}     46.07{col 51}    41.65{col 63}    50.97
+       {txt}Yes{col 12}{c |}{col 16}{res}     20.79{col 29}      12{col 39}     57.71{col 51}    32.77{col 63}   101.61
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *BMI*
+. stptime, per(100) by(bmicat) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(68 missing values generated)
+
+Estimated person-time and incidence rates
+
+    bmicat{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Underwe~t{col 12}{c |}{col 16}{res}     65.30{col 29}      28{col 39}     42.88{col 51}    29.61{col 63}    62.10
+ {txt}Normal ~t{col 12}{c |}{col 16}{res}    498.20{col 29}     253{col 39}     50.78{col 51}    44.90{col 63}    57.44
+ {txt}Overwei~t{col 12}{c |}{col 16}{res}    125.38{col 29}      47{col 39}     37.48{col 51}    28.16{col 63}    49.89
+     {txt}Obese{col 12}{c |}{col 16}{res}    149.22{col 29}      60{col 39}     40.21{col 51}    31.22{col 63}    51.79
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    838.10{col 29}     388{col 39}     46.30{col 51}    41.91{col 63}    51.14
+{txt}
+{com}. *
+. *Cotinine*
+. stptime, per(100) by(cotinine) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2,984 missing values generated)
+
+Estimated person-time and incidence rates
+
+  cotinine{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ No expo~e{col 12}{c |}{col 16}{res}    329.72{col 29}     155{col 39}     47.01{col 51}    40.16{col 63}    55.02
+ {txt}Passive~e{col 12}{c |}{col 16}{res}    349.37{col 29}     171{col 39}     48.94{col 51}    42.13{col 63}    56.86
+ {txt}Active ~e{col 12}{c |}{col 16}{res}    126.09{col 29}      43{col 39}     34.10{col 51}    25.29{col 63}    45.98
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    805.18{col 29}     369{col 39}     45.83{col 51}    41.38{col 63}    50.75
+{txt}
+{com}. *
+. *Smoking*
+. stptime, per(100) by(cigsmokenow) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ cigsmok~w{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    367.18{col 29}     123{col 39}     33.50{col 51}    28.07{col 63}    39.97
+       {txt}Yes{col 12}{c |}{col 16}{res}     67.94{col 29}      27{col 39}     39.74{col 51}    27.25{col 63}    57.95
+ {txt}<15 years{col 12}{c |}{col 16}{res}    403.93{col 29}     239{col 39}     59.17{col 51}    52.12{col 63}    67.17
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Alcohol*
+. stptime, per(100) by(alcohol) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   alcohol{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    273.25{col 29}      87{col 39}     31.84{col 51}    25.81{col 63}    39.28
+       {txt}Yes{col 12}{c |}{col 16}{res}    161.87{col 29}      63{col 39}     38.92{col 51}    30.40{col 63}    49.82
+ {txt}<15 years{col 12}{c |}{col 16}{res}    403.93{col 29}     239{col 39}     59.17{col 51}    52.12{col 63}    67.17
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Education*
+. stptime, per(100) by(educlevel) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ educlevel{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ <18 years{col 12}{c |}{col 16}{res}    474.50{col 29}     273{col 39}     57.53{col 51}    51.10{col 63}    64.78
+ {txt}No scho~g{col 12}{c |}{col 16}{res}     39.61{col 29}      11{col 39}     27.77{col 51}    15.38{col 63}    50.14
+   {txt}Primary{col 12}{c |}{col 16}{res}     84.63{col 29}      33{col 39}     38.99{col 51}    27.72{col 63}    54.85
+ {txt}Some se~y{col 12}{c |}{col 16}{res}    138.38{col 29}      46{col 39}     33.24{col 51}    24.90{col 63}    44.38
+ {txt}Seconda~d{col 12}{c |}{col 16}{res}     90.34{col 29}      24{col 39}     26.57{col 51}    17.81{col 63}    39.63
+ {txt}Post se~y{col 12}{c |}{col 16}{res}     11.58{col 29}       2{col 39}     17.27{col 51}     4.32{col 63}    69.04
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Employment*
+. stptime, per(100) by(employed) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  employed{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Unemplo~d{col 12}{c |}{col 16}{res}    202.28{col 29}      80{col 39}     39.55{col 51}    31.77{col 63}    49.24
+ {txt}Ever Em~d{col 12}{c |}{col 16}{res}    139.17{col 29}      31{col 39}     22.28{col 51}    15.67{col 63}    31.67
+ {txt}Ever St~t{col 12}{c |}{col 16}{res}     23.11{col 29}       5{col 39}     21.64{col 51}     9.01{col 63}    51.99
+         {txt}4{col 12}{c |}{col 16}{res}    474.50{col 29}     273{col 39}     57.53{col 51}    51.10{col 63}    64.78
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Household size*
+. stptime, per(100) by(hh_size) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   hh_size{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       3-5{col 12}{c |}{col 16}{res}    435.77{col 29}     190{col 39}     43.60{col 51}    37.82{col 63}    50.26
+      {txt}6-10{col 12}{c |}{col 16}{res}    345.72{col 29}     172{col 39}     49.75{col 51}    42.85{col 63}    57.77
+       {txt}>10{col 12}{c |}{col 16}{res}     57.57{col 29}      27{col 39}     46.90{col 51}    32.16{col 63}    68.39
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Number of sleeping rooms*
+. stptime, per(100) by(numroomsleep) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ numroom~p{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       1-2{col 12}{c |}{col 16}{res}    413.26{col 29}     195{col 39}     47.19{col 51}    41.01{col 63}    54.30
+       {txt}3-4{col 12}{c |}{col 16}{res}    384.32{col 29}     185{col 39}     48.14{col 51}    41.68{col 63}    55.60
+       {txt}>=5{col 12}{c |}{col 16}{res}     41.47{col 29}       9{col 39}     21.70{col 51}    11.29{col 63}    41.71
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Crowding*
+. stptime, per(100) by(crowding) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  crowding{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       <=2{col 12}{c |}{col 16}{res}    377.70{col 29}     158{col 39}     41.83{col 51}    35.79{col 63}    48.89
+        {txt}>2{col 12}{c |}{col 16}{res}    461.36{col 29}     231{col 39}     50.07{col 51}    44.01{col 63}    56.96
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     389{col 39}     46.36{col 51}    41.98{col 63}    51.21
+{txt}
+{com}. *
+. *Household income*
+. stptime, per(100) by(hh_income) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvepis==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimevis/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(1,840 missing values generated)
+
+Estimated person-time and incidence rates
+
+ hh_income{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+    0-R800{col 12}{c |}{col 16}{res}    101.79{col 29}      55{col 39}     54.03{col 51}    41.48{col 63}    70.37
+ {txt}R801-1600{col 12}{c |}{col 16}{res}    246.38{col 29}     117{col 39}     47.49{col 51}    39.62{col 63}    56.92
+ {txt}R160~3200{col 12}{c |}{col 16}{res}    258.21{col 29}     124{col 39}     48.02{col 51}    40.27{col 63}    57.26
+ {txt}R320~6400{col 12}{c |}{col 16}{res}    165.26{col 29}      69{col 39}     41.75{col 51}    32.98{col 63}    52.86
+ {txt}R64~12800{col 12}{c |}{col 16}{res}     38.25{col 29}      14{col 39}     36.60{col 51}    21.68{col 63}    61.80
+   {txt}>R12801{col 12}{c |}{col 16}{res}      9.77{col 29}       2{col 39}     20.47{col 51}     5.12{col 63}    81.85
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    819.67{col 29}     381{col 39}     46.48{col 51}    42.04{col 63}    51.39
+{txt}
+{com}. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Univariate analysis*
+. *
+. *Year*
+. svy linearized: poisson rsvepis i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:2.46}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1180}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.195492{col 26}{space 2} .1360115{col 37}{space 1}    1.57{col 46}{space 3}0.118{col 54}{space 4} .9553814{col 67}{space 3} 1.495948
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0011575{col 26}{space 2} .0000968{col 37}{space 1}  -80.83{col 46}{space 3}0.000{col 54}{space 4} .0009816{col 67}{space 3} .0013649
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Site*
+. svy linearized: poisson rsvepis i.site, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.47}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.4951}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} .9246053{col 26}{space 2} .1060625{col 37}{space 1}   -0.68{col 46}{space 3}0.495{col 54}{space 4} .7375327{col 67}{space 3} 1.159128
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0013197{col 26}{space 2} .0001113{col 37}{space 1}  -78.63{col 46}{space 3}0.000{col 54}{space 4} .0011177{col 67}{space 3} .0015583
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Age*
+. svy linearized: poisson rsvepis b4.agecat5, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:6}, {res:218})}{col 70} = {res}{ralign 6:10.11}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.465794{col 26}{space 2} .5980729{col 37}{space 1}    3.72{col 46}{space 3}0.000{col 54}{space 4} 1.528879{col 67}{space 3} 3.976861
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.602751{col 26}{space 2} .3544394{col 37}{space 1}    7.02{col 46}{space 3}0.000{col 54}{space 4} 1.990144{col 67}{space 3} 3.403931
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.656188{col 26}{space 2} .2227416{col 37}{space 1}    3.75{col 46}{space 3}0.000{col 54}{space 4} 1.270593{col 67}{space 3} 2.158802
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.732893{col 26}{space 2} .2547224{col 37}{space 1}    3.74{col 46}{space 3}0.000{col 54}{space 4} 1.297086{col 67}{space 3} 2.315127
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.432298{col 26}{space 2} .2453473{col 37}{space 1}    2.10{col 46}{space 3}0.037{col 54}{space 4} 1.021951{col 67}{space 3} 2.007412
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6051221{col 26}{space 2} .3434209{col 37}{space 1}   -0.89{col 46}{space 3}0.377{col 54}{space 4} .1977563{col 67}{space 3} 1.851636
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0008061{col 26}{space 2} .0000944{col 37}{space 1}  -60.82{col 46}{space 3}0.000{col 54}{space 4}   .00064{col 67}{space 3} .0010154
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Sex*
+. svy linearized: poisson rsvepis i.sex, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.27}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.6012}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2}  .952346{col 26}{space 2} .0888445{col 37}{space 1}   -0.52{col 46}{space 3}0.601{col 54}{space 4}  .792415{col 67}{space 3} 1.144555
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0013083{col 26}{space 2} .0001019{col 37}{space 1}  -85.25{col 46}{space 3}0.000{col 54}{space 4} .0011221{col 67}{space 3} .0015253
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *HIV*
+. svy linearized: poisson rsvepis i.hivfinal, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,075}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,075}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:4.76}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0302}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}hivfinal {c |}
+{space 3}Positive  {c |}{col 14}{res}{space 2} .7424618{col 26}{space 2} .1013533{col 37}{space 1}   -2.18{col 46}{space 3}0.030{col 54}{space 4} .5673391{col 67}{space 3} .9716403
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0013286{col 26}{space 2} .0000795{col 37}{space 1} -110.69{col 46}{space 3}0.000{col 54}{space 4} .0011808{col 67}{space 3} .0014949
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *UMC*
+. svy linearized: poisson rsvepis i.underill, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.70}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.4046}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}underill {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.252514{col 26}{space 2} .3377112{col 37}{space 1}    0.84{col 46}{space 3}0.405{col 54}{space 4} .7362468{col 67}{space 3} 2.130794
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0012623{col 26}{space 2} .0000736{col 37}{space 1} -114.40{col 46}{space 3}0.000{col 54}{space 4} .0011252{col 67}{space 3} .0014161
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *BMI*
+. svy linearized: poisson rsvepis i.bmicat, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,114}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,114}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:3}, {res:221})}{col 70} = {res}{ralign 6:2.06}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1070}
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 16}{c |}{col 28}  Linearized
+{col 1}       rsvepis{col 16}{c |}        IRR{col 28}   std. err.{col 40}      t{col 48}   P>|t|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}bmicat {c |}
+Normal weight  {c |}{col 16}{res}{space 2} 1.184359{col 28}{space 2}  .248082{col 39}{space 1}    0.81{col 48}{space 3}0.420{col 56}{space 4} .7838148{col 69}{space 3}  1.78959
+{txt}{space 3}Overweight  {c |}{col 16}{res}{space 2} .8742216{col 28}{space 2} .2064742{col 39}{space 1}   -0.57{col 48}{space 3}0.570{col 56}{space 4} .5488924{col 69}{space 3} 1.392374
+{txt}{space 8}Obese  {c |}{col 16}{res}{space 2} .9377754{col 28}{space 2} .2156365{col 39}{space 1}   -0.28{col 48}{space 3}0.780{col 56}{space 4} .5960758{col 69}{space 3} 1.475354
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0011747{col 28}{space 2} .0002344{col 39}{space 1}  -33.81{col 48}{space 3}0.000{col 56}{space 4} .0007928{col 69}{space 3} .0017407
+{col 1}{txt}  ln(ptimeall){col 16}{c |}{res}{space 2}        1{col 28}{txt}  (exposure)
+{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Cotinine*
+. svy linearized: poisson rsvepis i.cotinine, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,070}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,070}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:2.17}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1162}
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Linearized
+{col 1}          rsvepis{col 19}{c |}        IRR{col 31}   std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}cotinine {c |}
+Passive exposure  {c |}{col 19}{res}{space 2} 1.041161{col 31}{space 2} .1190703{col 42}{space 1}    0.35{col 51}{space 3}0.725{col 59}{space 4} .8310761{col 72}{space 3} 1.304353
+{txt}{space 1}Active exposure  {c |}{col 19}{res}{space 2}  .725417{col 31}{space 2}  .133525{col 42}{space 1}   -1.74{col 51}{space 3}0.083{col 59}{space 4} .5047252{col 72}{space 3} 1.042607
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} .0012879{col 31}{space 2} .0001154{col 42}{space 1}  -74.25{col 51}{space 3}0.000{col 59}{space 4} .0010794{col 72}{space 3} .0015368
+{col 1}{txt}     ln(ptimeall){col 19}{c |}{res}{space 2}        1{col 31}{txt}  (exposure)
+{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Smoking*
+. svy linearized: poisson rsvepis i.cigsmokenow, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:17.66}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}cigsmokenow {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.186299{col 26}{space 2} .2203922{col 37}{space 1}    0.92{col 46}{space 3}0.359{col 54}{space 4} .8226097{col 67}{space 3} 1.710781
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} 1.766277{col 26}{space 2} .1689129{col 37}{space 1}    5.95{col 46}{space 3}0.000{col 54}{space 4} 1.462893{col 67}{space 3}  2.13258
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0009178{col 26}{space 2} .0000837{col 37}{space 1}  -76.66{col 46}{space 3}0.000{col 54}{space 4} .0007668{col 67}{space 3} .0010985
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Alcohol*
+. svy linearized: poisson rsvepis i.alcohol, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:17.83}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}alcohol {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2}  1.22236{col 26}{space 2} .1973782{col 37}{space 1}    1.24{col 46}{space 3}0.215{col 54}{space 4}  .889207{col 67}{space 3} 1.680332
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} 1.858329{col 26}{space 2} .2039313{col 37}{space 1}    5.65{col 46}{space 3}0.000{col 54}{space 4} 1.496935{col 67}{space 3} 2.306973
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0008723{col 26}{space 2} .0000933{col 37}{space 1}  -65.88{col 46}{space 3}0.000{col 54}{space 4} .0007066{col 67}{space 3} .0010769
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Education*
+. svy linearized: poisson rsvepis i.educlevel, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:5}, {res:219})}{col 70} = {res}{ralign 6:8.45}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 22}{c |}{col 34}  Linearized
+{col 1}             rsvepis{col 22}{c |}        IRR{col 34}   std. err.{col 46}      t{col 54}   P>|t|{col 62}     [95% con{col 75}f. interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}educlevel {c |}
+{space 7}No schooling  {c |}{col 22}{res}{space 2} .4826748{col 34}{space 2} .1350356{col 45}{space 1}   -2.60{col 54}{space 3}0.010{col 62}{space 4} .2781113{col 75}{space 3} .8377042
+{txt}{space 12}Primary  {c |}{col 22}{res}{space 2} .6777449{col 34}{space 2} .1157209{col 45}{space 1}   -2.28{col 54}{space 3}0.024{col 62}{space 4} .4841006{col 75}{space 3} .9488485
+{txt}{space 5}Some secondary  {c |}{col 22}{res}{space 2} .5777642{col 34}{space 2} .0973569{col 45}{space 1}   -3.26{col 54}{space 3}0.001{col 62}{space 4} .4145102{col 75}{space 3} .8053156
+{txt}Secondary completed  {c |}{col 22}{res}{space 2} .4617391{col 34}{space 2} .0858765{col 45}{space 1}   -4.15{col 54}{space 3}0.000{col 62}{space 4} .3200532{col 75}{space 3} .6661485
+{txt}{space 5}Post secondary  {c |}{col 22}{res}{space 2} .3000998{col 34}{space 2} .1597763{col 45}{space 1}   -2.26{col 54}{space 3}0.025{col 62}{space 4} .1051004{col 75}{space 3} .8568942
+{txt}{space 20} {c |}
+{space 15}_cons {c |}{col 22}{res}{space 2} .0015763{col 34}{space 2} .0000955{col 45}{space 1} -106.46{col 54}{space 3}0.000{col 62}{space 4} .0013988{col 75}{space 3} .0017762
+{col 1}{txt}        ln(ptimeall){col 22}{c |}{res}{space 2}        1{col 34}{txt}  (exposure)
+{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Employment*
+. svy linearized: poisson rsvepis i.employed, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:3}, {res:221})}{col 70} = {res}{ralign 6:14.04}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 16}{c |}{col 28}  Linearized
+{col 1}       rsvepis{col 16}{c |}        IRR{col 28}   std. err.{col 40}      t{col 48}   P>|t|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}employed {c |}
+Ever Employed  {c |}{col 16}{res}{space 2} .5632237{col 28}{space 2} .1090172{col 39}{space 1}   -2.97{col 48}{space 3}0.003{col 56}{space 4}  .384613{col 69}{space 3} .8247797
+{txt}{space 1}Ever Student  {c |}{col 16}{res}{space 2} .5471233{col 28}{space 2} .2179872{col 39}{space 1}   -1.51{col 48}{space 3}0.132{col 56}{space 4} .2495142{col 69}{space 3} 1.199707
+{txt}{space 12}4  {c |}{col 16}{res}{space 2} 1.454717{col 28}{space 2} .1615119{col 39}{space 1}    3.38{col 48}{space 3}0.001{col 56}{space 4} 1.168845{col 69}{space 3} 1.810506
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0010836{col 28}{space 2}  .000119{col 39}{space 1}  -62.15{col 48}{space 3}0.000{col 56}{space 4} .0008726{col 69}{space 3} .0013455
+{col 1}{txt}  ln(ptimeall){col 16}{c |}{res}{space 2}        1{col 28}{txt}  (exposure)
+{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Household size*
+. svy linearized: poisson rsvepis i.hh_size, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:0.65}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.5237}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}hh_size {c |}
+{space 7}6-10  {c |}{col 14}{res}{space 2} 1.141065{col 26}{space 2} .1319021{col 37}{space 1}    1.14{col 46}{space 3}0.255{col 54}{space 4} .9086114{col 67}{space 3} 1.432988
+{txt}{space 8}>10  {c |}{col 14}{res}{space 2} 1.075704{col 26}{space 2} .2862315{col 37}{space 1}    0.27{col 46}{space 3}0.784{col 54}{space 4} .6367409{col 67}{space 3} 1.817284
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0011945{col 26}{space 2} .0001008{col 37}{space 1}  -79.74{col 46}{space 3}0.000{col 54}{space 4} .0010115{col 67}{space 3} .0014107
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Number of sleeping rooms*
+. svy linearized: poisson rsvepis i.numroomsleep, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:4.22}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0159}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+numroomsleep {c |}
+{space 8}3-4  {c |}{col 14}{res}{space 2} 1.020157{col 26}{space 2} .1172785{col 37}{space 1}    0.17{col 46}{space 3}0.862{col 54}{space 4} .8133511{col 67}{space 3} 1.279547
+{txt}{space 8}>=5  {c |}{col 14}{res}{space 2} .4598921{col 26}{space 2} .1270721{col 37}{space 1}   -2.81{col 46}{space 3}0.005{col 54}{space 4} .2667954{col 67}{space 3}  .792745
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0012928{col 26}{space 2} .0001037{col 37}{space 1}  -82.94{col 46}{space 3}0.000{col 54}{space 4} .0011038{col 67}{space 3} .0015141
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Crowding*
+. svy linearized: poisson rsvepis i.crowding, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:2.32}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1291}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.196917{col 26}{space 2}  .141249{col 37}{space 1}    1.52{col 46}{space 3}0.129{col 54}{space 4} .9485604{col 67}{space 3} 1.510299
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0011461{col 26}{space 2} .0001068{col 37}{space 1}  -72.63{col 46}{space 3}0.000{col 54}{space 4} .0009537{col 67}{space 3} .0013772
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Household income*
+. svy linearized: poisson rsvepis i.hh_income, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,089}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:219}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,089}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:217}
+{txt}{col 55}{lalign 15:F({res:5}, {res:213})}{col 70} = {res}{ralign 6:1.16}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.3279}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}hh_income {c |}
+{space 2}R801-1600  {c |}{col 14}{res}{space 2} .8789024{col 26}{space 2} .1655274{col 37}{space 1}   -0.69{col 46}{space 3}0.494{col 54}{space 4} .6063609{col 67}{space 3} 1.273944
+{txt}{space 1}R1601-3200  {c |}{col 14}{res}{space 2} .8888096{col 26}{space 2}   .16844{col 37}{space 1}   -0.62{col 46}{space 3}0.535{col 54}{space 4} .6117743{col 67}{space 3} 1.291297
+{txt}{space 1}R3201-6400  {c |}{col 14}{res}{space 2} .7727431{col 26}{space 2} .1469081{col 37}{space 1}   -1.36{col 46}{space 3}0.176{col 54}{space 4} .5312557{col 67}{space 3} 1.124001
+{txt}R6401-12800  {c |}{col 14}{res}{space 2} .6774326{col 26}{space 2} .1514594{col 37}{space 1}   -1.74{col 46}{space 3}0.083{col 54}{space 4} .4360018{col 67}{space 3} 1.052553
+{txt}{space 4}>R12801  {c |}{col 14}{res}{space 2} .3788816{col 26}{space 2} .2261485{col 37}{space 1}   -1.63{col 46}{space 3}0.105{col 54}{space 4} .1168382{col 67}{space 3} 1.228632
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0014803{col 26}{space 2} .0002272{col 37}{space 1}  -42.46{col 46}{space 3}0.000{col 54}{space 4} .0010939{col 67}{space 3} .0020031
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. svy linearized: poisson rsvepis i.wpm4, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:983}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:983}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:1}, {res:194})}{col 70} = {res}{ralign 6:13.75}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0003}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .6138332{col 26}{space 2} .0807998{col 37}{space 1}   -3.71{col 46}{space 3}0.000{col 54}{space 4} .4734804{col 67}{space 3} .7957905
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0018424{col 26}{space 2}  .000207{col 37}{space 1}  -56.04{col 46}{space 3}0.000{col 54}{space 4} .0014762{col 67}{space 3} .0022994
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis i.spm4, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:958}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:193}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:958}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:191}
+{txt}{col 55}{lalign 15:F({res:1}, {res:191})}{col 70} = {res}{ralign 6:0.02}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.8826}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}spm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .9819092{col 26}{space 2} .1212189{col 37}{space 1}   -0.15{col 46}{space 3}0.883{col 54}{space 4} .7696947{col 67}{space 3} 1.252634
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0012869{col 26}{space 2} .0001015{col 37}{space 1}  -84.41{col 46}{space 3}0.000{col 54}{space 4} .0011016{col 67}{space 3} .0015035
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis i.windoortemp, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:2.61}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0759}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .7249136{col 26}{space 2} .1100441{col 37}{space 1}   -2.12{col 46}{space 3}0.035{col 54}{space 4} .5374848{col 67}{space 3} .9777017
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .8022763{col 26}{space 2} .1490076{col 37}{space 1}   -1.19{col 46}{space 3}0.237{col 54}{space 4} .5563739{col 67}{space 3} 1.156861
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0013859{col 26}{space 2} .0000912{col 37}{space 1} -100.01{col 46}{space 3}0.000{col 54}{space 4} .0012173{col 67}{space 3} .0015778
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis i.sindoortemp, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:3.16}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0768}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}sindoortemp {c |}
+{space 8}>24  {c |}{col 14}{res}{space 2} 1.243176{col 26}{space 2} .1522156{col 37}{space 1}    1.78{col 46}{space 3}0.077{col 54}{space 4} .9766569{col 67}{space 3} 1.582425
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0011878{col 26}{space 2} .0000818{col 37}{space 1}  -97.78{col 46}{space 3}0.000{col 54}{space 4}  .001037{col 67}{space 3} .0013605
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. 
+. *Multivariable analysis*
+. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:983}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:983}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:11}, {res:184})}{col 70} = {res}{ralign 6:22.55}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449422{col 26}{space 2} .6520047{col 37}{space 1}    3.37{col 46}{space 3}0.001{col 54}{space 4}  1.44898{col 67}{space 3} 4.140615
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.658928{col 26}{space 2} .3769682{col 37}{space 1}    6.90{col 46}{space 3}0.000{col 54}{space 4} 2.010344{col 67}{space 3} 3.516761
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.635357{col 26}{space 2} .2410109{col 37}{space 1}    3.34{col 46}{space 3}0.001{col 54}{space 4} 1.222867{col 67}{space 3} 2.186986
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.772784{col 26}{space 2} .2845925{col 37}{space 1}    3.57{col 46}{space 3}0.000{col 54}{space 4} 1.291669{col 67}{space 3} 2.433104
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.547102{col 26}{space 2} .2835855{col 37}{space 1}    2.38{col 46}{space 3}0.018{col 54}{space 4} 1.077739{col 67}{space 3} 2.220878
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6211949{col 26}{space 2} .4057561{col 37}{space 1}   -0.73{col 46}{space 3}0.467{col 54}{space 4} .1712949{col 67}{space 3} 2.252742
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.138199{col 26}{space 2} .1346046{col 37}{space 1}    1.09{col 46}{space 3}0.275{col 54}{space 4} .9014104{col 67}{space 3}  1.43719
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .5900223{col 26}{space 2} .0953278{col 37}{space 1}   -3.27{col 46}{space 3}0.001{col 54}{space 4}  .429022{col 67}{space 3} .8114417
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .6887792{col 26}{space 2}  .108931{col 37}{space 1}   -2.36{col 46}{space 3}0.019{col 54}{space 4} .5042161{col 67}{space 3} .9408996
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .6350528{col 26}{space 2} .0988551{col 37}{space 1}   -2.92{col 46}{space 3}0.004{col 54}{space 4} .4671714{col 67}{space 3} .8632636
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} .7973099{col 26}{space 2} .1212376{col 37}{space 1}   -1.49{col 46}{space 3}0.138{col 54}{space 4}  .590721{col 67}{space 3} 1.076148
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0013308{col 26}{space 2} .0003114{col 37}{space 1}  -28.30{col 46}{space 3}0.000{col 54}{space 4} .0008389{col 67}{space 3} .0021113
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.underill i.hivfinal, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:951}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:951}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:12}, {res:183})}{col 70} = {res}{ralign 6:7.45}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.574034{col 26}{space 2} .6447187{col 37}{space 1}    3.77{col 46}{space 3}0.000{col 54}{space 4} 1.570635{col 67}{space 3} 4.218453
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2}  2.73209{col 26}{space 2} .4317934{col 37}{space 1}    6.36{col 46}{space 3}0.000{col 54}{space 4} 2.000425{col 67}{space 3} 3.731365
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2}  1.69641{col 26}{space 2} .2746937{col 37}{space 1}    3.26{col 46}{space 3}0.001{col 54}{space 4} 1.232632{col 67}{space 3} 2.334684
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.866951{col 26}{space 2} .3153163{col 37}{space 1}    3.70{col 46}{space 3}0.000{col 54}{space 4} 1.338037{col 67}{space 3} 2.604942
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.506137{col 26}{space 2} .2843864{col 37}{space 1}    2.17{col 46}{space 3}0.031{col 54}{space 4} 1.037847{col 67}{space 3} 2.185727
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6445006{col 26}{space 2} .4257693{col 37}{space 1}   -0.66{col 46}{space 3}0.507{col 54}{space 4} .1751352{col 67}{space 3} 2.371773
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.125511{col 26}{space 2} .1352652{col 37}{space 1}    0.98{col 46}{space 3}0.326{col 54}{space 4} .8879922{col 67}{space 3} 1.426561
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .6841733{col 26}{space 2} .0889059{col 37}{space 1}   -2.92{col 46}{space 3}0.004{col 54}{space 4} .5294941{col 67}{space 3} .8840383
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .7549898{col 26}{space 2} .1144986{col 37}{space 1}   -1.85{col 46}{space 3}0.065{col 54}{space 4} .5598106{col 67}{space 3} 1.018219
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .9240391{col 26}{space 2} .1105557{col 37}{space 1}   -0.66{col 46}{space 3}0.510{col 54}{space 4} .7298101{col 67}{space 3} 1.169959
+{txt}{space 12} {c |}
+{space 4}underill {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.340844{col 26}{space 2}  .324544{col 37}{space 1}    1.21{col 46}{space 3}0.227{col 54}{space 4} .8318712{col 67}{space 3} 2.161226
+{txt}{space 12} {c |}
+{space 4}hivfinal {c |}
+{space 3}Positive  {c |}{col 14}{res}{space 2} 1.099506{col 26}{space 2}  .178222{col 37}{space 1}    0.59{col 46}{space 3}0.559{col 54}{space 4} .7986522{col 67}{space 3} 1.513691
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010117{col 26}{space 2} .0001784{col 37}{space 1}  -39.10{col 46}{space 3}0.000{col 54}{space 4} .0007145{col 67}{space 3} .0014327
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.site , irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:983}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:983}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:11}, {res:184})}{col 70} = {res}{ralign 6:20.60}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.410558{col 26}{space 2} .6419632{col 37}{space 1}    3.30{col 46}{space 3}0.001{col 54}{space 4} 1.425635{col 67}{space 3}  4.07593
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.723729{col 26}{space 2} .3850381{col 37}{space 1}    7.09{col 46}{space 3}0.000{col 54}{space 4} 2.061005{col 67}{space 3} 3.599555
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.649237{col 26}{space 2} .2411657{col 37}{space 1}    3.42{col 46}{space 3}0.001{col 54}{space 4} 1.236037{col 67}{space 3} 2.200566
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.820835{col 26}{space 2} .2865418{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.334988{col 67}{space 3} 2.483497
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.568454{col 26}{space 2} .2840231{col 37}{space 1}    2.49{col 46}{space 3}0.014{col 54}{space 4} 1.097399{col 67}{space 3} 2.241708
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6398883{col 26}{space 2} .4203546{col 37}{space 1}   -0.68{col 46}{space 3}0.498{col 54}{space 4} .1751555{col 67}{space 3} 2.337677
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.125961{col 26}{space 2} .1333547{col 37}{space 1}    1.00{col 46}{space 3}0.318{col 54}{space 4} .8914094{col 67}{space 3} 1.422228
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .6371066{col 26}{space 2} .0882758{col 37}{space 1}   -3.25{col 46}{space 3}0.001{col 54}{space 4} .4847652{col 67}{space 3} .8373224
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .8072471{col 26}{space 2} .1396338{col 37}{space 1}   -1.24{col 46}{space 3}0.217{col 54}{space 4} .5739121{col 67}{space 3} 1.135449
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .5463497{col 26}{space 2} .0707094{col 37}{space 1}   -4.67{col 46}{space 3}0.000{col 54}{space 4} .4232679{col 67}{space 3} .7052223
+{txt}{space 12} {c |}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} 1.114952{col 26}{space 2} .1466474{col 37}{space 1}    0.83{col 46}{space 3}0.409{col 54}{space 4} .8601946{col 67}{space 3}  1.44516
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010198{col 26}{space 2} .0001669{col 37}{space 1}  -42.09{col 46}{space 3}0.000{col 54}{space 4} .0007385{col 67}{space 3} .0014083
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.site i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:9}, {res:215})}{col 70} = {res}{ralign 6:7.05}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449719{col 26}{space 2} .5918619{col 37}{space 1}    3.71{col 46}{space 3}0.000{col 54}{space 4}  1.52174{col 67}{space 3} 3.943594
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.588921{col 26}{space 2} .3605589{col 37}{space 1}    6.83{col 46}{space 3}0.000{col 54}{space 4} 1.967547{col 67}{space 3} 3.406532
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.636158{col 26}{space 2} .2207562{col 37}{space 1}    3.65{col 46}{space 3}0.000{col 54}{space 4} 1.254156{col 67}{space 3} 2.134514
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.764282{col 26}{space 2} .2625994{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.315777{col 67}{space 3} 2.365669
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.472972{col 26}{space 2} .2523688{col 37}{space 1}    2.26{col 46}{space 3}0.025{col 54}{space 4} 1.050896{col 67}{space 3} 2.064568
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6380375{col 26}{space 2} .3610305{col 37}{space 1}   -0.79{col 46}{space 3}0.428{col 54}{space 4} .2092038{col 67}{space 3}  1.94591
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.106883{col 26}{space 2} .1280763{col 37}{space 1}    0.88{col 46}{space 3}0.381{col 54}{space 4}  .881196{col 67}{space 3} 1.390371
+{txt}{space 12} {c |}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} 1.012692{col 26}{space 2}  .112645{col 37}{space 1}    0.11{col 46}{space 3}0.910{col 54}{space 4} .8133523{col 67}{space 3} 1.260886
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189272{col 26}{space 2} .1330687{col 37}{space 1}    1.55{col 46}{space 3}0.123{col 54}{space 4} .9539372{col 67}{space 3} 1.482663
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0006888{col 26}{space 2} .0001063{col 37}{space 1}  -47.18{col 46}{space 3}0.000{col 54}{space 4} .0005082{col 67}{space 3} .0009335
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:8}, {res:216})}{col 70} = {res}{ralign 6:7.75}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.451131{col 26}{space 2} .5921693{col 37}{space 1}    3.71{col 46}{space 3}0.000{col 54}{space 4} 1.522658{col 67}{space 3} 3.945759
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.581206{col 26}{space 2} .3590917{col 37}{space 1}    6.82{col 46}{space 3}0.000{col 54}{space 4} 1.962272{col 67}{space 3} 3.395362
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.633564{col 26}{space 2} .2223223{col 37}{space 1}    3.61{col 46}{space 3}0.000{col 54}{space 4} 1.249276{col 67}{space 3} 2.136062
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.762199{col 26}{space 2} .2636862{col 37}{space 1}    3.79{col 46}{space 3}0.000{col 54}{space 4} 1.312171{col 67}{space 3} 2.366569
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2}  1.47382{col 26}{space 2} .2526032{col 37}{space 1}    2.26{col 46}{space 3}0.025{col 54}{space 4} 1.051376{col 67}{space 3} 2.066004
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6375441{col 26}{space 2} .3602256{col 37}{space 1}   -0.80{col 46}{space 3}0.426{col 54}{space 4}  .209382{col 67}{space 3} 1.941248
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.106964{col 26}{space 2} .1280584{col 37}{space 1}    0.88{col 46}{space 3}0.381{col 54}{space 4} .8813038{col 67}{space 3} 1.390406
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189418{col 26}{space 2} .1329264{col 37}{space 1}    1.55{col 46}{space 3}0.122{col 54}{space 4} .9543048{col 67}{space 3} 1.482456
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0006937{col 26}{space 2} .0001013{col 37}{space 1}  -49.81{col 46}{space 3}0.000{col 54}{space 4} .0005202{col 67}{space 3}  .000925
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:7}, {res:217})}{col 70} = {res}{ralign 6:8.67}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449138{col 26}{space 2} .5902557{col 37}{space 1}    3.72{col 46}{space 3}0.000{col 54}{space 4} 1.523174{col 67}{space 3} 3.938011
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.616396{col 26}{space 2} .3580853{col 37}{space 1}    7.03{col 46}{space 3}0.000{col 54}{space 4} 1.997886{col 67}{space 3} 3.426387
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.660055{col 26}{space 2} .2221227{col 37}{space 1}    3.79{col 46}{space 3}0.000{col 54}{space 4} 1.275282{col 67}{space 3} 2.160919
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.765067{col 26}{space 2} .2629232{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.316057{col 67}{space 3} 2.367268
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.458676{col 26}{space 2} .2510407{col 37}{space 1}    2.19{col 46}{space 3}0.029{col 54}{space 4} 1.039121{col 67}{space 3}  2.04763
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6247141{col 26}{space 2} .3545078{col 37}{space 1}   -0.83{col 46}{space 3}0.408{col 54}{space 4} .2041797{col 67}{space 3} 1.911394
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189403{col 26}{space 2} .1333986{col 37}{space 1}    1.55{col 46}{space 3}0.123{col 54}{space 4}  .953544{col 67}{space 3} 1.483601
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0007312{col 26}{space 2} .0000996{col 37}{space 1}  -53.02{col 46}{space 3}0.000{col 54}{space 4} .0005591{col 67}{space 3} .0009563
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. **************************************************************
+. *Factors associated with RSV incidence (at least one episode)*
+. **************************************************************
+. 
+. *Rates by exposure (per 100 person week)*
+. *
+. *Year*
+. stptime, per(100) by(year) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+      year{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      2017{col 12}{c |}{col 16}{res}  21968.14{col 29}     167{col 39}      0.76{col 51}     0.65{col 63}     0.88
+      {txt}2018{col 12}{c |}{col 16}{res}  21782.57{col 29}     192{col 39}      0.88{col 51}     0.77{col 63}     1.02
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Site*
+. stptime, per(100) by(siteid) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}  21974.57{col 29}     186{col 39}      0.85{col 51}     0.73{col 63}     0.98
+         {txt}K{col 12}{c |}{col 16}{res}  21776.14{col 29}     173{col 39}      0.79{col 51}     0.68{col 63}     0.92
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Year & Site*
+. bysort year: stptime, per(100) by(siteid) dd(2)
+
+{txt}{hline}
+-> year = 2017
+
+{col 10}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}  11210.00{col 29}      81{col 39}      0.72{col 51}     0.58{col 63}     0.90
+         {txt}K{col 12}{c |}{col 16}{res}  10758.14{col 29}      86{col 39}      0.80{col 51}     0.65{col 63}     0.99
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  21968.14{col 29}     167{col 39}      0.76{col 51}     0.65{col 63}     0.88
+
+{txt}{hline}
+-> year = 2018
+
+{col 10}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}  10764.57{col 29}     105{col 39}      0.98{col 51}     0.81{col 63}     1.18
+         {txt}K{col 12}{c |}{col 16}{res}  11018.00{col 29}      87{col 39}      0.79{col 51}     0.64{col 63}     0.97
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  21782.57{col 29}     192{col 39}      0.88{col 51}     0.77{col 63}     1.02
+{txt}
+{com}. *
+. *Age*
+. stptime, per(100) by(agecat5) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   agecat5{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        <1{col 12}{c |}{col 16}{res}    862.43{col 29}      11{col 39}      1.28{col 51}     0.71{col 63}     2.30
+       {txt}1-4{col 12}{c |}{col 16}{res}   6127.86{col 29}      82{col 39}      1.34{col 51}     1.08{col 63}     1.66
+      {txt}5-12{col 12}{c |}{col 16}{res}  11877.14{col 29}     101{col 39}      0.85{col 51}     0.70{col 63}     1.03
+     {txt}13-18{col 12}{c |}{col 16}{res}   6340.43{col 29}      57{col 39}      0.90{col 51}     0.69{col 63}     1.17
+     {txt}19-44{col 12}{c |}{col 16}{res}  11341.71{col 29}      62{col 39}      0.55{col 51}     0.43{col 63}     0.70
+     {txt}45-64{col 12}{c |}{col 16}{res}   5444.00{col 29}      42{col 39}      0.77{col 51}     0.57{col 63}     1.04
+       {txt}65+{col 12}{c |}{col 16}{res}   1757.14{col 29}       4{col 39}      0.23{col 51}     0.09{col 63}     0.61
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Sex*
+. stptime, per(100) by(sex) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+       sex{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      Male{col 12}{c |}{col 16}{res}  17034.71{col 29}     140{col 39}      0.82{col 51}     0.70{col 63}     0.97
+    {txt}Female{col 12}{c |}{col 16}{res}  26716.00{col 29}     219{col 39}      0.82{col 51}     0.72{col 63}     0.94
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *HIV*
+. stptime, per(100) by(hivfinal) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(41 missing values generated)
+
+Estimated person-time and incidence rates
+
+  hivfinal{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+  Negative{col 12}{c |}{col 16}{res}  35698.29{col 29}     306{col 39}      0.86{col 51}     0.77{col 63}     0.96
+  {txt}Positive{col 12}{c |}{col 16}{res}   6517.00{col 29}      41{col 39}      0.63{col 51}     0.46{col 63}     0.85
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  42215.29{col 29}     347{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *UMC*
+. stptime, per(100) by(underill) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  underill{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  42666.43{col 29}     349{col 39}      0.82{col 51}     0.74{col 63}     0.91
+       {txt}Yes{col 12}{c |}{col 16}{res}   1084.29{col 29}      10{col 39}      0.92{col 51}     0.50{col 63}     1.71
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *BMI*
+. stptime, per(100) by(bmicat) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2 missing values generated)
+
+Estimated person-time and incidence rates
+
+    bmicat{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Underwe~t{col 12}{c |}{col 16}{res}   3405.00{col 29}      25{col 39}      0.73{col 51}     0.50{col 63}     1.09
+ {txt}Normal ~t{col 12}{c |}{col 16}{res}  25977.43{col 29}     231{col 39}      0.89{col 51}     0.78{col 63}     1.01
+ {txt}Overwei~t{col 12}{c |}{col 16}{res}   6537.86{col 29}      45{col 39}      0.69{col 51}     0.51{col 63}     0.92
+     {txt}Obese{col 12}{c |}{col 16}{res}   7780.57{col 29}      57{col 39}      0.73{col 51}     0.57{col 63}     0.95
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43700.86{col 29}     358{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Cotinine*
+. stptime, per(100) by(cotinine) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(46 missing values generated)
+
+Estimated person-time and incidence rates
+
+  cotinine{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ No expo~e{col 12}{c |}{col 16}{res}  17192.43{col 29}     142{col 39}      0.83{col 51}     0.70{col 63}     0.97
+ {txt}Passive~e{col 12}{c |}{col 16}{res}  18217.29{col 29}     160{col 39}      0.88{col 51}     0.75{col 63}     1.03
+ {txt}Active ~e{col 12}{c |}{col 16}{res}   6574.86{col 29}      41{col 39}      0.62{col 51}     0.46{col 63}     0.85
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  41984.57{col 29}     343{col 39}      0.82{col 51}     0.73{col 63}     0.91
+{txt}
+{com}. *
+. *Smoking*
+. stptime, per(100) by(cigsmokenow) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ cigsmok~w{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  19145.71{col 29}     115{col 39}      0.60{col 51}     0.50{col 63}     0.72
+       {txt}Yes{col 12}{c |}{col 16}{res}   3542.71{col 29}      25{col 39}      0.71{col 51}     0.48{col 63}     1.04
+ {txt}<15 years{col 12}{c |}{col 16}{res}  21062.29{col 29}     219{col 39}      1.04{col 51}     0.91{col 63}     1.19
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Alcohol*
+. stptime, per(100) by(alcohol) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   alcohol{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}  14247.86{col 29}      83{col 39}      0.58{col 51}     0.47{col 63}     0.72
+       {txt}Yes{col 12}{c |}{col 16}{res}   8440.57{col 29}      57{col 39}      0.68{col 51}     0.52{col 63}     0.88
+ {txt}<15 years{col 12}{c |}{col 16}{res}  21062.29{col 29}     219{col 39}      1.04{col 51}     0.91{col 63}     1.19
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Education*
+. stptime, per(100) by(educlevel) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ educlevel{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ <18 years{col 12}{c |}{col 16}{res}  24742.00{col 29}     249{col 39}      1.01{col 51}     0.89{col 63}     1.14
+ {txt}No scho~g{col 12}{c |}{col 16}{res}   2065.43{col 29}      11{col 39}      0.53{col 51}     0.29{col 63}     0.96
+   {txt}Primary{col 12}{c |}{col 16}{res}   4412.86{col 29}      30{col 39}      0.68{col 51}     0.48{col 63}     0.97
+ {txt}Some se~y{col 12}{c |}{col 16}{res}   7215.71{col 29}      43{col 39}      0.60{col 51}     0.44{col 63}     0.80
+ {txt}Seconda~d{col 12}{c |}{col 16}{res}   4710.71{col 29}      24{col 39}      0.51{col 51}     0.34{col 63}     0.76
+ {txt}Post se~y{col 12}{c |}{col 16}{res}    604.00{col 29}       2{col 39}      0.33{col 51}     0.08{col 63}     1.32
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Employment*
+. stptime, per(100) by(employed) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  employed{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Unemplo~d{col 12}{c |}{col 16}{res}  10547.29{col 29}      74{col 39}      0.70{col 51}     0.56{col 63}     0.88
+ {txt}Ever Em~d{col 12}{c |}{col 16}{res}   7256.57{col 29}      31{col 39}      0.43{col 51}     0.30{col 63}     0.61
+ {txt}Ever St~t{col 12}{c |}{col 16}{res}   1204.86{col 29}       5{col 39}      0.41{col 51}     0.17{col 63}     1.00
+         {txt}4{col 12}{c |}{col 16}{res}  24742.00{col 29}     249{col 39}      1.01{col 51}     0.89{col 63}     1.14
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Household size*
+. stptime, per(100) by(hh_size) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   hh_size{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       3-5{col 12}{c |}{col 16}{res}  22722.29{col 29}     172{col 39}      0.76{col 51}     0.65{col 63}     0.88
+      {txt}6-10{col 12}{c |}{col 16}{res}  18026.71{col 29}     162{col 39}      0.90{col 51}     0.77{col 63}     1.05
+       {txt}>10{col 12}{c |}{col 16}{res}   3001.71{col 29}      25{col 39}      0.83{col 51}     0.56{col 63}     1.23
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Number of sleeping rooms*
+. stptime, per(100) by(numroomsleep) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ numroom~p{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       1-2{col 12}{c |}{col 16}{res}  21548.57{col 29}     178{col 39}      0.83{col 51}     0.71{col 63}     0.96
+       {txt}3-4{col 12}{c |}{col 16}{res}  20039.57{col 29}     172{col 39}      0.86{col 51}     0.74{col 63}     1.00
+       {txt}>=5{col 12}{c |}{col 16}{res}   2162.57{col 29}       9{col 39}      0.42{col 51}     0.22{col 63}     0.80
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. *
+. *Crowding*
+. stptime, per(100) by(crowding) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/7
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  crowding{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       <=2{col 12}{c |}{col 16}{res}  19694.29{col 29}     144{col 39}      0.73{col 51}     0.62{col 63}     0.86
+        {txt}>2{col 12}{c |}{col 16}{res}  24056.43{col 29}     215{col 39}      0.89{col 51}     0.78{col 63}     1.02
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}  43750.71{col 29}     359{col 39}      0.82{col 51}     0.74{col 63}     0.91
+{txt}
+{com}. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. 
+. *Rates by exposure (per 100 person year)*
+. *
+. *Year*
+. stptime, per(100) by(year) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+      year{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      2017{col 12}{c |}{col 16}{res}    421.31{col 29}     167{col 39}     39.64{col 51}    34.06{col 63}    46.13
+      {txt}2018{col 12}{c |}{col 16}{res}    417.75{col 29}     192{col 39}     45.96{col 51}    39.90{col 63}    52.94
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Site*
+. stptime, per(100) by(siteid) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}    421.43{col 29}     186{col 39}     44.14{col 51}    38.23{col 63}    50.96
+         {txt}K{col 12}{c |}{col 16}{res}    417.62{col 29}     173{col 39}     41.42{col 51}    35.69{col 63}    48.08
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Year & Site*
+. bysort year: stptime, per(100) by(siteid) dd(2)
+
+{txt}{hline}
+-> year = 2017
+
+{col 10}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}    214.99{col 29}      81{col 39}     37.68{col 51}    30.30{col 63}    46.84
+         {txt}K{col 12}{c |}{col 16}{res}    206.32{col 29}      86{col 39}     41.68{col 51}    33.74{col 63}    51.49
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    421.31{col 29}     167{col 39}     39.64{col 51}    34.06{col 63}    46.13
+
+{txt}{hline}
+-> year = 2018
+
+{col 10}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+    siteid{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+         A{col 12}{c |}{col 16}{res}    206.44{col 29}     105{col 39}     50.86{col 51}    42.01{col 63}    61.58
+         {txt}K{col 12}{c |}{col 16}{res}    211.30{col 29}      87{col 39}     41.17{col 51}    33.37{col 63}    50.80
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    417.75{col 29}     192{col 39}     45.96{col 51}    39.90{col 63}    52.94
+{txt}
+{com}. *
+. *Age*
+. stptime, per(100) by(agecat5) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   agecat5{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        <1{col 12}{c |}{col 16}{res}     16.54{col 29}      11{col 39}     66.51{col 51}    36.83{col 63}   120.09
+       {txt}1-4{col 12}{c |}{col 16}{res}    117.52{col 29}      82{col 39}     69.78{col 51}    56.20{col 63}    86.64
+      {txt}5-12{col 12}{c |}{col 16}{res}    227.78{col 29}     101{col 39}     44.34{col 51}    36.48{col 63}    53.89
+     {txt}13-18{col 12}{c |}{col 16}{res}    121.60{col 29}      57{col 39}     46.88{col 51}    36.16{col 63}    60.77
+     {txt}19-44{col 12}{c |}{col 16}{res}    217.51{col 29}      62{col 39}     28.50{col 51}    22.22{col 63}    36.56
+     {txt}45-64{col 12}{c |}{col 16}{res}    104.41{col 29}      42{col 39}     40.23{col 51}    29.73{col 63}    54.43
+       {txt}65+{col 12}{c |}{col 16}{res}     33.70{col 29}       4{col 39}     11.87{col 51}     4.45{col 63}    31.63
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Sex*
+. stptime, per(100) by(sex) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+       sex{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+      Male{col 12}{c |}{col 16}{res}    326.69{col 29}     140{col 39}     42.85{col 51}    36.31{col 63}    50.57
+    {txt}Female{col 12}{c |}{col 16}{res}    512.36{col 29}     219{col 39}     42.74{col 51}    37.44{col 63}    48.80
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *HIV*
+. stptime, per(100) by(hivfinal) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(41 missing values generated)
+
+Estimated person-time and incidence rates
+
+  hivfinal{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+  Negative{col 12}{c |}{col 16}{res}    684.62{col 29}     306{col 39}     44.70{col 51}    39.96{col 63}    50.00
+  {txt}Positive{col 12}{c |}{col 16}{res}    124.98{col 29}      41{col 39}     32.80{col 51}    24.15{col 63}    44.55
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    809.61{col 29}     347{col 39}     42.86{col 51}    38.58{col 63}    47.62
+{txt}
+{com}. *
+. *UMC*
+. stptime, per(100) by(underill) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  underill{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    818.26{col 29}     349{col 39}     42.65{col 51}    38.40{col 63}    47.37
+       {txt}Yes{col 12}{c |}{col 16}{res}     20.79{col 29}      10{col 39}     48.09{col 51}    25.87{col 63}    89.38
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *BMI*
+. stptime, per(100) by(bmicat) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(2 missing values generated)
+
+Estimated person-time and incidence rates
+
+    bmicat{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Underwe~t{col 12}{c |}{col 16}{res}     65.30{col 29}      25{col 39}     38.28{col 51}    25.87{col 63}    56.66
+ {txt}Normal ~t{col 12}{c |}{col 16}{res}    498.20{col 29}     231{col 39}     46.37{col 51}    40.76{col 63}    52.75
+ {txt}Overwei~t{col 12}{c |}{col 16}{res}    125.38{col 29}      45{col 39}     35.89{col 51}    26.80{col 63}    48.07
+     {txt}Obese{col 12}{c |}{col 16}{res}    149.22{col 29}      57{col 39}     38.20{col 51}    29.47{col 63}    49.52
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    838.10{col 29}     358{col 39}     42.72{col 51}    38.51{col 63}    47.38
+{txt}
+{com}. *
+. *Cotinine*
+. stptime, per(100) by(cotinine) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(46 missing values generated)
+
+Estimated person-time and incidence rates
+
+  cotinine{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ No expo~e{col 12}{c |}{col 16}{res}    329.72{col 29}     142{col 39}     43.07{col 51}    36.54{col 63}    50.77
+ {txt}Passive~e{col 12}{c |}{col 16}{res}    349.37{col 29}     160{col 39}     45.80{col 51}    39.22{col 63}    53.47
+ {txt}Active ~e{col 12}{c |}{col 16}{res}    126.09{col 29}      41{col 39}     32.52{col 51}    23.94{col 63}    44.16
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    805.18{col 29}     343{col 39}     42.60{col 51}    38.32{col 63}    47.35
+{txt}
+{com}. *
+. *Smoking*
+. stptime, per(100) by(cigsmokenow) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ cigsmok~w{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    367.18{col 29}     115{col 39}     31.32{col 51}    26.09{col 63}    37.60
+       {txt}Yes{col 12}{c |}{col 16}{res}     67.94{col 29}      25{col 39}     36.80{col 51}    24.86{col 63}    54.46
+ {txt}<15 years{col 12}{c |}{col 16}{res}    403.93{col 29}     219{col 39}     54.22{col 51}    47.49{col 63}    61.89
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Alcohol*
+. stptime, per(100) by(alcohol) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   alcohol{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+        No{col 12}{c |}{col 16}{res}    273.25{col 29}      83{col 39}     30.38{col 51}    24.50{col 63}    37.67
+       {txt}Yes{col 12}{c |}{col 16}{res}    161.87{col 29}      57{col 39}     35.21{col 51}    27.16{col 63}    45.65
+ {txt}<15 years{col 12}{c |}{col 16}{res}    403.93{col 29}     219{col 39}     54.22{col 51}    47.49{col 63}    61.89
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Education*
+. stptime, per(100) by(educlevel) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ educlevel{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ <18 years{col 12}{c |}{col 16}{res}    474.50{col 29}     249{col 39}     52.48{col 51}    46.35{col 63}    59.42
+ {txt}No scho~g{col 12}{c |}{col 16}{res}     39.61{col 29}      11{col 39}     27.77{col 51}    15.38{col 63}    50.14
+   {txt}Primary{col 12}{c |}{col 16}{res}     84.63{col 29}      30{col 39}     35.45{col 51}    24.78{col 63}    50.70
+ {txt}Some se~y{col 12}{c |}{col 16}{res}    138.38{col 29}      43{col 39}     31.07{col 51}    23.05{col 63}    41.90
+ {txt}Seconda~d{col 12}{c |}{col 16}{res}     90.34{col 29}      24{col 39}     26.57{col 51}    17.81{col 63}    39.63
+ {txt}Post se~y{col 12}{c |}{col 16}{res}     11.58{col 29}       2{col 39}     17.27{col 51}     4.32{col 63}    69.04
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Employment*
+. stptime, per(100) by(employed) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  employed{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+ Unemplo~d{col 12}{c |}{col 16}{res}    202.28{col 29}      74{col 39}     36.58{col 51}    29.13{col 63}    45.94
+ {txt}Ever Em~d{col 12}{c |}{col 16}{res}    139.17{col 29}      31{col 39}     22.28{col 51}    15.67{col 63}    31.67
+ {txt}Ever St~t{col 12}{c |}{col 16}{res}     23.11{col 29}       5{col 39}     21.64{col 51}     9.01{col 63}    51.99
+         {txt}4{col 12}{c |}{col 16}{res}    474.50{col 29}     249{col 39}     52.48{col 51}    46.35{col 63}    59.42
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Household size*
+. stptime, per(100) by(hh_size) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+   hh_size{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       3-5{col 12}{c |}{col 16}{res}    435.77{col 29}     172{col 39}     39.47{col 51}    33.99{col 63}    45.83
+      {txt}6-10{col 12}{c |}{col 16}{res}    345.72{col 29}     162{col 39}     46.86{col 51}    40.17{col 63}    54.66
+       {txt}>10{col 12}{c |}{col 16}{res}     57.57{col 29}      25{col 39}     43.43{col 51}    29.34{col 63}    64.27
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Number of sleeping rooms*
+. stptime, per(100) by(numroomsleep) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+ numroom~p{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       1-2{col 12}{c |}{col 16}{res}    413.26{col 29}     178{col 39}     43.07{col 51}    37.19{col 63}    49.89
+       {txt}3-4{col 12}{c |}{col 16}{res}    384.32{col 29}     172{col 39}     44.75{col 51}    38.54{col 63}    51.97
+       {txt}>=5{col 12}{c |}{col 16}{res}     41.47{col 29}       9{col 39}     21.70{col 51}    11.29{col 63}    41.71
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Crowding*
+. stptime, per(100) by(crowding) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+
+{txt}Estimated person-time and incidence rates
+
+  crowding{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+       <=2{col 12}{c |}{col 16}{res}    377.70{col 29}     144{col 39}     38.13{col 51}    32.38{col 63}    44.89
+        {txt}>2{col 12}{c |}{col 16}{res}    461.36{col 29}     215{col 39}     46.60{col 51}    40.77{col 63}    53.27
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    839.05{col 29}     359{col 39}     42.79{col 51}    38.58{col 63}    47.45
+{txt}
+{com}. *
+. *Household income*
+. stptime, per(100) by(hh_income) dd(2)
+
+{col 10}{txt}Failure {bf:_d}: {res}rsvany==1
+{col 4}{txt}Analysis time {bf:_t}: {res}ptimeall/365
+{col 3}{txt}Exit on or before: {res}time .
+{col 9}{txt}ID variable: {res}indid
+{txt}(27 missing values generated)
+
+Estimated person-time and incidence rates
+
+ hh_income{col 12}{c |}{col 15}Person-time{col 29}Failures{col 45}Rate{col 52}[95% conf. interval]
+{hline 11}{c +}{hline 59}
+    0-R800{col 12}{c |}{col 16}{res}    101.79{col 29}      52{col 39}     51.08{col 51}    38.93{col 63}    67.04
+ {txt}R801-1600{col 12}{c |}{col 16}{res}    246.38{col 29}     106{col 39}     43.02{col 51}    35.57{col 63}    52.04
+ {txt}R160~3200{col 12}{c |}{col 16}{res}    258.21{col 29}     114{col 39}     44.15{col 51}    36.75{col 63}    53.05
+ {txt}R320~6400{col 12}{c |}{col 16}{res}    165.26{col 29}      63{col 39}     38.12{col 51}    29.78{col 63}    48.80
+ {txt}R64~12800{col 12}{c |}{col 16}{res}     38.25{col 29}      14{col 39}     36.60{col 51}    21.68{col 63}    61.80
+   {txt}>R12801{col 12}{c |}{col 16}{res}      9.77{col 29}       2{col 39}     20.47{col 51}     5.12{col 63}    81.85
+{txt}{hline 11}{c +}{hline 59}
+     Total{col 12}{c |}{col 16}{res}    819.67{col 29}     351{col 39}     42.82{col 51}    38.57{col 63}    47.54
+{txt}
+{com}. 
+. 
+. *Univariate analysis*
+. *
+. *Year*
+. svy linearized: poisson rsvany i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:1.81}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1798}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.159495{col 26}{space 2} .1275122{col 37}{space 1}    1.35{col 46}{space 3}0.180{col 54}{space 4}  .933576{col 67}{space 3} 1.440085
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  .001086{col 26}{space 2} .0000888{col 37}{space 1}  -83.48{col 46}{space 3}0.000{col 54}{space 4} .0009244{col 67}{space 3} .0012759
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Site*
+. svy linearized: poisson rsvany i.site, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.33}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.5666}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} .9385829{col 26}{space 2} .1036525{col 37}{space 1}   -0.57{col 46}{space 3}0.567{col 54}{space 4} .7550177{col 67}{space 3} 1.166778
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0012092{col 26}{space 2}  .000097{col 37}{space 1}  -83.73{col 46}{space 3}0.000{col 54}{space 4} .0010323{col 67}{space 3} .0014163
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Age*
+. svy linearized: poisson rsvany b4.agecat5, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:6}, {res:218})}{col 70} = {res}{ralign 6:10.17}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.333225{col 26}{space 2} .5429712{col 37}{space 1}    3.64{col 46}{space 3}0.000{col 54}{space 4} 1.474994{col 67}{space 3} 3.690821
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.447892{col 26}{space 2} .3259199{col 37}{space 1}    6.72{col 46}{space 3}0.000{col 54}{space 4} 1.882965{col 67}{space 3} 3.182308
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.555595{col 26}{space 2} .2093575{col 37}{space 1}    3.28{col 46}{space 3}0.001{col 54}{space 4} 1.193201{col 67}{space 3} 2.028053
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.644536{col 26}{space 2} .2357776{col 37}{space 1}    3.47{col 46}{space 3}0.001{col 54}{space 4} 1.239768{col 67}{space 3} 2.181455
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.411296{col 26}{space 2} .2355003{col 37}{space 1}    2.06{col 46}{space 3}0.040{col 54}{space 4} 1.015792{col 67}{space 3} 1.960792
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .4164345{col 26}{space 2} .2011661{col 37}{space 1}   -1.81{col 46}{space 3}0.071{col 54}{space 4} .1607366{col 67}{space 3} 1.078893
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0007809{col 26}{space 2} .0000903{col 37}{space 1}  -61.87{col 46}{space 3}0.000{col 54}{space 4} .0006218{col 67}{space 3} .0009808
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Sex*
+. svy linearized: poisson rsvany i.sex, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.00}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.9765}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}sex {c |}
+{space 5}Female  {c |}{col 14}{res}{space 2} .9974233{col 26}{space 2} .0871927{col 37}{space 1}   -0.03{col 46}{space 3}0.976{col 54}{space 4} .8395822{col 67}{space 3} 1.184938
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0011741{col 26}{space 2} .0000883{col 37}{space 1}  -89.71{col 46}{space 3}0.000{col 54}{space 4} .0010123{col 67}{space 3} .0013616
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *HIV*
+. svy linearized: poisson rsvany i.hivfinal, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,075}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,075}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:5.55}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0193}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}hivfinal {c |}
+{space 3}Positive  {c |}{col 14}{res}{space 2} .7339426{col 26}{space 2} .0963449{col 37}{space 1}   -2.36{col 46}{space 3}0.019{col 54}{space 4}   .56665{col 67}{space 3} .9506253
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0012245{col 26}{space 2} .0000709{col 37}{space 1} -115.77{col 46}{space 3}0.000{col 54}{space 4} .0010925{col 67}{space 3} .0013726
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *UMC*
+. svy linearized: poisson rsvany i.underill, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:0.24}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.6261}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}underill {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.127502{col 26}{space 2} .2773504{col 37}{space 1}    0.49{col 46}{space 3}0.626{col 54}{space 4}  .694369{col 67}{space 3} 1.830813
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0011685{col 26}{space 2} .0000658{col 37}{space 1} -119.99{col 46}{space 3}0.000{col 54}{space 4} .0010459{col 67}{space 3} .0013056
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *BMI*
+. svy linearized: poisson rsvany i.bmicat, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,114}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,114}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:3}, {res:221})}{col 70} = {res}{ralign 6:1.62}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1854}
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 16}{c |}{col 28}  Linearized
+{col 1}        rsvany{col 16}{c |}        IRR{col 28}   std. err.{col 40}      t{col 48}   P>|t|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}bmicat {c |}
+Normal weight  {c |}{col 16}{res}{space 2} 1.211136{col 28}{space 2}  .250308{col 39}{space 1}    0.93{col 48}{space 3}0.355{col 56}{space 4} .8059598{col 69}{space 3} 1.820004
+{txt}{space 3}Overweight  {c |}{col 16}{res}{space 2} .9374631{col 28}{space 2} .2180418{col 39}{space 1}   -0.28{col 48}{space 3}0.782{col 56}{space 4} .5927826{col 69}{space 3} 1.482562
+{txt}{space 8}Obese  {c |}{col 16}{res}{space 2}  .997793{col 28}{space 2} .2289715{col 39}{space 1}   -0.01{col 48}{space 3}0.992{col 56}{space 4} .6348083{col 69}{space 3} 1.568333
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0010489{col 28}{space 2}  .000209{col 39}{space 1}  -34.43{col 48}{space 3}0.000{col 56}{space 4} .0007082{col 69}{space 3} .0015533
+{col 1}{txt}  ln(ptimeall){col 16}{c |}{res}{space 2}        1{col 28}{txt}  (exposure)
+{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Cotinine*
+. svy linearized: poisson rsvany i.cotinine, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,070}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,070}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:1.97}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.1421}
+
+{txt}{hline 18}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 19}{c |}{col 31}  Linearized
+{col 1}           rsvany{col 19}{c |}        IRR{col 31}   std. err.{col 43}      t{col 51}   P>|t|{col 59}     [95% con{col 72}f. interval]
+{hline 18}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}cotinine {c |}
+Passive exposure  {c |}{col 19}{res}{space 2} 1.063372{col 31}{space 2} .1100976{col 42}{space 1}    0.59{col 51}{space 3}0.553{col 59}{space 4} .8671097{col 72}{space 3} 1.304056
+{txt}{space 1}Active exposure  {c |}{col 19}{res}{space 2} .7549991{col 31}{space 2} .1378197{col 42}{space 1}   -1.54{col 51}{space 3}0.125{col 59}{space 4} .5268874{col 72}{space 3}  1.08187
+{txt}{space 17} {c |}
+{space 12}_cons {c |}{col 19}{res}{space 2} .0011799{col 31}{space 2} .0000962{col 42}{space 1}  -82.73{col 51}{space 3}0.000{col 59}{space 4} .0010049{col 72}{space 3} .0013855
+{col 1}{txt}     ln(ptimeall){col 19}{c |}{res}{space 2}        1{col 31}{txt}  (exposure)
+{hline 18}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Smoking*
+. svy linearized: poisson rsvany i.cigsmokenow, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:17.11}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 1}cigsmokenow {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.174837{col 26}{space 2} .2146313{col 37}{space 1}    0.88{col 46}{space 3}0.379{col 54}{space 4} .8196394{col 67}{space 3} 1.683963
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} 1.731061{col 26}{space 2} .1620524{col 37}{space 1}    5.86{col 46}{space 3}0.000{col 54}{space 4} 1.439437{col 67}{space 3} 2.081766
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0008581{col 26}{space 2} .0000759{col 37}{space 1}  -79.86{col 46}{space 3}0.000{col 54}{space 4} .0007209{col 67}{space 3} .0010214
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Alcohol*
+. svy linearized: poisson rsvany i.alcohol, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:16.21}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}alcohol {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.159243{col 26}{space 2} .1852463{col 37}{space 1}    0.92{col 46}{space 3}0.356{col 54}{space 4} .8460787{col 67}{space 3} 1.588321
+{txt}{space 2}<15 years  {c |}{col 14}{res}{space 2} 1.784884{col 26}{space 2} .1956469{col 37}{space 1}    5.29{col 46}{space 3}0.000{col 54}{space 4}  1.43813{col 67}{space 3} 2.215247
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0008322{col 26}{space 2}  .000088{col 37}{space 1}  -67.06{col 46}{space 3}0.000{col 54}{space 4} .0006757{col 67}{space 3}  .001025
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Education*
+. svy linearized: poisson rsvany i.educlevel, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:5}, {res:219})}{col 70} = {res}{ralign 6:7.22}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 21}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 22}{c |}{col 34}  Linearized
+{col 1}              rsvany{col 22}{c |}        IRR{col 34}   std. err.{col 46}      t{col 54}   P>|t|{col 62}     [95% con{col 75}f. interval]
+{hline 21}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}educlevel {c |}
+{space 7}No schooling  {c |}{col 22}{res}{space 2} .5291977{col 34}{space 2} .1471883{col 45}{space 1}   -2.29{col 54}{space 3}0.023{col 62}{space 4} .3058985{col 75}{space 3} .9155004
+{txt}{space 12}Primary  {c |}{col 22}{res}{space 2} .6755179{col 34}{space 2} .1146603{col 45}{space 1}   -2.31{col 54}{space 3}0.022{col 62}{space 4} .4834685{col 75}{space 3} .9438556
+{txt}{space 5}Some secondary  {c |}{col 22}{res}{space 2} .5921402{col 34}{space 2} .0952465{col 45}{space 1}   -3.26{col 54}{space 3}0.001{col 62}{space 4} .4312814{col 75}{space 3} .8129961
+{txt}Secondary completed  {c |}{col 22}{res}{space 2} .5062441{col 34}{space 2} .0942713{col 45}{space 1}   -3.66{col 54}{space 3}0.000{col 62}{space 4} .3507411{col 75}{space 3} .7306901
+{txt}{space 5}Post secondary  {c |}{col 22}{res}{space 2} .3290249{col 34}{space 2} .1750417{col 45}{space 1}   -2.09{col 54}{space 3}0.038{col 62}{space 4} .1153234{col 75}{space 3} .9387287
+{txt}{space 20} {c |}
+{space 15}_cons {c |}{col 22}{res}{space 2} .0014377{col 34}{space 2} .0000829{col 45}{space 1} -113.54{col 54}{space 3}0.000{col 62}{space 4} .0012833{col 75}{space 3} .0016106
+{col 1}{txt}        ln(ptimeall){col 22}{c |}{res}{space 2}        1{col 34}{txt}  (exposure)
+{hline 21}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Employment*
+. svy linearized: poisson rsvany i.employed, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:3}, {res:221})}{col 70} = {res}{ralign 6:12.01}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 15}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 16}{c |}{col 28}  Linearized
+{col 1}        rsvany{col 16}{c |}        IRR{col 28}   std. err.{col 40}      t{col 48}   P>|t|{col 56}     [95% con{col 69}f. interval]
+{hline 15}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}employed {c |}
+Ever Employed  {c |}{col 16}{res}{space 2} .6088905{col 28}{space 2} .1166438{col 39}{space 1}   -2.59{col 48}{space 3}0.010{col 56}{space 4} .4174328{col 69}{space 3} .8881613
+{txt}{space 1}Ever Student  {c |}{col 16}{res}{space 2} .5914846{col 28}{space 2} .2342166{col 39}{space 1}   -1.33{col 48}{space 3}0.186{col 56}{space 4}  .271047{col 69}{space 3}  1.29075
+{txt}{space 12}4  {c |}{col 16}{res}{space 2} 1.434411{col 28}{space 2} .1558977{col 39}{space 1}    3.32{col 48}{space 3}0.001{col 56}{space 4} 1.157861{col 69}{space 3} 1.777012
+{txt}{space 14} {c |}
+{space 9}_cons {c |}{col 16}{res}{space 2} .0010023{col 28}{space 2} .0001076{col 39}{space 1}  -64.32{col 48}{space 3}0.000{col 56}{space 4} .0008112{col 69}{space 3} .0012385
+{col 1}{txt}  ln(ptimeall){col 16}{c |}{res}{space 2}        1{col 28}{txt}  (exposure)
+{hline 15}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Household size*
+. svy linearized: poisson rsvany i.hh_size, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:1.17}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.3125}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}hh_size {c |}
+{space 7}6-10  {c |}{col 14}{res}{space 2} 1.187195{col 26}{space 2} .1329993{col 37}{space 1}    1.53{col 46}{space 3}0.127{col 54}{space 4} .9520135{col 67}{space 3} 1.480474
+{txt}{space 8}>10  {c |}{col 14}{res}{space 2} 1.100257{col 26}{space 2} .2622282{col 37}{space 1}    0.40{col 46}{space 3}0.689{col 54}{space 4} .6878874{col 67}{space 3} 1.759832
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0010814{col 26}{space 2} .0000849{col 37}{space 1}  -87.00{col 46}{space 3}0.000{col 54}{space 4} .0009264{col 67}{space 3} .0012623
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Number of sleeping rooms*
+. svy linearized: poisson rsvany i.numroomsleep, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:2}, {res:222})}{col 70} = {res}{ralign 6:3.43}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0340}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+numroomsleep {c |}
+{space 8}3-4  {c |}{col 14}{res}{space 2} 1.039055{col 26}{space 2} .1151079{col 37}{space 1}    0.35{col 46}{space 3}0.730{col 54}{space 4} .8352697{col 67}{space 3} 1.292559
+{txt}{space 8}>=5  {c |}{col 14}{res}{space 2} .5038143{col 26}{space 2} .1385417{col 37}{space 1}   -2.49{col 46}{space 3}0.013{col 54}{space 4} .2930388{col 67}{space 3} .8661957
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0011801{col 26}{space 2} .0000891{col 37}{space 1}  -89.29{col 46}{space 3}0.000{col 54}{space 4} .0010169{col 67}{space 3} .0013694
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Crowding*
+. svy linearized: poisson rsvany i.crowding, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:1}, {res:223})}{col 70} = {res}{ralign 6:3.19}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0756}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2}  1.22232{col 26}{space 2} .1374394{col 37}{space 1}    1.79{col 46}{space 3}0.076{col 54}{space 4} .9793829{col 67}{space 3} 1.525519
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010445{col 26}{space 2} .0000915{col 37}{space 1}  -78.38{col 46}{space 3}0.000{col 54}{space 4}  .000879{col 67}{space 3} .0012413
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. *
+. *Household income*
+. svy linearized: poisson rsvany i.hh_income, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,089}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:219}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,089}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:217}
+{txt}{col 55}{lalign 15:F({res:5}, {res:213})}{col 70} = {res}{ralign 6:1.00}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.4213}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}      rsvany{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}hh_income {c |}
+{space 2}R801-1600  {c |}{col 14}{res}{space 2} .8422093{col 26}{space 2} .1544548{col 37}{space 1}   -0.94{col 46}{space 3}0.350{col 54}{space 4} .5867331{col 67}{space 3} 1.208925
+{txt}{space 1}R1601-3200  {c |}{col 14}{res}{space 2} .8642736{col 26}{space 2} .1571362{col 37}{space 1}   -0.80{col 46}{space 3}0.423{col 54}{space 4} .6039817{col 67}{space 3} 1.236741
+{txt}{space 1}R3201-6400  {c |}{col 14}{res}{space 2} .7462527{col 26}{space 2} .1375273{col 37}{space 1}   -1.59{col 46}{space 3}0.114{col 54}{space 4} .5189647{col 67}{space 3} 1.073085
+{txt}R6401-12800  {c |}{col 14}{res}{space 2} .7165152{col 26}{space 2} .1578971{col 37}{space 1}   -1.51{col 46}{space 3}0.132{col 54}{space 4} .4640831{col 67}{space 3} 1.106255
+{txt}{space 4}>R12801  {c |}{col 14}{res}{space 2}   .40074{col 26}{space 2} .2387177{col 37}{space 1}   -1.54{col 46}{space 3}0.126{col 54}{space 4} .1238696{col 67}{space 3} 1.296464
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0013995{col 26}{space 2} .0002082{col 37}{space 1}  -44.18{col 46}{space 3}0.000{col 54}{space 4} .0010439{col 67}{space 3} .0018764
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. *Multivariable analysis*
+. *Multivariable analysis*
+. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:983}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:983}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:11}, {res:184})}{col 70} = {res}{ralign 6:22.55}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449422{col 26}{space 2} .6520047{col 37}{space 1}    3.37{col 46}{space 3}0.001{col 54}{space 4}  1.44898{col 67}{space 3} 4.140615
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.658928{col 26}{space 2} .3769682{col 37}{space 1}    6.90{col 46}{space 3}0.000{col 54}{space 4} 2.010344{col 67}{space 3} 3.516761
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.635357{col 26}{space 2} .2410109{col 37}{space 1}    3.34{col 46}{space 3}0.001{col 54}{space 4} 1.222867{col 67}{space 3} 2.186986
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.772784{col 26}{space 2} .2845925{col 37}{space 1}    3.57{col 46}{space 3}0.000{col 54}{space 4} 1.291669{col 67}{space 3} 2.433104
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.547102{col 26}{space 2} .2835855{col 37}{space 1}    2.38{col 46}{space 3}0.018{col 54}{space 4} 1.077739{col 67}{space 3} 2.220878
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6211949{col 26}{space 2} .4057561{col 37}{space 1}   -0.73{col 46}{space 3}0.467{col 54}{space 4} .1712949{col 67}{space 3} 2.252742
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.138199{col 26}{space 2} .1346046{col 37}{space 1}    1.09{col 46}{space 3}0.275{col 54}{space 4} .9014104{col 67}{space 3}  1.43719
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .5900223{col 26}{space 2} .0953278{col 37}{space 1}   -3.27{col 46}{space 3}0.001{col 54}{space 4}  .429022{col 67}{space 3} .8114417
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .6887792{col 26}{space 2}  .108931{col 37}{space 1}   -2.36{col 46}{space 3}0.019{col 54}{space 4} .5042161{col 67}{space 3} .9408996
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .6350528{col 26}{space 2} .0988551{col 37}{space 1}   -2.92{col 46}{space 3}0.004{col 54}{space 4} .4671714{col 67}{space 3} .8632636
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} .7973099{col 26}{space 2} .1212376{col 37}{space 1}   -1.49{col 46}{space 3}0.138{col 54}{space 4}  .590721{col 67}{space 3} 1.076148
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0013308{col 26}{space 2} .0003114{col 37}{space 1}  -28.30{col 46}{space 3}0.000{col 54}{space 4} .0008389{col 67}{space 3} .0021113
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.underill i.hivfinal, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:951}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:951}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:12}, {res:183})}{col 70} = {res}{ralign 6:7.45}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.574034{col 26}{space 2} .6447187{col 37}{space 1}    3.77{col 46}{space 3}0.000{col 54}{space 4} 1.570635{col 67}{space 3} 4.218453
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2}  2.73209{col 26}{space 2} .4317934{col 37}{space 1}    6.36{col 46}{space 3}0.000{col 54}{space 4} 2.000425{col 67}{space 3} 3.731365
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2}  1.69641{col 26}{space 2} .2746937{col 37}{space 1}    3.26{col 46}{space 3}0.001{col 54}{space 4} 1.232632{col 67}{space 3} 2.334684
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.866951{col 26}{space 2} .3153163{col 37}{space 1}    3.70{col 46}{space 3}0.000{col 54}{space 4} 1.338037{col 67}{space 3} 2.604942
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.506137{col 26}{space 2} .2843864{col 37}{space 1}    2.17{col 46}{space 3}0.031{col 54}{space 4} 1.037847{col 67}{space 3} 2.185727
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6445006{col 26}{space 2} .4257693{col 37}{space 1}   -0.66{col 46}{space 3}0.507{col 54}{space 4} .1751352{col 67}{space 3} 2.371773
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.125511{col 26}{space 2} .1352652{col 37}{space 1}    0.98{col 46}{space 3}0.326{col 54}{space 4} .8879922{col 67}{space 3} 1.426561
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .6841733{col 26}{space 2} .0889059{col 37}{space 1}   -2.92{col 46}{space 3}0.004{col 54}{space 4} .5294941{col 67}{space 3} .8840383
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .7549898{col 26}{space 2} .1144986{col 37}{space 1}   -1.85{col 46}{space 3}0.065{col 54}{space 4} .5598106{col 67}{space 3} 1.018219
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .9240391{col 26}{space 2} .1105557{col 37}{space 1}   -0.66{col 46}{space 3}0.510{col 54}{space 4} .7298101{col 67}{space 3} 1.169959
+{txt}{space 12} {c |}
+{space 4}underill {c |}
+{space 8}Yes  {c |}{col 14}{res}{space 2} 1.340844{col 26}{space 2}  .324544{col 37}{space 1}    1.21{col 46}{space 3}0.227{col 54}{space 4} .8318712{col 67}{space 3} 2.161226
+{txt}{space 12} {c |}
+{space 4}hivfinal {c |}
+{space 3}Positive  {c |}{col 14}{res}{space 2} 1.099506{col 26}{space 2}  .178222{col 37}{space 1}    0.59{col 46}{space 3}0.559{col 54}{space 4} .7986522{col 67}{space 3} 1.513691
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010117{col 26}{space 2} .0001784{col 37}{space 1}  -39.10{col 46}{space 3}0.000{col 54}{space 4} .0007145{col 67}{space 3} .0014327
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.wpm4 i.windoortemp i.site , irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:983}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:196}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:983}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:194}
+{txt}{col 55}{lalign 15:F({res:11}, {res:184})}{col 70} = {res}{ralign 6:20.60}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.410558{col 26}{space 2} .6419632{col 37}{space 1}    3.30{col 46}{space 3}0.001{col 54}{space 4} 1.425635{col 67}{space 3}  4.07593
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.723729{col 26}{space 2} .3850381{col 37}{space 1}    7.09{col 46}{space 3}0.000{col 54}{space 4} 2.061005{col 67}{space 3} 3.599555
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.649237{col 26}{space 2} .2411657{col 37}{space 1}    3.42{col 46}{space 3}0.001{col 54}{space 4} 1.236037{col 67}{space 3} 2.200566
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.820835{col 26}{space 2} .2865418{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.334988{col 67}{space 3} 2.483497
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.568454{col 26}{space 2} .2840231{col 37}{space 1}    2.49{col 46}{space 3}0.014{col 54}{space 4} 1.097399{col 67}{space 3} 2.241708
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6398883{col 26}{space 2} .4203546{col 37}{space 1}   -0.68{col 46}{space 3}0.498{col 54}{space 4} .1751555{col 67}{space 3} 2.337677
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.125961{col 26}{space 2} .1333547{col 37}{space 1}    1.00{col 46}{space 3}0.318{col 54}{space 4} .8914094{col 67}{space 3} 1.422228
+{txt}{space 12} {c |}
+{space 8}wpm4 {c |}
+{space 2}>25 ug/m3  {c |}{col 14}{res}{space 2} .6371066{col 26}{space 2} .0882758{col 37}{space 1}   -3.25{col 46}{space 3}0.001{col 54}{space 4} .4847652{col 67}{space 3} .8373224
+{txt}{space 12} {c |}
+{space 1}windoortemp {c |}
+{space 6}18-24  {c |}{col 14}{res}{space 2} .8072471{col 26}{space 2} .1396338{col 37}{space 1}   -1.24{col 46}{space 3}0.217{col 54}{space 4} .5739121{col 67}{space 3} 1.135449
+{txt}{space 8}>24  {c |}{col 14}{res}{space 2} .5463497{col 26}{space 2} .0707094{col 37}{space 1}   -4.67{col 46}{space 3}0.000{col 54}{space 4} .4232679{col 67}{space 3} .7052223
+{txt}{space 12} {c |}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} 1.114952{col 26}{space 2} .1466474{col 37}{space 1}    0.83{col 46}{space 3}0.409{col 54}{space 4} .8601946{col 67}{space 3}  1.44516
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0010198{col 26}{space 2} .0001669{col 37}{space 1}  -42.09{col 46}{space 3}0.000{col 54}{space 4} .0007385{col 67}{space 3} .0014083
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.site i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:9}, {res:215})}{col 70} = {res}{ralign 6:7.05}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449719{col 26}{space 2} .5918619{col 37}{space 1}    3.71{col 46}{space 3}0.000{col 54}{space 4}  1.52174{col 67}{space 3} 3.943594
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.588921{col 26}{space 2} .3605589{col 37}{space 1}    6.83{col 46}{space 3}0.000{col 54}{space 4} 1.967547{col 67}{space 3} 3.406532
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.636158{col 26}{space 2} .2207562{col 37}{space 1}    3.65{col 46}{space 3}0.000{col 54}{space 4} 1.254156{col 67}{space 3} 2.134514
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.764282{col 26}{space 2} .2625994{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.315777{col 67}{space 3} 2.365669
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.472972{col 26}{space 2} .2523688{col 37}{space 1}    2.26{col 46}{space 3}0.025{col 54}{space 4} 1.050896{col 67}{space 3} 2.064568
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6380375{col 26}{space 2} .3610305{col 37}{space 1}   -0.79{col 46}{space 3}0.428{col 54}{space 4} .2092038{col 67}{space 3}  1.94591
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.106883{col 26}{space 2} .1280763{col 37}{space 1}    0.88{col 46}{space 3}0.381{col 54}{space 4}  .881196{col 67}{space 3} 1.390371
+{txt}{space 12} {c |}
+{space 8}site {c |}
+{space 1}Klerksdorp  {c |}{col 14}{res}{space 2} 1.012692{col 26}{space 2}  .112645{col 37}{space 1}    0.11{col 46}{space 3}0.910{col 54}{space 4} .8133523{col 67}{space 3} 1.260886
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189272{col 26}{space 2} .1330687{col 37}{space 1}    1.55{col 46}{space 3}0.123{col 54}{space 4} .9539372{col 67}{space 3} 1.482663
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0006888{col 26}{space 2} .0001063{col 37}{space 1}  -47.18{col 46}{space 3}0.000{col 54}{space 4} .0005082{col 67}{space 3} .0009335
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.crowding i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:8}, {res:216})}{col 70} = {res}{ralign 6:7.75}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.451131{col 26}{space 2} .5921693{col 37}{space 1}    3.71{col 46}{space 3}0.000{col 54}{space 4} 1.522658{col 67}{space 3} 3.945759
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.581206{col 26}{space 2} .3590917{col 37}{space 1}    6.82{col 46}{space 3}0.000{col 54}{space 4} 1.962272{col 67}{space 3} 3.395362
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.633564{col 26}{space 2} .2223223{col 37}{space 1}    3.61{col 46}{space 3}0.000{col 54}{space 4} 1.249276{col 67}{space 3} 2.136062
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.762199{col 26}{space 2} .2636862{col 37}{space 1}    3.79{col 46}{space 3}0.000{col 54}{space 4} 1.312171{col 67}{space 3} 2.366569
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2}  1.47382{col 26}{space 2} .2526032{col 37}{space 1}    2.26{col 46}{space 3}0.025{col 54}{space 4} 1.051376{col 67}{space 3} 2.066004
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6375441{col 26}{space 2} .3602256{col 37}{space 1}   -0.80{col 46}{space 3}0.426{col 54}{space 4}  .209382{col 67}{space 3} 1.941248
+{txt}{space 12} {c |}
+{space 4}crowding {c |}
+{space 9}>2  {c |}{col 14}{res}{space 2} 1.106964{col 26}{space 2} .1280584{col 37}{space 1}    0.88{col 46}{space 3}0.381{col 54}{space 4} .8813038{col 67}{space 3} 1.390406
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189418{col 26}{space 2} .1329264{col 37}{space 1}    1.55{col 46}{space 3}0.122{col 54}{space 4} .9543048{col 67}{space 3} 1.482456
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0006937{col 26}{space 2} .0001013{col 37}{space 1}  -49.81{col 46}{space 3}0.000{col 54}{space 4} .0005202{col 67}{space 3}  .000925
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. svy linearized: poisson rsvepis b4.agecat5 i.year, irr nolog exposure(ptimeall)
+{res}{txt}(running {bf:poisson} on estimation sample)
+{res}
+{txt}Survey: Poisson regression
+
+{col 1}{lalign 16:Number of strata}{col 17} = {res}{ralign 3:2}{txt}{col 55}{lalign 15:Number of obs}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 1}{lalign 16:Number of PSUs}{col 17} = {res}{ralign 3:225}{txt}{col 55}{lalign 15:Population size}{col 70} = {res}{ralign 6:1,116}
+{txt}{col 55}{lalign 15:Design df}{col 70} = {res}{ralign 6:223}
+{txt}{col 55}{lalign 15:F({res:7}, {res:217})}{col 70} = {res}{ralign 6:8.67}
+{txt}{col 55}{lalign 15:Prob > F}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}  Linearized
+{col 1}     rsvepis{col 14}{c |}        IRR{col 26}   std. err.{col 38}      t{col 46}   P>|t|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}agecat5 {c |}
+{space 9}<1  {c |}{col 14}{res}{space 2} 2.449138{col 26}{space 2} .5902557{col 37}{space 1}    3.72{col 46}{space 3}0.000{col 54}{space 4} 1.523174{col 67}{space 3} 3.938011
+{txt}{space 8}1-4  {c |}{col 14}{res}{space 2} 2.616396{col 26}{space 2} .3580853{col 37}{space 1}    7.03{col 46}{space 3}0.000{col 54}{space 4} 1.997886{col 67}{space 3} 3.426387
+{txt}{space 7}5-12  {c |}{col 14}{res}{space 2} 1.660055{col 26}{space 2} .2221227{col 37}{space 1}    3.79{col 46}{space 3}0.000{col 54}{space 4} 1.275282{col 67}{space 3} 2.160919
+{txt}{space 6}13-18  {c |}{col 14}{res}{space 2} 1.765067{col 26}{space 2} .2629232{col 37}{space 1}    3.81{col 46}{space 3}0.000{col 54}{space 4} 1.316057{col 67}{space 3} 2.367268
+{txt}{space 6}45-64  {c |}{col 14}{res}{space 2} 1.458676{col 26}{space 2} .2510407{col 37}{space 1}    2.19{col 46}{space 3}0.029{col 54}{space 4} 1.039121{col 67}{space 3}  2.04763
+{txt}{space 8}65+  {c |}{col 14}{res}{space 2} .6247141{col 26}{space 2} .3545078{col 37}{space 1}   -0.83{col 46}{space 3}0.408{col 54}{space 4} .2041797{col 67}{space 3} 1.911394
+{txt}{space 12} {c |}
+{space 8}year {c |}
+{space 7}2018  {c |}{col 14}{res}{space 2} 1.189403{col 26}{space 2} .1333986{col 37}{space 1}    1.55{col 46}{space 3}0.123{col 54}{space 4}  .953544{col 67}{space 3} 1.483601
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} .0007312{col 26}{space 2} .0000996{col 37}{space 1}  -53.02{col 46}{space 3}0.000{col 54}{space 4} .0005591{col 67}{space 3} .0009563
+{col 1}{txt}ln(ptimeall){col 14}{c |}{res}{space 2}        1{col 26}{txt}  (exposure)
+{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{p 0 6 2}Note: {bf:_cons} estimates baseline incidence rate{txt}.{p_end}
+
+{com}. 
+. qui log close
+{smcl}
+{com}{sf}{ul off}

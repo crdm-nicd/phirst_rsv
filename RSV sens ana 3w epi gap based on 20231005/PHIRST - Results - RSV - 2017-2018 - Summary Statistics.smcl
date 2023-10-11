@@ -1,0 +1,4283 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. ***********************************
+. ***********************************
+. *PHIRST: RSV - Summary Statistics**
+. ***********************************
+. ***********************************
+. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. ********************
+. *Seasonal breakdown*
+. ********************
+. 
+. *Heirarchical variable for seasonal breakdown*
+. tab type if type>0
+
+       {txt}type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}         14        3.90        3.90
+{txt}          A {c |}{res}        127       35.38       39.28
+{txt}          B {c |}{res}        218       60.72      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        359      100.00
+{txt}
+{com}. bysort year site: tab type if type>0
+
+{txt}{hline}
+-> year = 2017, site = Agincourt
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          A {c |}{res}         37       45.68       45.68
+{txt}          B {c |}{res}         44       54.32      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         81      100.00
+
+{txt}{hline}
+-> year = 2017, site = Klerksdorp
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          2        2.33        2.33
+{txt}          A {c |}{res}          1        1.16        3.49
+{txt}          B {c |}{res}         83       96.51      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         86      100.00
+
+{txt}{hline}
+-> year = 2018, site = Agincourt
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          7        6.67        6.67
+{txt}          A {c |}{res}         27       25.71       32.38
+{txt}          B {c |}{res}         71       67.62      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        105      100.00
+
+{txt}{hline}
+-> year = 2018, site = Klerksdorp
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          5        5.75        5.75
+{txt}          A {c |}{res}         62       71.26       77.01
+{txt}          B {c |}{res}         20       22.99      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         87      100.00
+
+{txt}
+{com}. bysort year : tab type if  type>0
+
+{txt}{hline}
+-> year = 2017
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          2        1.20        1.20
+{txt}          A {c |}{res}         38       22.75       23.95
+{txt}          B {c |}{res}        127       76.05      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        167      100.00
+
+{txt}{hline}
+-> year = 2018
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}         12        6.25        6.25
+{txt}          A {c |}{res}         89       46.35       52.60
+{txt}          B {c |}{res}         91       47.40      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        192      100.00
+
+{txt}
+{com}. bysort site: tab type if type>0
+
+{txt}{hline}
+-> site = Agincourt
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          7        3.76        3.76
+{txt}          A {c |}{res}         64       34.41       38.17
+{txt}          B {c |}{res}        115       61.83      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        186      100.00
+
+{txt}{hline}
+-> site = Klerksdorp
+
+       type {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+    Untyped {c |}{res}          7        4.05        4.05
+{txt}          A {c |}{res}         63       36.42       40.46
+{txt}          B {c |}{res}        103       59.54      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        173      100.00
+
+{txt}
+{com}. 
+. *Non-heirarchical variable for seasonal breakdown*
+. tab type1 if type1>0
+
+      {txt}type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}         20        5.57        5.57
+{txt}          A {c |}{res}        123       34.26       39.83
+{txt}          B {c |}{res}        202       56.27       96.10
+{txt}    Untyped {c |}{res}         14        3.90      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        359      100.00
+{txt}
+{com}. bysort year site: tab type1 if type1>0
+
+{txt}{hline}
+-> year = 2017, site = Agincourt
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          2        2.47        2.47
+{txt}          A {c |}{res}         37       45.68       48.15
+{txt}          B {c |}{res}         42       51.85      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         81      100.00
+
+{txt}{hline}
+-> year = 2017, site = Klerksdorp
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          2        2.33        2.33
+{txt}          A {c |}{res}          1        1.16        3.49
+{txt}          B {c |}{res}         81       94.19       97.67
+{txt}    Untyped {c |}{res}          2        2.33      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         86      100.00
+
+{txt}{hline}
+-> year = 2018, site = Agincourt
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          9        8.57        8.57
+{txt}          A {c |}{res}         26       24.76       33.33
+{txt}          B {c |}{res}         63       60.00       93.33
+{txt}    Untyped {c |}{res}          7        6.67      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        105      100.00
+
+{txt}{hline}
+-> year = 2018, site = Klerksdorp
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          7        8.05        8.05
+{txt}          A {c |}{res}         59       67.82       75.86
+{txt}          B {c |}{res}         16       18.39       94.25
+{txt}    Untyped {c |}{res}          5        5.75      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         87      100.00
+
+{txt}
+{com}. bysort year : tab type1 if  type1>0
+
+{txt}{hline}
+-> year = 2017
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          4        2.40        2.40
+{txt}          A {c |}{res}         38       22.75       25.15
+{txt}          B {c |}{res}        123       73.65       98.80
+{txt}    Untyped {c |}{res}          2        1.20      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        167      100.00
+
+{txt}{hline}
+-> year = 2018
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}         16        8.33        8.33
+{txt}          A {c |}{res}         85       44.27       52.60
+{txt}          B {c |}{res}         79       41.15       93.75
+{txt}    Untyped {c |}{res}         12        6.25      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        192      100.00
+
+{txt}
+{com}. bysort site: tab type1 if type1>0
+
+{txt}{hline}
+-> site = Agincourt
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}         11        5.91        5.91
+{txt}          A {c |}{res}         63       33.87       39.78
+{txt}          B {c |}{res}        105       56.45       96.24
+{txt}    Untyped {c |}{res}          7        3.76      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        186      100.00
+
+{txt}{hline}
+-> site = Klerksdorp
+
+      type1 {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+      Mixed {c |}{res}          9        5.20        5.20
+{txt}          A {c |}{res}         60       34.68       39.88
+{txt}          B {c |}{res}         97       56.07       95.95
+{txt}    Untyped {c |}{res}          7        4.05      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        173      100.00
+
+{txt}
+{com}. 
+. 
+. **********************************************
+. *Community attack rate and number of episodes*
+. **********************************************
+. 
+. *Number of participants*
+. 
+. *By year and site*
+. bysort year siteid: sum year // *Obs is number of participants*
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        285        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        273        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        276        2018           0       2018       2018
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        282        2018           0       2018       2018
+
+{txt}
+{com}. *By year*
+. bysort year: sum year // *Obs is number of participants*
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        558        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        558        2018           0       2018       2018
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum year // *Obs is number of participants*
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        561    2017.492    .5003818       2017       2018
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        555    2017.508    .5003853       2017       2018
+
+{txt}
+{com}. *Total*
+. sum year // *Obs is number of participants*
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}      1,116      2017.5    .5002242       2017       2018
+{txt}
+{com}. 
+. *Follow up rate*
+. 
+. *By year and site*
+. bysort year siteid: sum percfu
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        285    89.55823    9.815983   19.27711   96.38554
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        273    88.58732    12.92315   24.09639   97.59036
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        276    86.96089    13.03521   24.09639   96.38554
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        282    86.52055    14.36338   28.91566   96.38554
+
+{txt}
+{com}. *By year*
+. bysort year: sum percfu
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        558    89.08322    11.44199   19.27711   97.59036
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        558    86.73835    13.71199   24.09639   96.38554
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum percfu
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        561    88.28039    11.57564   19.27711   96.38554
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}        555    87.53718     13.7007   24.09639   97.59036
+
+{txt}
+{com}. *Total*
+. sum percfu
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}percfu {c |}{res}      1,116    87.91078    12.67682   19.27711   97.59036
+{txt}
+{com}. 
+. ***********************
+. *Community attack rate*
+. ***********************
+. 
+. *By year and site*
+. bysort year: tab siteid rsv, row
+
+{txt}{hline}
+-> year = 2017
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}       (max) rsv
+    siteid {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         A {c |}{res}       204         81 {txt}{c |}{res}       285 
+           {txt}{c |}{res}     71.58      28.42 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         K {c |}{res}       187         86 {txt}{c |}{res}       273 
+           {txt}{c |}{res}     68.50      31.50 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       391        167 {txt}{c |}{res}       558 
+           {txt}{c |}{res}     70.07      29.93 {txt}{c |}{res}    100.00 
+
+{txt}{hline}
+-> year = 2018
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}       (max) rsv
+    siteid {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         A {c |}{res}       171        105 {txt}{c |}{res}       276 
+           {txt}{c |}{res}     61.96      38.04 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         K {c |}{res}       195         87 {txt}{c |}{res}       282 
+           {txt}{c |}{res}     69.15      30.85 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       366        192 {txt}{c |}{res}       558 
+           {txt}{c |}{res}     65.59      34.41 {txt}{c |}{res}    100.00 
+
+{txt}
+{com}. *By year*
+. tab year rsv, row
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}       (max) rsv
+      year {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+      2017 {c |}{res}       391        167 {txt}{c |}{res}       558 
+           {txt}{c |}{res}     70.07      29.93 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+      2018 {c |}{res}       366        192 {txt}{c |}{res}       558 
+           {txt}{c |}{res}     65.59      34.41 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       757        359 {txt}{c |}{res}     1,116 
+           {txt}{c |}{res}     67.83      32.17 {txt}{c |}{res}    100.00 
+{txt}
+{com}. *By site*
+. tab siteid rsv, row
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}       (max) rsv
+    siteid {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         A {c |}{res}       375        186 {txt}{c |}{res}       561 
+           {txt}{c |}{res}     66.84      33.16 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         K {c |}{res}       382        173 {txt}{c |}{res}       555 
+           {txt}{c |}{res}     68.83      31.17 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       757        359 {txt}{c |}{res}     1,116 
+           {txt}{c |}{res}     67.83      32.17 {txt}{c |}{res}    100.00 
+{txt}
+{com}. *Total*
+. tab rsv
+
+  {txt}(max) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        757       67.83       67.83
+{txt}          1 {c |}{res}        359       32.17      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. *By RSV types
+. tab ersvafn
+
+      {txt}(max) {c |}
+    ersvafn {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        975       87.37       87.37
+{txt}          1 {c |}{res}        137       12.28       99.64
+{txt}          2 {c |}{res}          4        0.36      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab rsvaepis
+
+   {txt}rsvaepis {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        975       87.37       87.37
+{txt}          1 {c |}{res}        141       12.63      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab ersvbfn
+
+      {txt}(max) {c |}
+    ersvbfn {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        898       80.47       80.47
+{txt}          1 {c |}{res}        210       18.82       99.28
+{txt}          2 {c |}{res}          7        0.63       99.91
+{txt}          3 {c |}{res}          1        0.09      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab rsvbepis
+
+   {txt}rsvbepis {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        898       80.47       80.47
+{txt}          1 {c |}{res}        218       19.53      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab ersvutpfn
+
+      {txt}(max) {c |}
+  ersvutpfn {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}      1,095       98.12       98.12
+{txt}          1 {c |}{res}         21        1.88      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab rsvutpepis
+
+ {txt}rsvutpepis {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}      1,095       98.12       98.12
+{txt}          1 {c |}{res}         21        1.88      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. 
+. ******************************
+. *Double counting coinfections*
+. ******************************
+. *
+. *Total number of episodes*
+. tab toteall
+
+    {txt}toteall {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+        393 {c |}{res}      1,116      100.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. 
+. *Number and combination of episodes*
+. tab etotall if etotall>0
+
+    {txt}etotall {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}        328       91.36       91.36
+{txt}          2 {c |}{res}         28        7.80       99.16
+{txt}          3 {c |}{res}          3        0.84      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        359      100.00
+{txt}
+{com}. tab ecomball
+
+   {txt}ecomball {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+        Neg {c |}{res}        757       67.83       67.83
+{txt}          A {c |}{res}        123       11.02       78.85
+{txt}          B {c |}{res}        202       18.10       96.95
+{txt}        A/B {c |}{res}         13        1.16       98.12
+{txt}    Untyped {c |}{res}         14        1.25       99.37
+{txt}  A/Untyped {c |}{res}          4        0.36       99.73
+{txt}  B/Untyped {c |}{res}          2        0.18       99.91
+{txt}A/B/Untyped {c |}{res}          1        0.09      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab ecomball etotall
+
+            {txt}{c |}                   etotall
+   ecomball {c |}         0          1          2          3 {c |}     Total
+{hline 12}{c +}{hline 44}{c +}{hline 10}
+        Neg {c |}{res}       757          0          0          0 {txt}{c |}{res}       757 
+{txt}          A {c |}{res}         0        120          3          0 {txt}{c |}{res}       123 
+{txt}          B {c |}{res}         0        194          7          1 {txt}{c |}{res}       202 
+{txt}        A/B {c |}{res}         0          0         12          1 {txt}{c |}{res}        13 
+{txt}    Untyped {c |}{res}         0         14          0          0 {txt}{c |}{res}        14 
+{txt}  A/Untyped {c |}{res}         0          0          4          0 {txt}{c |}{res}         4 
+{txt}  B/Untyped {c |}{res}         0          0          2          0 {txt}{c |}{res}         2 
+{txt}A/B/Untyped {c |}{res}         0          0          0          1 {txt}{c |}{res}         1 
+{txt}{hline 12}{c +}{hline 44}{c +}{hline 10}
+      Total {c |}{res}       757        328         28          3 {txt}{c |}{res}     1,116 
+{txt}
+{com}. tab ecomball etotall if etotall>0, col
+{txt}
+{c TLC}{hline 19}{c TRC}
+{c |} Key{col 21}{c |}
+{c LT}{hline 19}{c RT}
+{c |}{space 5}{it:frequency}{col 21}{c |}
+{c |}{space 1}{it:column percentage}{col 21}{c |}
+{c BLC}{hline 19}{c BRC}
+
+            {c |}             etotall
+   ecomball {c |}         1          2          3 {c |}     Total
+{hline 12}{c +}{hline 33}{c +}{hline 10}
+          A {c |}{res}       120          3          0 {txt}{c |}{res}       123 
+            {txt}{c |}{res}     36.59      10.71       0.00 {txt}{c |}{res}     34.26 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+          B {c |}{res}       194          7          1 {txt}{c |}{res}       202 
+            {txt}{c |}{res}     59.15      25.00      33.33 {txt}{c |}{res}     56.27 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+        A/B {c |}{res}         0         12          1 {txt}{c |}{res}        13 
+            {txt}{c |}{res}      0.00      42.86      33.33 {txt}{c |}{res}      3.62 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+    Untyped {c |}{res}        14          0          0 {txt}{c |}{res}        14 
+            {txt}{c |}{res}      4.27       0.00       0.00 {txt}{c |}{res}      3.90 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  A/Untyped {c |}{res}         0          4          0 {txt}{c |}{res}         4 
+            {txt}{c |}{res}      0.00      14.29       0.00 {txt}{c |}{res}      1.11 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  B/Untyped {c |}{res}         0          2          0 {txt}{c |}{res}         2 
+            {txt}{c |}{res}      0.00       7.14       0.00 {txt}{c |}{res}      0.56 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+A/B/Untyped {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+            {txt}{c |}{res}      0.00       0.00      33.33 {txt}{c |}{res}      0.28 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+      Total {c |}{res}       328         28          3 {txt}{c |}{res}       359 
+            {txt}{c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+{txt}
+{com}. list indid ersvafn ersvbfn ersvutpfn if etotall==2
+{txt}
+      {c TLC}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c TRC}
+      {c |} {res}   indid   ersvafn   ersvbfn   ersvut~n {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 143. {c |} {res}K139-007         0         2          0 {txt}{c |}
+ 281. {c |} {res}A117-004         1         1          0 {txt}{c |}
+ 321. {c |} {res}K155-008         1         1          0 {txt}{c |}
+ 326. {c |} {res}A118-003         0         2          0 {txt}{c |}
+ 376. {c |} {res}A132-004         2         0          0 {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 444. {c |} {res}K162-006         0         2          0 {txt}{c |}
+ 446. {c |} {res}K117-004         1         1          0 {txt}{c |}
+ 449. {c |} {res}A138-007         0         2          0 {txt}{c |}
+ 492. {c |} {res}K133-004         0         2          0 {txt}{c |}
+ 553. {c |} {res}A120-004         1         1          0 {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 574. {c |} {res}K237-003         1         0          1 {txt}{c |}
+ 615. {c |} {res}A253-004         2         0          0 {txt}{c |}
+ 653. {c |} {res}K268-005         0         1          1 {txt}{c |}
+ 716. {c |} {res}A244-003         1         1          0 {txt}{c |}
+ 728. {c |} {res}K247-005         2         0          0 {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 797. {c |} {res}K252-001         1         0          1 {txt}{c |}
+ 808. {c |} {res}K256-002         1         1          0 {txt}{c |}
+ 842. {c |} {res}K248-004         1         0          1 {txt}{c |}
+ 856. {c |} {res}A258-005         1         1          0 {txt}{c |}
+ 889. {c |} {res}K205-004         1         1          0 {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 891. {c |} {res}A217-009         0         2          0 {txt}{c |}
+ 926. {c |} {res}A273-001         1         0          1 {txt}{c |}
+ 945. {c |} {res}A261-003         1         1          0 {txt}{c |}
+ 974. {c |} {res}A207-005         1         1          0 {txt}{c |}
+ 999. {c |} {res}A262-004         0         1          1 {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+1032. {c |} {res}A225-007         1         1          0 {txt}{c |}
+1057. {c |} {res}K258-002         1         1          0 {txt}{c |}
+1067. {c |} {res}A259-004         0         2          0 {txt}{c |}
+      {c BLC}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c BRC}
+
+{com}. sort indid
+{txt}
+{com}. list indid ersvafn ersvbfn ersvutpfn if etotall==3
+{txt}
+      {c TLC}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c TRC}
+      {c |} {res}   indid   ersvafn   ersvbfn   ersvut~n {txt}{c |}
+      {c LT}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c RT}
+ 480. {c |} {res}A258-004         2         1          0 {txt}{c |}
+ 515. {c |} {res}A273-003         1         1          1 {txt}{c |}
+ 603. {c |} {res}K111-001         0         3          0 {txt}{c |}
+      {c BLC}{hline 10}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c BRC}
+
+{com}. 
+. *Number of individuals with more than one episode*
+. tab ecomball if etotall>1
+
+   {txt}ecomball {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          A {c |}{res}          3        9.68        9.68
+{txt}          B {c |}{res}          8       25.81       35.48
+{txt}        A/B {c |}{res}         13       41.94       77.42
+{txt}  A/Untyped {c |}{res}          4       12.90       90.32
+{txt}  B/Untyped {c |}{res}          2        6.45       96.77
+{txt}A/B/Untyped {c |}{res}          1        3.23      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         31      100.00
+{txt}
+{com}. tab ecomball etotall if etotall>1
+
+            {txt}{c |}        etotall
+   ecomball {c |}         2          3 {c |}     Total
+{hline 12}{c +}{hline 22}{c +}{hline 10}
+          A {c |}{res}         3          0 {txt}{c |}{res}         3 
+{txt}          B {c |}{res}         7          1 {txt}{c |}{res}         8 
+{txt}        A/B {c |}{res}        12          1 {txt}{c |}{res}        13 
+{txt}  A/Untyped {c |}{res}         4          0 {txt}{c |}{res}         4 
+{txt}  B/Untyped {c |}{res}         2          0 {txt}{c |}{res}         2 
+{txt}A/B/Untyped {c |}{res}         0          1 {txt}{c |}{res}         1 
+{txt}{hline 12}{c +}{hline 22}{c +}{hline 10}
+      Total {c |}{res}        28          3 {txt}{c |}{res}        31 
+{txt}
+{com}. sort ecomball
+{txt}
+{com}. list ecomball ersvafn ersvbfn ersvutpfn etotall if etotall>1
+{txt}
+      {c TLC}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c TRC}
+      {c |} {res}   ecomball   ersvafn   ersvbfn   ersvut~n   etotall {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+ 792. {c |} {res}          A         2         0          0         2 {txt}{c |}
+ 815. {c |} {res}          A         2         0          0         2 {txt}{c |}
+ 816. {c |} {res}          A         2         0          0         2 {txt}{c |}
+ 883. {c |} {res}          B         0         2          0         2 {txt}{c |}
+ 927. {c |} {res}          B         0         2          0         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+ 930. {c |} {res}          B         0         2          0         2 {txt}{c |}
+ 935. {c |} {res}          B         0         2          0         2 {txt}{c |}
+ 974. {c |} {res}          B         0         2          0         2 {txt}{c |}
+ 996. {c |} {res}          B         0         2          0         2 {txt}{c |}
+ 997. {c |} {res}          B         0         2          0         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+1020. {c |} {res}          B         0         3          0         3 {txt}{c |}
+1083. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1084. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1085. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1086. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+1087. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1088. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1089. {c |} {res}        A/B         2         1          0         3 {txt}{c |}
+1090. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1091. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+1092. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1093. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1094. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1095. {c |} {res}        A/B         1         1          0         2 {txt}{c |}
+1110. {c |} {res}  A/Untyped         1         0          1         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+1111. {c |} {res}  A/Untyped         1         0          1         2 {txt}{c |}
+1112. {c |} {res}  A/Untyped         1         0          1         2 {txt}{c |}
+1113. {c |} {res}  A/Untyped         1         0          1         2 {txt}{c |}
+1114. {c |} {res}  B/Untyped         0         1          1         2 {txt}{c |}
+1115. {c |} {res}  B/Untyped         0         1          1         2 {txt}{c |}
+      {c LT}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c RT}
+1116. {c |} {res}A/B/Untyped         1         1          1         3 {txt}{c |}
+      {c BLC}{hline 13}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 9}{c BRC}
+
+{com}. 
+. *Community infection risk*
+. sum etotall
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}      1,116    .3521505    .5428746          0          3
+{txt}
+{com}. bysort siteid year: sum etotall
+
+{txt}{hline}
+-> siteid = A, year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        285    .3017544    .4966406          0          2
+
+{txt}{hline}
+-> siteid = A, year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        276    .4311594    .6020934          0          3
+
+{txt}{hline}
+-> siteid = K, year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        273    .3406593    .5331603          0          3
+
+{txt}{hline}
+-> siteid = K, year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        282    .3368794    .5302133          0          2
+
+{txt}
+{com}. bysort agecat5: sum etotall
+
+{txt}{hline}
+-> agecat5 = <1
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         22    .5454545    .5958006          0          2
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        158    .5822785    .6204086          0          3
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        302    .3675497    .5474252          0          2
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        161    .3913043    .5719912          0          3
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        291    .2233677    .4413189          0          2
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        137    .3211679     .499033          0          2
+
+{txt}{hline}
+-> agecat5 = 65+
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         45    .1333333     .504525          0          3
+
+{txt}
+{com}. *
+. 
+. **********************************
+. *Not Double counting coinfections*
+. **********************************
+. *
+. *Total number of episodes*
+. tab totemix
+
+    {txt}totemix {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+        389 {c |}{res}      1,116      100.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. 
+. *Number and combination of episodes*
+. tab etotmix if totemix>0
+
+    {txt}etotmix {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        757       67.83       67.83
+{txt}          1 {c |}{res}        331       29.66       97.49
+{txt}          2 {c |}{res}         26        2.33       99.82
+{txt}          3 {c |}{res}          2        0.18      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab etotmix
+
+    {txt}etotmix {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        757       67.83       67.83
+{txt}          1 {c |}{res}        331       29.66       97.49
+{txt}          2 {c |}{res}         26        2.33       99.82
+{txt}          3 {c |}{res}          2        0.18      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}      1,116      100.00
+{txt}
+{com}. tab etotmix totemix
+
+           {txt}{c |}  totemix
+   etotmix {c |}       389 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         0 {c |}{res}       757 {txt}{c |}{res}       757 
+{txt}         1 {c |}{res}       331 {txt}{c |}{res}       331 
+{txt}         2 {c |}{res}        26 {txt}{c |}{res}        26 
+{txt}         3 {c |}{res}         2 {txt}{c |}{res}         2 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}     1,116 {txt}{c |}{res}     1,116 
+{txt}
+{com}. tab etotmix totemix if totemix>0, col
+{txt}
+{c TLC}{hline 19}{c TRC}
+{c |} Key{col 21}{c |}
+{c LT}{hline 19}{c RT}
+{c |}{space 5}{it:frequency}{col 21}{c |}
+{c |}{space 1}{it:column percentage}{col 21}{c |}
+{c BLC}{hline 19}{c BRC}
+
+           {c |}  totemix
+   etotmix {c |}       389 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         0 {c |}{res}       757 {txt}{c |}{res}       757 
+           {txt}{c |}{res}     67.83 {txt}{c |}{res}     67.83 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}       331 {txt}{c |}{res}       331 
+           {txt}{c |}{res}     29.66 {txt}{c |}{res}     29.66 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+         2 {c |}{res}        26 {txt}{c |}{res}        26 
+           {txt}{c |}{res}      2.33 {txt}{c |}{res}      2.33 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+         3 {c |}{res}         2 {txt}{c |}{res}         2 
+           {txt}{c |}{res}      0.18 {txt}{c |}{res}      0.18 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}     1,116 {txt}{c |}{res}     1,116 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}
+{com}. list indid ersvafn ersvbfn ersvutpfn rsvab if totemix==2
+{txt}
+{com}. sort indid
+{txt}
+{com}. list indid ersvafn ersvbfn ersvutpfn rsvab if totemix==3
+{txt}
+{com}. 
+. *Number of individuals with more than one episode*
+. tab etotmix if etotmix>1
+
+    {txt}etotmix {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          2 {c |}{res}         26       92.86       92.86
+{txt}          3 {c |}{res}          2        7.14      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         28      100.00
+{txt}
+{com}. tab etotmix etotmix if etotmix>1
+
+           {txt}{c |}        etotmix
+   etotmix {c |}         2          3 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         2 {c |}{res}        26          0 {txt}{c |}{res}        26 
+{txt}         3 {c |}{res}         0          2 {txt}{c |}{res}         2 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        26          2 {txt}{c |}{res}        28 
+{txt}
+{com}. sort etotmix
+{txt}
+{com}. list etotmix ersvafn ersvbfn ersvutpfn rsvab etotmix if etotmix>1
+{txt}
+      {c TLC}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c TRC}
+      {c |} {res}etotmix   ersvafn   ersvbfn   ersvut~n   rsvab   etotmix {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1089. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1090. {c |} {res}      2         1         0          1       0         2 {txt}{c |}
+1091. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1092. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1093. {c |} {res}      2         2         0          0       0         2 {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1094. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1095. {c |} {res}      2         1         0          1       0         2 {txt}{c |}
+1096. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1097. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1098. {c |} {res}      2         1         1          1       1         2 {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1099. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1100. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1101. {c |} {res}      2         0         1          1       0         2 {txt}{c |}
+1102. {c |} {res}      2         1         0          1       0         2 {txt}{c |}
+1103. {c |} {res}      2         0         1          1       0         2 {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1104. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1105. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1106. {c |} {res}      2         2         0          0       0         2 {txt}{c |}
+1107. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1108. {c |} {res}      2         1         0          1       0         2 {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1109. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1110. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1111. {c |} {res}      2         1         1          0       0         2 {txt}{c |}
+1112. {c |} {res}      2         2         0          0       0         2 {txt}{c |}
+1113. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+      {c LT}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c RT}
+1114. {c |} {res}      2         0         2          0       0         2 {txt}{c |}
+1115. {c |} {res}      3         0         3          0       0         3 {txt}{c |}
+1116. {c |} {res}      3         2         1          0       0         3 {txt}{c |}
+      {c BLC}{hline 9}{c -}{hline 9}{c -}{hline 9}{c -}{hline 10}{c -}{hline 7}{c -}{hline 9}{c BRC}
+
+{com}. 
+. tab ecombmix etotall if etotall>0, col
+{txt}
+{c TLC}{hline 19}{c TRC}
+{c |} Key{col 21}{c |}
+{c LT}{hline 19}{c RT}
+{c |}{space 5}{it:frequency}{col 21}{c |}
+{c |}{space 1}{it:column percentage}{col 21}{c |}
+{c BLC}{hline 19}{c BRC}
+
+            {c |}             etotall
+   ecombmix {c |}         1          2          3 {c |}     Total
+{hline 12}{c +}{hline 33}{c +}{hline 10}
+          A {c |}{res}       120          3          0 {txt}{c |}{res}       123 
+            {txt}{c |}{res}     36.59      10.71       0.00 {txt}{c |}{res}     34.26 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+          B {c |}{res}       194          7          1 {txt}{c |}{res}       202 
+            {txt}{c |}{res}     59.15      25.00      33.33 {txt}{c |}{res}     56.27 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+        A,B {c |}{res}         0          3          0 {txt}{c |}{res}         3 
+            {txt}{c |}{res}      0.00      10.71       0.00 {txt}{c |}{res}      0.84 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+        A/B {c |}{res}         0          9          1 {txt}{c |}{res}        10 
+            {txt}{c |}{res}      0.00      32.14      33.33 {txt}{c |}{res}      2.79 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+    Untyped {c |}{res}        14          0          0 {txt}{c |}{res}        14 
+            {txt}{c |}{res}      4.27       0.00       0.00 {txt}{c |}{res}      3.90 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  A/Untyped {c |}{res}         0          4          0 {txt}{c |}{res}         4 
+            {txt}{c |}{res}      0.00      14.29       0.00 {txt}{c |}{res}      1.11 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  B/Untyped {c |}{res}         0          2          0 {txt}{c |}{res}         2 
+            {txt}{c |}{res}      0.00       7.14       0.00 {txt}{c |}{res}      0.56 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+A,B/Untyped {c |}{res}         0          0          1 {txt}{c |}{res}         1 
+            {txt}{c |}{res}      0.00       0.00      33.33 {txt}{c |}{res}      0.28 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+      Total {c |}{res}       328         28          3 {txt}{c |}{res}       359 
+            {txt}{c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+{txt}
+{com}. tab ecombmix etotmix 
+
+            {txt}{c |}                   etotmix
+   ecombmix {c |}         0          1          2          3 {c |}     Total
+{hline 12}{c +}{hline 44}{c +}{hline 10}
+        Neg {c |}{res}       757          0          0          0 {txt}{c |}{res}       757 
+{txt}          A {c |}{res}         0        120          3          0 {txt}{c |}{res}       123 
+{txt}          B {c |}{res}         0        194          7          1 {txt}{c |}{res}       202 
+{txt}        A,B {c |}{res}         0          3          0          0 {txt}{c |}{res}         3 
+{txt}        A/B {c |}{res}         0          0          9          1 {txt}{c |}{res}        10 
+{txt}    Untyped {c |}{res}         0         14          0          0 {txt}{c |}{res}        14 
+{txt}  A/Untyped {c |}{res}         0          0          4          0 {txt}{c |}{res}         4 
+{txt}  B/Untyped {c |}{res}         0          0          2          0 {txt}{c |}{res}         2 
+{txt}A,B/Untyped {c |}{res}         0          0          1          0 {txt}{c |}{res}         1 
+{txt}{hline 12}{c +}{hline 44}{c +}{hline 10}
+      Total {c |}{res}       757        331         26          2 {txt}{c |}{res}     1,116 
+{txt}
+{com}. tab ecombmix etotmix if etotmix>0, col
+{txt}
+{c TLC}{hline 19}{c TRC}
+{c |} Key{col 21}{c |}
+{c LT}{hline 19}{c RT}
+{c |}{space 5}{it:frequency}{col 21}{c |}
+{c |}{space 1}{it:column percentage}{col 21}{c |}
+{c BLC}{hline 19}{c BRC}
+
+            {c |}             etotmix
+   ecombmix {c |}         1          2          3 {c |}     Total
+{hline 12}{c +}{hline 33}{c +}{hline 10}
+          A {c |}{res}       120          3          0 {txt}{c |}{res}       123 
+            {txt}{c |}{res}     36.25      11.54       0.00 {txt}{c |}{res}     34.26 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+          B {c |}{res}       194          7          1 {txt}{c |}{res}       202 
+            {txt}{c |}{res}     58.61      26.92      50.00 {txt}{c |}{res}     56.27 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+        A,B {c |}{res}         3          0          0 {txt}{c |}{res}         3 
+            {txt}{c |}{res}      0.91       0.00       0.00 {txt}{c |}{res}      0.84 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+        A/B {c |}{res}         0          9          1 {txt}{c |}{res}        10 
+            {txt}{c |}{res}      0.00      34.62      50.00 {txt}{c |}{res}      2.79 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+    Untyped {c |}{res}        14          0          0 {txt}{c |}{res}        14 
+            {txt}{c |}{res}      4.23       0.00       0.00 {txt}{c |}{res}      3.90 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  A/Untyped {c |}{res}         0          4          0 {txt}{c |}{res}         4 
+            {txt}{c |}{res}      0.00      15.38       0.00 {txt}{c |}{res}      1.11 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+  B/Untyped {c |}{res}         0          2          0 {txt}{c |}{res}         2 
+            {txt}{c |}{res}      0.00       7.69       0.00 {txt}{c |}{res}      0.56 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+A,B/Untyped {c |}{res}         0          1          0 {txt}{c |}{res}         1 
+            {txt}{c |}{res}      0.00       3.85       0.00 {txt}{c |}{res}      0.28 
+{txt}{hline 12}{c +}{hline 33}{c +}{hline 10}
+      Total {c |}{res}       331         26          2 {txt}{c |}{res}       359 
+            {txt}{c |}{res}    100.00     100.00     100.00 {txt}{c |}{res}    100.00 
+{txt}
+{com}. *Community infection risk*
+. sum etotmix
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}      1,116    .3485663    .5335453          0          3
+{txt}
+{com}. bysort siteid year: sum etotmix
+
+{txt}{hline}
+-> siteid = A, year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        285    .2982456    .4880585          0          2
+
+{txt}{hline}
+-> siteid = A, year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        276    .4275362     .589455          0          3
+
+{txt}{hline}
+-> siteid = K, year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        273    .3406593    .5331603          0          3
+
+{txt}{hline}
+-> siteid = K, year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        282    .3297872    .5143139          0          2
+
+{txt}
+{com}. bysort agecat5: sum etotmix
+
+{txt}{hline}
+-> agecat5 = <1
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}         22    .5454545    .5958006          0          2
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        158    .5696203    .6011357          0          3
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        302    .3675497    .5474252          0          2
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        161    .3850932    .5484309          0          2
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        291    .2199313    .4312148          0          2
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}        137    .3211679     .499033          0          2
+
+{txt}{hline}
+-> agecat5 = 65+
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotmix {c |}{res}         45    .1333333     .504525          0          3
+
+{txt}
+{com}. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. ***************************
+. *Mean duration of episodes*
+. ***************************
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Mean, min. and max duration of episodes*
+. sum edur
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        393     6.97201    6.514249          0         52
+{txt}
+{com}. *
+. *By type*
+. bysort type: sum edur
+
+{txt}{hline}
+-> type = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        145    7.082759    6.295395          0         50
+
+{txt}{hline}
+-> type = B
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        227    7.286344       6.802          0         52
+
+{txt}{hline}
+-> type = Untyped
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         21    2.809524    2.040075          0          6
+
+{txt}
+{com}. bysort type: sum edur, d
+
+{txt}{hline}
+-> type = A
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        145
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        145
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.082759
+                        {txt}Largest       Std. dev.     {res} 6.295395
+{txt}75%    {res}        9             23
+{txt}90%    {res}       14             25       {txt}Variance      {res} 39.63199
+{txt}95%    {res}       18             26       {txt}Skewness      {res} 2.890395
+{txt}99%    {res}       26             50       {txt}Kurtosis      {res} 17.39359
+
+{txt}{hline}
+-> type = B
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        227
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        227
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.286344
+                        {txt}Largest       Std. dev.     {res}    6.802
+{txt}75%    {res}        9             32
+{txt}90%    {res}       13             34       {txt}Variance      {res}  46.2672
+{txt}95%    {res}       21             36       {txt}Skewness      {res} 2.728535
+{txt}99%    {res}       34             52       {txt}Kurtosis      {res} 13.80714
+
+{txt}{hline}
+-> type = Untyped
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         21
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}         21
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 2.809524
+                        {txt}Largest       Std. dev.     {res} 2.040075
+{txt}75%    {res}        5              5
+{txt}90%    {res}        5              5       {txt}Variance      {res} 4.161905
+{txt}95%    {res}        6              6       {txt}Skewness      {res} .0827287
+{txt}99%    {res}        6              6       {txt}Kurtosis      {res} 1.649726
+
+{txt}
+{com}. 
+. *All*
+. sum edur
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        393     6.97201    6.514249          0         52
+{txt}
+{com}. sum edur, d
+
+                            {txt}edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        393
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        393
+
+{txt}50%    {res}        5                      {txt}Mean          {res}  6.97201
+                        {txt}Largest       Std. dev.     {res} 6.514249
+{txt}75%    {res}        9             34
+{txt}90%    {res}       13             36       {txt}Variance      {res} 42.43544
+{txt}95%    {res}       20             50       {txt}Skewness      {res} 2.830668
+{txt}99%    {res}       34             52       {txt}Kurtosis      {res} 15.43587
+{txt}
+{com}. hist edur, bin(35) normal
+{txt}(bin={res}35{txt}, start={res}0{txt}, width={res}1.4857143{txt})
+{res}{txt}
+{com}. 
+. qui log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *By Age*
+. bysort agecat5: sum edur
+
+{txt}{hline}
+-> agecat5 = <1
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         12    11.16667    11.85391          1         36
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         92    8.163043    6.969758          0         34
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        111    6.567568    4.444857          0         23
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         63    6.857143    7.330575          0         52
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         65         6.4    7.461987          0         50
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         44    5.272727     4.02529          0         16
+
+{txt}{hline}
+-> agecat5 = 65+
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}          6    7.666667    8.846845          2         25
+
+{txt}
+{com}. bysort agecat5: sum edur, d
+
+{txt}{hline}
+-> agecat5 = <1
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              2       {txt}Obs         {res}         12
+{txt}25%    {res}      2.5              3       {txt}Sum of wgt. {res}         12
+
+{txt}50%    {res}      5.5                      {txt}Mean          {res} 11.16667
+                        {txt}Largest       Std. dev.     {res} 11.85391
+{txt}75%    {res}       21             17
+{txt}90%    {res}       26             25       {txt}Variance      {res} 140.5152
+{txt}95%    {res}       36             26       {txt}Skewness      {res} .9824964
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res}  2.53289
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         92
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         92
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 8.163043
+                        {txt}Largest       Std. dev.     {res} 6.969758
+{txt}75%    {res}       10             25
+{txt}90%    {res}       19             30       {txt}Variance      {res} 48.57752
+{txt}95%    {res}       23             32       {txt}Skewness      {res} 1.724492
+{txt}99%    {res}       34             34       {txt}Kurtosis      {res} 6.128936
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        111
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        111
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.567568
+                        {txt}Largest       Std. dev.     {res} 4.444857
+{txt}75%    {res}        9             16
+{txt}90%    {res}       11             21       {txt}Variance      {res} 19.75676
+{txt}95%    {res}       13             22       {txt}Skewness      {res} 1.075932
+{txt}99%    {res}       22             23       {txt}Kurtosis      {res} 5.077486
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              1       {txt}Obs         {res}         63
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         63
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.857143
+                        {txt}Largest       Std. dev.     {res} 7.330575
+{txt}75%    {res}        8             16
+{txt}90%    {res}       14             17       {txt}Variance      {res} 53.73733
+{txt}95%    {res}       16             24       {txt}Skewness      {res} 4.038383
+{txt}99%    {res}       52             52       {txt}Kurtosis      {res}  24.2981
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}         65
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         65
+
+{txt}50%    {res}        5                      {txt}Mean          {res}      6.4
+                        {txt}Largest       Std. dev.     {res} 7.461987
+{txt}75%    {res}        7             18
+{txt}90%    {res}       12             21       {txt}Variance      {res} 55.68125
+{txt}95%    {res}       18             29       {txt}Skewness      {res}  3.70783
+{txt}99%    {res}       50             50       {txt}Kurtosis      {res}  20.2616
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         44
+{txt}25%    {res}      2.5              0       {txt}Sum of wgt. {res}         44
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.272727
+                        {txt}Largest       Std. dev.     {res}  4.02529
+{txt}75%    {res}        8             12
+{txt}90%    {res}       12             13       {txt}Variance      {res} 16.20296
+{txt}95%    {res}       13             13       {txt}Skewness      {res} .7397927
+{txt}99%    {res}       16             16       {txt}Kurtosis      {res} 2.874722
+
+{txt}{hline}
+-> agecat5 = 65+
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              3
+{txt}10%    {res}        2              3       {txt}Obs         {res}          6
+{txt}25%    {res}        3              4       {txt}Sum of wgt. {res}          6
+
+{txt}50%    {res}      3.5                      {txt}Mean          {res} 7.666667
+                        {txt}Largest       Std. dev.     {res} 8.846845
+{txt}75%    {res}        9              3
+{txt}90%    {res}       25              4       {txt}Variance      {res} 78.26667
+{txt}95%    {res}       25              9       {txt}Skewness      {res} 1.511051
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 3.621368
+
+{txt}
+{com}. 
+. *By sex*
+. bysort sex: sum edur
+
+{txt}{hline}
+-> sex = Male
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        156    6.871795    6.001847          0         34
+
+{txt}{hline}
+-> sex = Female
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        237    7.037975    6.842247          0         52
+
+{txt}
+{com}. bysort sex: sum edur, d
+
+{txt}{hline}
+-> sex = Male
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        156
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        156
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.871795
+                        {txt}Largest       Std. dev.     {res} 6.001847
+{txt}75%    {res}        9             25
+{txt}90%    {res}       13             25       {txt}Variance      {res} 36.02217
+{txt}95%    {res}       23             30       {txt}Skewness      {res} 1.890104
+{txt}99%    {res}       30             34       {txt}Kurtosis      {res} 7.384758
+
+{txt}{hline}
+-> sex = Female
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        237
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        237
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 7.037975
+                        {txt}Largest       Std. dev.     {res} 6.842247
+{txt}75%    {res}        9             32
+{txt}90%    {res}       13             36       {txt}Variance      {res} 46.81635
+{txt}95%    {res}       19             50       {txt}Skewness      {res} 3.217268
+{txt}99%    {res}       36             52       {txt}Kurtosis      {res} 18.15918
+
+{txt}
+{com}. 
+. *By hiv*
+. bysort hiv_status: sum edur
+
+{txt}{hline}
+-> hiv_status = Negative
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        335    6.707463    5.547112          0         36
+
+{txt}{hline}
+-> hiv_status = Positive
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         45    8.755556    11.47558          0         52
+
+{txt}{hline}
+-> hiv_status = Unknown
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         13    7.615385    5.708743          1         23
+
+{txt}
+{com}. bysort hiv_status: sum edur, d
+
+{txt}{hline}
+-> hiv_status = Negative
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        335
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        335
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.707463
+                        {txt}Largest       Std. dev.     {res} 5.547112
+{txt}75%    {res}        9             26
+{txt}90%    {res}       12             30       {txt}Variance      {res} 30.77045
+{txt}95%    {res}       17             34       {txt}Skewness      {res}   1.9502
+{txt}99%    {res}       26             36       {txt}Kurtosis      {res} 8.476964
+
+{txt}{hline}
+-> hiv_status = Positive
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         45
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         45
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 8.755556
+                        {txt}Largest       Std. dev.     {res} 11.47558
+{txt}75%    {res}        8             29
+{txt}90%    {res}       21             32       {txt}Variance      {res} 131.6889
+{txt}95%    {res}       32             50       {txt}Skewness      {res} 2.559278
+{txt}99%    {res}       52             52       {txt}Kurtosis      {res} 9.286369
+
+{txt}{hline}
+-> hiv_status = Unknown
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}         13
+{txt}25%    {res}        4              4       {txt}Sum of wgt. {res}         13
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 7.615385
+                        {txt}Largest       Std. dev.     {res} 5.708743
+{txt}75%    {res}       10             10
+{txt}90%    {res}       12             11       {txt}Variance      {res} 32.58974
+{txt}95%    {res}       23             12       {txt}Skewness      {res} 1.495116
+{txt}99%    {res}       23             23       {txt}Kurtosis      {res} 5.070372
+
+{txt}
+{com}. 
+. *By underill*
+. bysort underill: sum edur
+
+{txt}{hline}
+-> underill = No
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        381     6.91601    6.503706          0         52
+
+{txt}{hline}
+-> underill = Yes
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         12        8.75    6.890375          2         25
+
+{txt}
+{com}. bysort underill: sum edur, d
+
+{txt}{hline}
+-> underill = No
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        381
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        381
+
+{txt}50%    {res}        5                      {txt}Mean          {res}  6.91601
+                        {txt}Largest       Std. dev.     {res} 6.503706
+{txt}75%    {res}        9             34
+{txt}90%    {res}       13             36       {txt}Variance      {res} 42.29819
+{txt}95%    {res}       19             50       {txt}Skewness      {res} 2.891567
+{txt}99%    {res}       34             52       {txt}Kurtosis      {res} 15.94597
+
+{txt}{hline}
+-> underill = Yes
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}         12
+{txt}25%    {res}      3.5              4       {txt}Sum of wgt. {res}         12
+
+{txt}50%    {res}      6.5                      {txt}Mean          {res}     8.75
+                        {txt}Largest       Std. dev.     {res} 6.890375
+{txt}75%    {res}     11.5             10
+{txt}90%    {res}       18             13       {txt}Variance      {res} 47.47727
+{txt}95%    {res}       25             18       {txt}Skewness      {res} 1.253556
+{txt}99%    {res}       25             25       {txt}Kurtosis      {res} 3.619819
+
+{txt}
+{com}. 
+. *By bmicat*
+. bysort bmicat: sum edur
+
+{txt}{hline}
+-> bmicat = Underweight
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         28    6.035714    5.614018          0         21
+
+{txt}{hline}
+-> bmicat = Normal weight
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        256       7.375    7.224143          0         52
+
+{txt}{hline}
+-> bmicat = Overweight
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         47    5.914894    4.179816          0         21
+
+{txt}{hline}
+-> bmicat = Obese
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         61    6.540984    5.068115          0         29
+
+{txt}{hline}
+-> bmicat = .
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}          1           6           .          6          6
+
+{txt}
+{com}. bysort bmicat: sum edur, d
+
+{txt}{hline}
+-> bmicat = Underweight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         28
+{txt}25%    {res}      1.5              1       {txt}Sum of wgt. {res}         28
+
+{txt}50%    {res}      4.5                      {txt}Mean          {res} 6.035714
+                        {txt}Largest       Std. dev.     {res} 5.614018
+{txt}75%    {res}      9.5             13
+{txt}90%    {res}       17             17       {txt}Variance      {res}  31.5172
+{txt}95%    {res}       17             17       {txt}Skewness      {res} 1.128022
+{txt}99%    {res}       21             21       {txt}Kurtosis      {res}  3.45418
+
+{txt}{hline}
+-> bmicat = Normal weight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        256
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        256
+
+{txt}50%    {res}        5                      {txt}Mean          {res}    7.375
+                        {txt}Largest       Std. dev.     {res} 7.224143
+{txt}75%    {res}        9             34
+{txt}90%    {res}       14             36       {txt}Variance      {res} 52.18824
+{txt}95%    {res}       23             50       {txt}Skewness      {res} 2.842922
+{txt}99%    {res}       36             52       {txt}Kurtosis      {res} 14.39309
+
+{txt}{hline}
+-> bmicat = Overweight
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}         47
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}         47
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 5.914894
+                        {txt}Largest       Std. dev.     {res} 4.179816
+{txt}75%    {res}        8             12
+{txt}90%    {res}       11             13       {txt}Variance      {res} 17.47086
+{txt}95%    {res}       13             14       {txt}Skewness      {res} 1.069811
+{txt}99%    {res}       21             21       {txt}Kurtosis      {res} 5.040309
+
+{txt}{hline}
+-> bmicat = Obese
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              1       {txt}Obs         {res}         61
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         61
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 6.540984
+                        {txt}Largest       Std. dev.     {res} 5.068115
+{txt}75%    {res}        9             13
+{txt}90%    {res}       12             15       {txt}Variance      {res} 25.68579
+{txt}95%    {res}       13             23       {txt}Skewness      {res} 2.017722
+{txt}99%    {res}       29             29       {txt}Kurtosis      {res} 8.990423
+
+{txt}{hline}
+-> bmicat = .
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        6              6
+{txt} 5%    {res}        6              .
+{txt}10%    {res}        6              .       {txt}Obs         {res}          1
+{txt}25%    {res}        6              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}        6                      {txt}Mean          {res}        6
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}        6              .
+{txt}90%    {res}        6              .       {txt}Variance      {res}        .
+{txt}95%    {res}        6              .       {txt}Skewness      {res}        .
+{txt}99%    {res}        6              6       {txt}Kurtosis      {res}        .
+
+{txt}
+{com}. 
+. *By symcat*
+. bysort symcat: sum edur
+
+{txt}{hline}
+-> symcat = 0
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        261    6.199234    6.295187          0         52
+
+{txt}{hline}
+-> symcat = 1
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         54    7.185185    5.035999          0         30
+
+{txt}{hline}
+-> symcat = 2+
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}         78    9.410256    7.529054          1         36
+
+{txt}
+{com}. bysort symcat: sum edur, d
+
+{txt}{hline}
+-> symcat = 0
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        261
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        261
+
+{txt}50%    {res}        5                      {txt}Mean          {res} 6.199234
+                        {txt}Largest       Std. dev.     {res} 6.295187
+{txt}75%    {res}        8             29
+{txt}90%    {res}       11             34       {txt}Variance      {res} 39.62938
+{txt}95%    {res}       15             50       {txt}Skewness      {res} 3.678549
+{txt}99%    {res}       34             52       {txt}Kurtosis      {res} 23.27278
+
+{txt}{hline}
+-> symcat = 1
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              1       {txt}Obs         {res}         54
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         54
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 7.185185
+                        {txt}Largest       Std. dev.     {res} 5.035999
+{txt}75%    {res}        9             12
+{txt}90%    {res}       11             18       {txt}Variance      {res} 25.36129
+{txt}95%    {res}       18             19       {txt}Skewness      {res} 1.927319
+{txt}99%    {res}       30             30       {txt}Kurtosis      {res} 9.559058
+
+{txt}{hline}
+-> symcat = 2+
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        2              1       {txt}Obs         {res}         78
+{txt}25%    {res}        4              1       {txt}Sum of wgt. {res}         78
+
+{txt}50%    {res}        8                      {txt}Mean          {res} 9.410256
+                        {txt}Largest       Std. dev.     {res} 7.529054
+{txt}75%    {res}       13             25
+{txt}90%    {res}       23             26       {txt}Variance      {res} 56.68665
+{txt}95%    {res}       25             32       {txt}Skewness      {res} 1.389393
+{txt}99%    {res}       36             36       {txt}Kurtosis      {res} 4.785765
+
+{txt}
+{com}. 
+. *Ct value
+. bysort ctcat: sum edur
+
+{txt}{hline}
+-> ctcat = >=30
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        151    3.721854    2.747505          0         19
+
+{txt}{hline}
+-> ctcat = <30
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}edur {c |}{res}        242           9    7.319615          0         52
+
+{txt}
+{com}. bysort ctcat: sum edur, d
+
+{txt}{hline}
+-> ctcat = >=30
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        151
+{txt}25%    {res}        2              0       {txt}Sum of wgt. {res}        151
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 3.721854
+                        {txt}Largest       Std. dev.     {res} 2.747505
+{txt}75%    {res}        5             10
+{txt}90%    {res}        7             10       {txt}Variance      {res} 7.548786
+{txt}95%    {res}        8             13       {txt}Skewness      {res} 1.608039
+{txt}99%    {res}       13             19       {txt}Kurtosis      {res} 8.739226
+
+{txt}{hline}
+-> ctcat = <30
+
+                            edur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        2              0       {txt}Obs         {res}        242
+{txt}25%    {res}        5              1       {txt}Sum of wgt. {res}        242
+
+{txt}50%    {res}        8                      {txt}Mean          {res}        9
+                        {txt}Largest       Std. dev.     {res} 7.319615
+{txt}75%    {res}       11             34
+{txt}90%    {res}       16             36       {txt}Variance      {res} 53.57676
+{txt}95%    {res}       23             50       {txt}Skewness      {res} 2.512973
+{txt}99%    {res}       36             52       {txt}Kurtosis      {res} 12.37452
+
+{txt}
+{com}. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. **********************
+. *Household level data*
+. **********************
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Number of household*
+. 
+. *By year and site*
+. bysort year siteid: sum year // *Obs is number of households*
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}         53        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}         55        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}         56        2018           0       2018       2018
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}         61        2018           0       2018       2018
+
+{txt}
+{com}. *By year*
+. bysort year: sum year // *Obs is number of households*
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        108        2017           0       2017       2017
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        117        2018           0       2018       2018
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum year // *Obs is number of households*
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        109    2017.514    .5021192       2017       2018
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        116    2017.526     .501497       2017       2018
+
+{txt}
+{com}. *Total*
+. sum year // *Obs is number of households*
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}year {c |}{res}        225     2017.52    .5007138       2017       2018
+{txt}
+{com}. 
+. *Number of participants per household*
+. 
+. *By year and site*
+. bysort year siteid: sum indnum 
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}         53    5.377358    2.632828          3         20
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}         55    4.963636      1.8152          3         11
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}         56    4.928571    1.547516          3         10
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}         61    4.622951    1.368258          3          8
+
+{txt}
+{com}. *By year*
+. bysort year: sum indnum 
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}        108    5.166667    2.252724          3         20
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}        117    4.769231    1.458534          3         10
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum indnum 
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}        109    5.146789    2.146598          3         20
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}        116    4.784483    1.597857          3         11
+
+{txt}
+{com}. *Total*
+. sum indnum
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}indnum {c |}{res}        225        4.96    1.888215          3         20
+{txt}
+{com}. 
+. *Number of household with at least one infected individual*
+. *All RSV
+. *By year and site*
+. bysort year siteid: tab rsvinfec
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         14       26.42       26.42
+{txt}          1 {c |}{res}         39       73.58      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         53      100.00
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         16       29.09       29.09
+{txt}          1 {c |}{res}         39       70.91      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         55      100.00
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         12       21.43       21.43
+{txt}          1 {c |}{res}         44       78.57      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         56      100.00
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         15       24.59       24.59
+{txt}          1 {c |}{res}         46       75.41      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         61      100.00
+
+{txt}
+{com}. *By year*
+. bysort year: tab rsvinfec 
+
+{txt}{hline}
+-> year = 2017
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         30       27.78       27.78
+{txt}          1 {c |}{res}         78       72.22      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        108      100.00
+
+{txt}{hline}
+-> year = 2018
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         27       23.08       23.08
+{txt}          1 {c |}{res}         90       76.92      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        117      100.00
+
+{txt}
+{com}. *By site*
+. bysort siteid: tab rsvinfec
+
+{txt}{hline}
+-> siteid = A
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         26       23.85       23.85
+{txt}          1 {c |}{res}         83       76.15      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        109      100.00
+
+{txt}{hline}
+-> siteid = K
+
+      (max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         31       26.72       26.72
+{txt}          1 {c |}{res}         85       73.28      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        116      100.00
+
+{txt}
+{com}. *Total*
+. tab rsvinfec
+
+      {txt}(max) {c |}
+  rsvinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         57       25.33       25.33
+{txt}          1 {c |}{res}        168       74.67      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. *By RSV types*
+. *Total*
+. tab rsvainfect
+
+      {txt}(max) {c |}
+ rsvainfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        147       65.33       65.33
+{txt}          1 {c |}{res}         78       34.67      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab rsvbinfect
+
+      {txt}(max) {c |}
+ rsvbinfect {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        111       49.33       49.33
+{txt}          1 {c |}{res}        114       50.67      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab rsvutpinfect 
+
+      {txt}(max) {c |}
+rsvutpinfec {c |}
+          t {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        207       92.00       92.00
+{txt}          1 {c |}{res}         18        8.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. 
+. *Number of infected households with only one infected individual*
+. 
+. *By year and site*
+. bysort year siteid: tab rsv if rsv>0
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         19       48.72       48.72
+{txt}          2 {c |}{res}         10       25.64       74.36
+{txt}          3 {c |}{res}          3        7.69       82.05
+{txt}          4 {c |}{res}          2        5.13       87.18
+{txt}          5 {c |}{res}          5       12.82      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         39      100.00
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         15       38.46       38.46
+{txt}          2 {c |}{res}          9       23.08       61.54
+{txt}          3 {c |}{res}          9       23.08       84.62
+{txt}          4 {c |}{res}          5       12.82       97.44
+{txt}          6 {c |}{res}          1        2.56      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         39      100.00
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         16       36.36       36.36
+{txt}          2 {c |}{res}          9       20.45       56.82
+{txt}          3 {c |}{res}         11       25.00       81.82
+{txt}          4 {c |}{res}          5       11.36       93.18
+{txt}          5 {c |}{res}          1        2.27       95.45
+{txt}          6 {c |}{res}          1        2.27       97.73
+{txt}          7 {c |}{res}          1        2.27      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         44      100.00
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         25       54.35       54.35
+{txt}          2 {c |}{res}          9       19.57       73.91
+{txt}          3 {c |}{res}          6       13.04       86.96
+{txt}          4 {c |}{res}          4        8.70       95.65
+{txt}          5 {c |}{res}          2        4.35      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         46      100.00
+
+{txt}
+{com}. *By year*
+. bysort year: tab rsv if rsv>0
+
+{txt}{hline}
+-> year = 2017
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         34       43.59       43.59
+{txt}          2 {c |}{res}         19       24.36       67.95
+{txt}          3 {c |}{res}         12       15.38       83.33
+{txt}          4 {c |}{res}          7        8.97       92.31
+{txt}          5 {c |}{res}          5        6.41       98.72
+{txt}          6 {c |}{res}          1        1.28      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         78      100.00
+
+{txt}{hline}
+-> year = 2018
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         41       45.56       45.56
+{txt}          2 {c |}{res}         18       20.00       65.56
+{txt}          3 {c |}{res}         17       18.89       84.44
+{txt}          4 {c |}{res}          9       10.00       94.44
+{txt}          5 {c |}{res}          3        3.33       97.78
+{txt}          6 {c |}{res}          1        1.11       98.89
+{txt}          7 {c |}{res}          1        1.11      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         90      100.00
+
+{txt}
+{com}. *By site*
+. bysort siteid: tab rsv if rsv>0
+
+{txt}{hline}
+-> siteid = A
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         35       42.17       42.17
+{txt}          2 {c |}{res}         19       22.89       65.06
+{txt}          3 {c |}{res}         14       16.87       81.93
+{txt}          4 {c |}{res}          7        8.43       90.36
+{txt}          5 {c |}{res}          6        7.23       97.59
+{txt}          6 {c |}{res}          1        1.20       98.80
+{txt}          7 {c |}{res}          1        1.20      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         83      100.00
+
+{txt}{hline}
+-> siteid = K
+
+  (sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         40       47.06       47.06
+{txt}          2 {c |}{res}         18       21.18       68.24
+{txt}          3 {c |}{res}         15       17.65       85.88
+{txt}          4 {c |}{res}          9       10.59       96.47
+{txt}          5 {c |}{res}          2        2.35       98.82
+{txt}          6 {c |}{res}          1        1.18      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         85      100.00
+
+{txt}
+{com}. *Total*
+. tab rsv if rsv>0
+
+  {txt}(sum) rsv {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         75       44.64       44.64
+{txt}          2 {c |}{res}         37       22.02       66.67
+{txt}          3 {c |}{res}         29       17.26       83.93
+{txt}          4 {c |}{res}         16        9.52       93.45
+{txt}          5 {c |}{res}          8        4.76       98.21
+{txt}          6 {c |}{res}          2        1.19       99.40
+{txt}          7 {c |}{res}          1        0.60      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        168      100.00
+{txt}
+{com}. 
+. *Mean and range of infected individuals per infected household*
+. *By year and site*
+. bysort year siteid: sum rsv if rsv>0
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         39    2.076923    1.402716          1          5
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         39    2.205128    1.239259          1          6
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         44    2.386364    1.450195          1          7
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         46    1.891304    1.196815          1          5
+
+{txt}
+{com}. *By year*
+. bysort year: sum rsv if rsv>0
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         78    2.141026    1.316473          1          6
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         90    2.133333    1.342478          1          7
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum rsv if rsv>0
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         83    2.240964    1.427862          1          7
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}         85    2.035294    1.219358          1          6
+
+{txt}
+{com}. *Total*
+. sum rsv if rsv>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 9}rsv {c |}{res}        168    2.136905    1.326495          1          7
+{txt}
+{com}. 
+. *Mean and range of RSV episodes per infected household*
+. *By year and site*
+. bysort year siteid: sum etotall if rsv>0
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         39    2.205128    1.472189          1          5
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         39    2.384615     1.44396          1          7
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         44    2.704545    1.824632          1          8
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         46    2.065217    1.306432          1          5
+
+{txt}
+{com}. *By year*
+. bysort year: sum etotall if rsv>0
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         78    2.294872    1.451457          1          7
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         90    2.377778    1.604613          1          8
+
+{txt}
+{com}. *By site*
+. bysort siteid: sum etotall if rsv>0
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         83     2.46988    1.677232          1          8
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}         85    2.211765    1.372295          1          7
+
+{txt}
+{com}. *Total*
+. sum etotall if rsv>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 5}etotall {c |}{res}        168    2.339286    1.531429          1          8
+{txt}
+{com}. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. ********************
+. *Number of clusters*
+. ********************
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Proportion of households with clusters and number of clusters per household*
+. *
+. *RSV A*
+. tab crsvaf
+
+      {txt}(max) {c |}
+     crsvaf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        147       65.33       65.33
+{txt}          1 {c |}{res}         70       31.11       96.44
+{txt}          2 {c |}{res}          8        3.56      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab crsvaf if crsvaf>0
+
+      {txt}(max) {c |}
+     crsvaf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         70       89.74       89.74
+{txt}          2 {c |}{res}          8       10.26      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         78      100.00
+{txt}
+{com}. sum crsvaf if crsvaf>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvaf {c |}{res}         78    1.102564    .3053524          1          2
+{txt}
+{com}. *
+. *RSV B*
+. tab crsvbf
+
+      {txt}(max) {c |}
+     crsvbf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        111       49.33       49.33
+{txt}          1 {c |}{res}         98       43.56       92.89
+{txt}          2 {c |}{res}         14        6.22       99.11
+{txt}          3 {c |}{res}          2        0.89      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab crsvbf if crsvbf>0
+
+      {txt}(max) {c |}
+     crsvbf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         98       85.96       85.96
+{txt}          2 {c |}{res}         14       12.28       98.25
+{txt}          3 {c |}{res}          2        1.75      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        114      100.00
+{txt}
+{com}. sum crsvbf if crsvbf>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvbf {c |}{res}        114    1.157895     .411751          1          3
+{txt}
+{com}. *
+. *RSV untyped*
+. tab crsvutpf
+
+      {txt}(max) {c |}
+   crsvutpf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        207       92.00       92.00
+{txt}          1 {c |}{res}         17        7.56       99.56
+{txt}          2 {c |}{res}          1        0.44      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab crsvutpf if crsvutpf>0
+
+      {txt}(max) {c |}
+   crsvutpf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         17       94.44       94.44
+{txt}          2 {c |}{res}          1        5.56      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         18      100.00
+{txt}
+{com}. sum crsvutpf if crsvutpf>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 4}crsvutpf {c |}{res}         18    1.055556    .2357023          1          2
+{txt}
+{com}. *
+. *RSV Total*
+. tab crsvtf
+
+     {txt}crsvtf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         57       25.33       25.33
+{txt}          1 {c |}{res}        113       50.22       75.56
+{txt}          2 {c |}{res}         44       19.56       95.11
+{txt}          3 {c |}{res}          8        3.56       98.67
+{txt}          4 {c |}{res}          3        1.33      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. tab crsvtf if crsvtf>0
+
+     {txt}crsvtf {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}        113       67.26       67.26
+{txt}          2 {c |}{res}         44       26.19       93.45
+{txt}          3 {c |}{res}          8        4.76       98.21
+{txt}          4 {c |}{res}          3        1.79      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        168      100.00
+{txt}
+{com}. sum crsvtf if crsvtf>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}        168    1.410714     .668633          1          4
+{txt}
+{com}. 
+. *Total number of clusters*
+. *
+. egen totc=total(crsvtf)
+{txt}
+{com}. tab totc
+
+       {txt}totc {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+        237 {c |}{res}        225      100.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        225      100.00
+{txt}
+{com}. *
+. *Average number of clusters per infected household
+. *By year/site*
+. bysort year siteid: sum crsvtf if crsvtf>0
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         39    1.333333    .5298129          1          3
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         39    1.384615     .711388          1          4
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         44    1.636364    .8377964          1          4
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         46    1.282609     .501688          1          3
+
+{txt}
+{com}. bysort year : sum crsvtf if crsvtf>0
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         78    1.358974    .6236541          1          4
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         90    1.455556    .7056929          1          4
+
+{txt}
+{com}. bysort siteid: sum crsvtf if crsvtf>0
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         83    1.493976    .7220144          1          4
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}         85    1.329412    .6052987          1          4
+
+{txt}
+{com}. *Total*
+. sum crsvtf if crsvtf>0
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvtf {c |}{res}        168    1.410714     .668633          1          4
+{txt}
+{com}. sum crsvaf if crsvaf>0 
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvaf {c |}{res}         78    1.102564    .3053524          1          2
+{txt}
+{com}. sum crsvbf if crsvbf>0 
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 6}crsvbf {c |}{res}        114    1.157895     .411751          1          3
+{txt}
+{com}. sum crsvutpf if crsvutpf>0 
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 4}crsvutpf {c |}{res}         18    1.055556    .2357023          1          2
+{txt}
+{com}. 
+. 
+. ******************
+. *Cluster duration*
+. ******************
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Mean, min. and max duration of ALL clusters*
+. *
+. *By type*
+. bysort type: sum cdur
+
+{txt}{hline}
+-> type = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}         86    10.06977    10.12486          0         66
+
+{txt}{hline}
+-> type = B
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}        132    11.18939    11.35017          0         65
+
+{txt}{hline}
+-> type = Untyped
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}         19    3.210526     3.06556          0         13
+
+{txt}
+{com}. bysort type: sum cdur, d
+
+{txt}{hline}
+-> type = A
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         86
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         86
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 10.06977
+                        {txt}Largest       Std. dev.     {res} 10.12486
+{txt}75%    {res}       15             26
+{txt}90%    {res}       22             26       {txt}Variance      {res} 102.5127
+{txt}95%    {res}       25             39       {txt}Skewness      {res} 2.435456
+{txt}99%    {res}       66             66       {txt}Kurtosis      {res} 12.50462
+
+{txt}{hline}
+-> type = B
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        132
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        132
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 11.18939
+                        {txt}Largest       Std. dev.     {res} 11.35017
+{txt}75%    {res}     16.5             40
+{txt}90%    {res}       25             40       {txt}Variance      {res} 128.8265
+{txt}95%    {res}       36             46       {txt}Skewness      {res} 1.708797
+{txt}99%    {res}       46             65       {txt}Kurtosis      {res} 6.566536
+
+{txt}{hline}
+-> type = Untyped
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         19
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}         19
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 3.210526
+                        {txt}Largest       Std. dev.     {res}  3.06556
+{txt}75%    {res}        5              5
+{txt}90%    {res}        6              5       {txt}Variance      {res} 9.397661
+{txt}95%    {res}       13              6       {txt}Skewness      {res} 1.662238
+{txt}99%    {res}       13             13       {txt}Kurtosis      {res} 6.442451
+
+{txt}
+{com}. *
+. *All*
+. sum cdur
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}        237    10.14346    10.65983          0         66
+{txt}
+{com}. sum cdur, d
+
+                            {txt}cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        237
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        237
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 10.14346
+                        {txt}Largest       Std. dev.     {res} 10.65983
+{txt}75%    {res}       15             40
+{txt}90%    {res}       24             46       {txt}Variance      {res} 113.6319
+{txt}95%    {res}       30             65       {txt}Skewness      {res} 2.039723
+{txt}99%    {res}       46             66       {txt}Kurtosis      {res}  8.79894
+{txt}
+{com}. hist cdur, bin(35) normal
+{txt}(bin={res}35{txt}, start={res}0{txt}, width={res}1.8857143{txt})
+{res}{txt}
+{com}. 
+. *Mean, min. and max duration of clusters*
+. *
+. *By type*
+. bysort type: sum cdur
+
+{txt}{hline}
+-> type = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}         86    10.06977    10.12486          0         66
+
+{txt}{hline}
+-> type = B
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}        132    11.18939    11.35017          0         65
+
+{txt}{hline}
+-> type = Untyped
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}         19    3.210526     3.06556          0         13
+
+{txt}
+{com}. bysort type: sum cdur, d
+
+{txt}{hline}
+-> type = A
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        1              0
+{txt}10%    {res}        1              1       {txt}Obs         {res}         86
+{txt}25%    {res}        3              1       {txt}Sum of wgt. {res}         86
+
+{txt}50%    {res}        7                      {txt}Mean          {res} 10.06977
+                        {txt}Largest       Std. dev.     {res} 10.12486
+{txt}75%    {res}       15             26
+{txt}90%    {res}       22             26       {txt}Variance      {res} 102.5127
+{txt}95%    {res}       25             39       {txt}Skewness      {res} 2.435456
+{txt}99%    {res}       66             66       {txt}Kurtosis      {res} 12.50462
+
+{txt}{hline}
+-> type = B
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        132
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        132
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 11.18939
+                        {txt}Largest       Std. dev.     {res} 11.35017
+{txt}75%    {res}     16.5             40
+{txt}90%    {res}       25             40       {txt}Variance      {res} 128.8265
+{txt}95%    {res}       36             46       {txt}Skewness      {res} 1.708797
+{txt}99%    {res}       46             65       {txt}Kurtosis      {res} 6.566536
+
+{txt}{hline}
+-> type = Untyped
+
+                            cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}         19
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}         19
+
+{txt}50%    {res}        3                      {txt}Mean          {res} 3.210526
+                        {txt}Largest       Std. dev.     {res}  3.06556
+{txt}75%    {res}        5              5
+{txt}90%    {res}        6              5       {txt}Variance      {res} 9.397661
+{txt}95%    {res}       13              6       {txt}Skewness      {res} 1.662238
+{txt}99%    {res}       13             13       {txt}Kurtosis      {res} 6.442451
+
+{txt}
+{com}. *
+. *All*
+. sum cdur
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}cdur {c |}{res}        237    10.14346    10.65983          0         66
+{txt}
+{com}. sum cdur, d
+
+                            {txt}cdur
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        1              0       {txt}Obs         {res}        237
+{txt}25%    {res}        3              0       {txt}Sum of wgt. {res}        237
+
+{txt}50%    {res}        6                      {txt}Mean          {res} 10.14346
+                        {txt}Largest       Std. dev.     {res} 10.65983
+{txt}75%    {res}       15             40
+{txt}90%    {res}       24             46       {txt}Variance      {res} 113.6319
+{txt}95%    {res}       30             65       {txt}Skewness      {res} 2.039723
+{txt}99%    {res}       46             66       {txt}Kurtosis      {res}  8.79894
+{txt}
+{com}. hist cdur, bin(35) normal
+{txt}(bin={res}35{txt}, start={res}0{txt}, width={res}1.8857143{txt})
+{res}{txt}
+{com}. 
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. 
+. **************************************************************************
+. *HCIR and proportion of community vs. household acquired infections - All*
+. **************************************************************************
+. 
+. *NOTE: Not reported in manuscript, manuscript limits to generation interval <17 days
+.                 *See HCIR RF do file
+. 
+. *By type*
+. bysort type: tab ixnix if ixnix<2
+
+{txt}{hline}
+-> type = A
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        295       86.76       86.76
+{txt}          1 {c |}{res}         45       13.24      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        340      100.00
+
+{txt}{hline}
+-> type = B
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        463       84.18       84.18
+{txt}          1 {c |}{res}         87       15.82      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        550      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         78       98.73       98.73
+{txt}          1 {c |}{res}          1        1.27      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         79      100.00
+
+{txt}
+{com}. bysort type: tab ixnix if ixnix>0
+
+{txt}{hline}
+-> type = A
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         45       31.03       31.03
+{txt}          2 {c |}{res}        100       68.97      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        145      100.00
+
+{txt}{hline}
+-> type = B
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         87       38.33       38.33
+{txt}          2 {c |}{res}        140       61.67      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        227      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}          1        4.76        4.76
+{txt}          2 {c |}{res}         20       95.24      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         21      100.00
+
+{txt}
+{com}. 
+. *All*
+. tab ixnix if ixnix<2
+
+      {txt}(max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        836       86.27       86.27
+{txt}          1 {c |}{res}        133       13.73      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        969      100.00
+{txt}
+{com}. tab ixnix if ixnix>0
+
+      {txt}(max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}        133       33.84       33.84
+{txt}          2 {c |}{res}        260       66.16      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        393      100.00
+{txt}
+{com}. 
+. 
+. *************************
+. *HCIR - Only susceptible*
+. *************************
+. 
+. *By type*
+. bysort type: tab ixnix if ixnix<2 & sus==1
+
+{txt}{hline}
+-> type = A
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        289       86.53       86.53
+{txt}          1 {c |}{res}         45       13.47      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        334      100.00
+
+{txt}{hline}
+-> type = B
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        439       83.46       83.46
+{txt}          1 {c |}{res}         87       16.54      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        526      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+      (max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}         77       98.72       98.72
+{txt}          1 {c |}{res}          1        1.28      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         78      100.00
+
+{txt}
+{com}. 
+. *All*
+. tab ixnix if ixnix<2 & sus==1
+
+      {txt}(max) {c |}
+     ersvai {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          0 {c |}{res}        805       85.82       85.82
+{txt}          1 {c |}{res}        133       14.18      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        938      100.00
+{txt}
+{com}. 
+. **********************************
+. *Infected individuals per cluster*
+. **********************************
+. 
+. *By year/site*
+. collapse (sum) epis, by (year type site hhid clus)
+{res}{txt}
+{com}. bysort year site: sum epis
+
+{txt}{hline}
+-> year = 2017, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         52    1.711538     1.22613          1          5
+
+{txt}{hline}
+-> year = 2017, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         54    1.833333    1.041588          1          5
+
+{txt}{hline}
+-> year = 2018, siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         72    1.708333    1.238326          1          7
+
+{txt}{hline}
+-> year = 2018, siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         59    1.627119    1.048781          1          5
+
+{txt}
+{com}. bysort year : sum epis
+
+{txt}{hline}
+-> year = 2017
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        106    1.773585    1.132069          1          5
+
+{txt}{hline}
+-> year = 2018
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        131    1.671756    1.153208          1          7
+
+{txt}
+{com}. bysort site: sum epis
+
+{txt}{hline}
+-> siteid = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        124    1.709677     1.22822          1          7
+
+{txt}{hline}
+-> siteid = K
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        113    1.725664    1.045806          1          5
+
+{txt}
+{com}. sum epis
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        237      1.7173    1.142513          1          7
+{txt}
+{com}. 
+. *By type*
+. bysort  type: sum epi
+
+{txt}{hline}
+-> type = A
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         86    1.732558    1.172473          1          5
+
+{txt}{hline}
+-> type = B
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        132    1.795455    1.176997          1          7
+
+{txt}{hline}
+-> type = Untyped
+
+    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}         19    1.105263    .3153018          1          2
+
+{txt}
+{com}. sum epis
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 8}epis {c |}{res}        237      1.7173    1.142513          1          7
+{txt}
+{com}. 
+. ***********************************************************
+. *Number and % of cluster by number of episodes per cluster*
+. ***********************************************************
+. 
+. tab epis
+
+ {txt}(sum) epis {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}        147       62.03       62.03
+{txt}          2 {c |}{res}         43       18.14       80.17
+{txt}          3 {c |}{res}         27       11.39       91.56
+{txt}          4 {c |}{res}         10        4.22       95.78
+{txt}          5 {c |}{res}          8        3.38       99.16
+{txt}          6 {c |}{res}          1        0.42       99.58
+{txt}          7 {c |}{res}          1        0.42      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        237      100.00
+{txt}
+{com}. 
+. **********************
+. *Symptomatic Fraction*
+. **********************
+. 
+. qui: log off
+{smcl}
+{com}{sf}{ul off}{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. *Symptomatic fraction*
+. 
+. *By year*
+. bysort year: tab symany
+
+{txt}{hline}
+-> year = 2017
+
+     symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}        117       65.36       65.36
+{txt}        Yes {c |}{res}         62       34.64      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        179      100.00
+
+{txt}{hline}
+-> year = 2018
+
+     symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}        144       67.29       67.29
+{txt}        Yes {c |}{res}         70       32.71      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        214      100.00
+
+{txt}
+{com}. 
+. *All*
+. tab symany
+
+     {txt}symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}        261       66.41       66.41
+{txt}        Yes {c |}{res}        132       33.59      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        393      100.00
+{txt}
+{com}. 
+. *By type*
+. bysort type: tab symany
+
+{txt}{hline}
+-> type = A
+
+     symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}         94       64.83       64.83
+{txt}        Yes {c |}{res}         51       35.17      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        145      100.00
+
+{txt}{hline}
+-> type = B
+
+     symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}        148       65.20       65.20
+{txt}        Yes {c |}{res}         79       34.80      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        227      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+     symany {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         No {c |}{res}         19       90.48       90.48
+{txt}        Yes {c |}{res}          2        9.52      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         21      100.00
+
+{txt}
+{com}. 
+. *By age*
+. tab  agecat5 symany, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+  agegroup {c |}
+  <1, 1-4, {c |}
+     5-12, {c |}
+    13-18, {c |}
+    19-44, {c |}        symany
+45-64, 65+ {c |}        No        Yes {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+        <1 {c |}{res}         4          8 {txt}{c |}{res}        12 
+           {txt}{c |}{res}     33.33      66.67 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       1-4 {c |}{res}        47         45 {txt}{c |}{res}        92 
+           {txt}{c |}{res}     51.09      48.91 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+      5-12 {c |}{res}        77         34 {txt}{c |}{res}       111 
+           {txt}{c |}{res}     69.37      30.63 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     13-18 {c |}{res}        51         12 {txt}{c |}{res}        63 
+           {txt}{c |}{res}     80.95      19.05 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     19-44 {c |}{res}        47         18 {txt}{c |}{res}        65 
+           {txt}{c |}{res}     72.31      27.69 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     45-64 {c |}{res}        33         11 {txt}{c |}{res}        44 
+           {txt}{c |}{res}     75.00      25.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       65+ {c |}{res}         2          4 {txt}{c |}{res}         6 
+           {txt}{c |}{res}     33.33      66.67 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       261        132 {txt}{c |}{res}       393 
+           {txt}{c |}{res}     66.41      33.59 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}6{txt}) = {res} 27.3901  {txt} Pr = {res}0.000
+{txt}
+{com}. 
+. *Number of symptoms among symptomatic individuals*
+. 
+. *All and by age*
+. tab symcat if symcat>0
+
+     {txt}symcat {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         54       40.91       40.91
+{txt}         2+ {c |}{res}         78       59.09      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        132      100.00
+{txt}
+{com}. tab agecat5 symcat if symcat>0, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+  agegroup {c |}
+  <1, 1-4, {c |}
+     5-12, {c |}
+    13-18, {c |}
+    19-44, {c |}        symcat
+45-64, 65+ {c |}         1         2+ {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+        <1 {c |}{res}         1          7 {txt}{c |}{res}         8 
+           {txt}{c |}{res}     12.50      87.50 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       1-4 {c |}{res}        22         23 {txt}{c |}{res}        45 
+           {txt}{c |}{res}     48.89      51.11 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+      5-12 {c |}{res}        13         21 {txt}{c |}{res}        34 
+           {txt}{c |}{res}     38.24      61.76 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     13-18 {c |}{res}         4          8 {txt}{c |}{res}        12 
+           {txt}{c |}{res}     33.33      66.67 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     19-44 {c |}{res}         8         10 {txt}{c |}{res}        18 
+           {txt}{c |}{res}     44.44      55.56 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     45-64 {c |}{res}         5          6 {txt}{c |}{res}        11 
+           {txt}{c |}{res}     45.45      54.55 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       65+ {c |}{res}         1          3 {txt}{c |}{res}         4 
+           {txt}{c |}{res}     25.00      75.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        54         78 {txt}{c |}{res}       132 
+           {txt}{c |}{res}     40.91      59.09 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}6{txt}) = {res}  4.8477  {txt} Pr = {res}0.563
+{txt}
+{com}. *
+. tab symili if symili>0
+
+     {txt}symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         54       40.91       40.91
+{txt}         2+ {c |}{res}         58       43.94       84.85
+{txt}        ILI {c |}{res}         20       15.15      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}        132      100.00
+{txt}
+{com}. tab agecat5 symili if symili>0, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+  agegroup {c |}
+  <1, 1-4, {c |}
+     5-12, {c |}
+    13-18, {c |}
+    19-44, {c |}              symili
+45-64, 65+ {c |}         1         2+        ILI {c |}     Total
+{hline 11}{c +}{hline 33}{c +}{hline 10}
+        <1 {c |}{res}         1          6          1 {txt}{c |}{res}         8 
+           {txt}{c |}{res}     12.50      75.00      12.50 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+       1-4 {c |}{res}        22         17          6 {txt}{c |}{res}        45 
+           {txt}{c |}{res}     48.89      37.78      13.33 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+      5-12 {c |}{res}        13         15          6 {txt}{c |}{res}        34 
+           {txt}{c |}{res}     38.24      44.12      17.65 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+     13-18 {c |}{res}         4          6          2 {txt}{c |}{res}        12 
+           {txt}{c |}{res}     33.33      50.00      16.67 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+     19-44 {c |}{res}         8          8          2 {txt}{c |}{res}        18 
+           {txt}{c |}{res}     44.44      44.44      11.11 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+     45-64 {c |}{res}         5          4          2 {txt}{c |}{res}        11 
+           {txt}{c |}{res}     45.45      36.36      18.18 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+       65+ {c |}{res}         1          2          1 {txt}{c |}{res}         4 
+           {txt}{c |}{res}     25.00      50.00      25.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 33}{c +}{hline 10}
+     Total {c |}{res}        54         58         20 {txt}{c |}{res}       132 
+           {txt}{c |}{res}     40.91      43.94      15.15 {txt}{c |}{res}    100.00 
+
+{txt}         Pearson chi2({res}12{txt}) = {res}  6.0985  {txt} Pr = {res}0.911
+{txt}
+{com}. 
+. *By type*
+. bysort type: tab symcat if symcat>0 
+
+{txt}{hline}
+-> type = A
+
+     symcat {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         21       41.18       41.18
+{txt}         2+ {c |}{res}         30       58.82      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         51      100.00
+
+{txt}{hline}
+-> type = B
+
+     symcat {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         32       40.51       40.51
+{txt}         2+ {c |}{res}         47       59.49      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         79      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+     symcat {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}          1       50.00       50.00
+{txt}         2+ {c |}{res}          1       50.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}          2      100.00
+
+{txt}
+{com}. bysort type: tab symili if symili>0 
+
+{txt}{hline}
+-> type = A
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         21       41.18       41.18
+{txt}         2+ {c |}{res}         24       47.06       88.24
+{txt}        ILI {c |}{res}          6       11.76      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         51      100.00
+
+{txt}{hline}
+-> type = B
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}         32       40.51       40.51
+{txt}         2+ {c |}{res}         34       43.04       83.54
+{txt}        ILI {c |}{res}         13       16.46      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         79      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+          1 {c |}{res}          1       50.00       50.00
+{txt}        ILI {c |}{res}          1       50.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}          2      100.00
+
+{txt}
+{com}. 
+. *Proportion of ILI among individuals with 2+ symptoms*
+. 
+. *All*
+. tab symili if symili>1
+
+     {txt}symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         2+ {c |}{res}         58       74.36       74.36
+{txt}        ILI {c |}{res}         20       25.64      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         78      100.00
+{txt}
+{com}. 
+. *By types*
+. bysort type: tab symili if symili>1
+
+{txt}{hline}
+-> type = A
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         2+ {c |}{res}         24       80.00       80.00
+{txt}        ILI {c |}{res}          6       20.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         30      100.00
+
+{txt}{hline}
+-> type = B
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+         2+ {c |}{res}         34       72.34       72.34
+{txt}        ILI {c |}{res}         13       27.66      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}         47      100.00
+
+{txt}{hline}
+-> type = Untyped
+
+     symili {c |}      Freq.     Percent        Cum.
+{hline 12}{c +}{hline 35}
+        ILI {c |}{res}          1      100.00      100.00
+{txt}{hline 12}{c +}{hline 35}
+      Total {c |}{res}          1      100.00
+
+{txt}
+{com}. 
+. 
+. ***********************
+. *Missed school or work*
+. ***********************
+. 
+. *By symptom*
+. tab symcat missed, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}     (max) missed
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         0 {c |}{res}         2          0 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        24          3 {txt}{c |}{res}        27 
+           {txt}{c |}{res}     88.89      11.11 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        22          4 {txt}{c |}{res}        26 
+           {txt}{c |}{res}     84.62      15.38 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        48          7 {txt}{c |}{res}        55 
+           {txt}{c |}{res}     87.27      12.73 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  0.5205  {txt} Pr = {res}0.771
+{txt}
+{com}. tab symili missed, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}     (max) missed
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         0 {c |}{res}         2          0 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        24          3 {txt}{c |}{res}        27 
+           {txt}{c |}{res}     88.89      11.11 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        17          3 {txt}{c |}{res}        20 
+           {txt}{c |}{res}     85.00      15.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}         5          1 {txt}{c |}{res}         6 
+           {txt}{c |}{res}     83.33      16.67 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        48          7 {txt}{c |}{res}        55 
+           {txt}{c |}{res}     87.27      12.73 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}3{txt}) = {res}  0.5320  {txt} Pr = {res}0.912
+{txt}
+{com}. 
+. *By type*
+. tab type missed, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}     (max) missed
+      type {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         A {c |}{res}        21          1 {txt}{c |}{res}        22 
+           {txt}{c |}{res}     95.45       4.55 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         B {c |}{res}        26          6 {txt}{c |}{res}        32 
+           {txt}{c |}{res}     81.25      18.75 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+   Untyped {c |}{res}         1          0 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        48          7 {txt}{c |}{res}        55 
+           {txt}{c |}{res}     87.27      12.73 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  2.5167  {txt} Pr = {res}0.284
+{txt}
+{com}. 
+. 
+. *******************
+. *Outpatient visits*
+. *******************
+. 
+. *By symptom - all*
+. tab symcat outvisit if symcat>0, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        53          1 {txt}{c |}{res}        54 
+           {txt}{c |}{res}     98.15       1.85 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        70          8 {txt}{c |}{res}        78 
+           {txt}{c |}{res}     89.74      10.26 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       123          9 {txt}{c |}{res}       132 
+           {txt}{c |}{res}     93.18       6.82 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res}  3.5477  {txt} Pr = {res}0.060
+{txt}
+{com}. tab symili outvisit if symili>0, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        53          1 {txt}{c |}{res}        54 
+           {txt}{c |}{res}     98.15       1.85 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        53          5 {txt}{c |}{res}        58 
+           {txt}{c |}{res}     91.38       8.62 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}        17          3 {txt}{c |}{res}        20 
+           {txt}{c |}{res}     85.00      15.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       123          9 {txt}{c |}{res}       132 
+           {txt}{c |}{res}     93.18       6.82 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  4.5003  {txt} Pr = {res}0.105
+{txt}
+{com}. 
+. *By symptom and age*
+. bysort agecat5: tab symcat outvisit if symcat>0, row chi
+
+{txt}{hline}
+-> agecat5 = <1
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         1          0 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}         6          1 {txt}{c |}{res}         7 
+           {txt}{c |}{res}     85.71      14.29 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}         7          1 {txt}{c |}{res}         8 
+           {txt}{c |}{res}     87.50      12.50 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res}  0.1633  {txt} Pr = {res}0.686
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        21          1 {txt}{c |}{res}        22 
+           {txt}{c |}{res}     95.45       4.55 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        20          3 {txt}{c |}{res}        23 
+           {txt}{c |}{res}     86.96      13.04 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        41          4 {txt}{c |}{res}        45 
+           {txt}{c |}{res}     91.11       8.89 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res}  1.0027  {txt} Pr = {res}0.317
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        13          0 {txt}{c |}{res}        13 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        19          2 {txt}{c |}{res}        21 
+           {txt}{c |}{res}     90.48       9.52 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        32          2 {txt}{c |}{res}        34 
+           {txt}{c |}{res}     94.12       5.88 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res}  1.3155  {txt} Pr = {res}0.251
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symcat {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         4 {txt}{c |}{res}         4 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}         8 {txt}{c |}{res}         8 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}        12 {txt}{c |}{res}        12 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symcat {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         8 {txt}{c |}{res}         8 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}        10 {txt}{c |}{res}        10 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}        18 {txt}{c |}{res}        18 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symcat {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         5          0 {txt}{c |}{res}         5 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}         4          2 {txt}{c |}{res}         6 
+           {txt}{c |}{res}     66.67      33.33 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}         9          2 {txt}{c |}{res}        11 
+           {txt}{c |}{res}     81.82      18.18 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}1{txt}) = {res}  2.0370  {txt} Pr = {res}0.154
+
+{txt}{hline}
+-> agecat5 = 65+
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symcat {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         1 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}         3 {txt}{c |}{res}         3 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}         4 {txt}{c |}{res}         4 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}
+{com}. bysort agecat5: tab symili outvisit if symili>0, row chi
+
+{txt}{hline}
+-> agecat5 = <1
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         1          0 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}         6          0 {txt}{c |}{res}         6 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}         0          1 {txt}{c |}{res}         1 
+           {txt}{c |}{res}      0.00     100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}         7          1 {txt}{c |}{res}         8 
+           {txt}{c |}{res}     87.50      12.50 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  8.0000  {txt} Pr = {res}0.018
+
+{txt}{hline}
+-> agecat5 = 1-4
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        21          1 {txt}{c |}{res}        22 
+           {txt}{c |}{res}     95.45       4.55 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        16          1 {txt}{c |}{res}        17 
+           {txt}{c |}{res}     94.12       5.88 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}         4          2 {txt}{c |}{res}         6 
+           {txt}{c |}{res}     66.67      33.33 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        41          4 {txt}{c |}{res}        45 
+           {txt}{c |}{res}     91.11       8.89 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  5.1290  {txt} Pr = {res}0.077
+
+{txt}{hline}
+-> agecat5 = 5-12
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}        13          0 {txt}{c |}{res}        13 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}        13          2 {txt}{c |}{res}        15 
+           {txt}{c |}{res}     86.67      13.33 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}         6          0 {txt}{c |}{res}         6 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}        32          2 {txt}{c |}{res}        34 
+           {txt}{c |}{res}     94.12       5.88 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  2.6917  {txt} Pr = {res}0.260
+
+{txt}{hline}
+-> agecat5 = 13-18
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symili {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         4 {txt}{c |}{res}         4 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}         6 {txt}{c |}{res}         6 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+       ILI {c |}{res}         2 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}        12 {txt}{c |}{res}        12 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}{hline}
+-> agecat5 = 19-44
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symili {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         8 {txt}{c |}{res}         8 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}         8 {txt}{c |}{res}         8 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+       ILI {c |}{res}         2 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}        18 {txt}{c |}{res}        18 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}{hline}
+-> agecat5 = 45-64
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+    symili {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         1 {c |}{res}         5          0 {txt}{c |}{res}         5 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+        2+ {c |}{res}         2          2 {txt}{c |}{res}         4 
+           {txt}{c |}{res}     50.00      50.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+       ILI {c |}{res}         2          0 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}         9          2 {txt}{c |}{res}        11 
+           {txt}{c |}{res}     81.82      18.18 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  4.2778  {txt} Pr = {res}0.118
+
+{txt}{hline}
+-> agecat5 = 65+
+
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}   (max)
+           {c |}  outvisit
+    symili {c |}         0 {c |}     Total
+{hline 11}{c +}{hline 11}{c +}{hline 10}
+         1 {c |}{res}         1 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+        2+ {c |}{res}         2 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+       ILI {c |}{res}         1 {txt}{c |}{res}         1 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 11}{c +}{hline 10}
+     Total {c |}{res}         4 {txt}{c |}{res}         4 
+           {txt}{c |}{res}    100.00 {txt}{c |}{res}    100.00 
+
+{txt}
+{com}. 
+. *By type*
+. tab type outvisit if symcat>0, row chi
+{txt}
+{c TLC}{hline 16}{c TRC}
+{c |} Key{col 18}{c |}
+{c LT}{hline 16}{c RT}
+{c |}{space 3}{it:frequency}{col 18}{c |}
+{c |}{space 1}{it:row percentage}{col 18}{c |}
+{c BLC}{hline 16}{c BRC}
+
+           {c |}    (max) outvisit
+      type {c |}         0          1 {c |}     Total
+{hline 11}{c +}{hline 22}{c +}{hline 10}
+         A {c |}{res}        47          4 {txt}{c |}{res}        51 
+           {txt}{c |}{res}     92.16       7.84 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+         B {c |}{res}        74          5 {txt}{c |}{res}        79 
+           {txt}{c |}{res}     93.67       6.33 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+   Untyped {c |}{res}         2          0 {txt}{c |}{res}         2 
+           {txt}{c |}{res}    100.00       0.00 {txt}{c |}{res}    100.00 
+{txt}{hline 11}{c +}{hline 22}{c +}{hline 10}
+     Total {c |}{res}       123          9 {txt}{c |}{res}       132 
+           {txt}{c |}{res}     93.18       6.82 {txt}{c |}{res}    100.00 
+
+{txt}          Pearson chi2({res}2{txt}) = {res}  0.2604  {txt} Pr = {res}0.878
+{txt}
+{com}. 
+. qui: log close
+{smcl}
+{com}{sf}{ul off}
