@@ -1,0 +1,3487 @@
+                                                       ___  ____  ____  ____  ____(R)
+                                                      /__    /   ____/   /   ____/   
+                                                     ___/   /   /___/   /   /___/    
+                                                       Statistics/Data analysis      
+      
+      
+     1 . 
+     2 . 
+     3 . *************************************************************
+     4 . *************************************************************
+     5 . *PHIRST: RSV Community Attack Rate - Risk Factors - Analysis*
+     6 . *************************************************************
+     7 . *************************************************************
+     8 . 
+     9 . *Univariate analysis*
+    10 . *
+    11 . *Year*
+    12 . tab year rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |       (max) rsv
+            year |         0          1 |     Total
+      -----------+----------------------+----------
+            2017 |       224         94 |       318 
+                 |     70.44      29.56 |    100.00 
+      -----------+----------------------+----------
+            2018 |       264        135 |       399 
+                 |     66.17      33.83 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(1) =   1.4877   Pr = 0.223
+      
+    13 . mepoisson rsv i.year || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.97
+      Log likelihood = -489.79845                     Prob > chi2       =     0.3248
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2018  |   1.144917    .157353     0.98   0.325     .8745573    1.498856
+                   |
+             _cons |   .2918406   .0326867   -11.00   0.000     .2343202    .3634811
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   8.13e-34   3.06e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0268815   .0786503                      .0000869    8.315947
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.12         Prob >= chibar2 = 0.3620
+      
+    14 . *
+    15 . *Site*
+    16 . tab site rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          site 0 |
+          Agin 1 |       (max) rsv
+      Klerksdorp |         0          1 |     Total
+      -----------+----------------------+----------
+       Agincourt |       246        127 |       373 
+                 |     65.95      34.05 |    100.00 
+      -----------+----------------------+----------
+      Klerksdorp |       242        102 |       344 
+                 |     70.35      29.65 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(1) =   1.5917   Pr = 0.207
+      
+    17 . mepoisson rsv i.site || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       1.09
+      Log likelihood = -489.73591                     Prob > chi2       =     0.2970
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              site |
+       Klerksdorp  |   .8669766   .1186717    -1.04   0.297     .6629716    1.133757
+             _cons |   .3363288   .0324796   -11.28   0.000     .2783318    .4064109
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   8.34e-33   4.07e-17                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0320648   .0778248                      .0002755    3.732402
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.18         Prob >= chibar2 = 0.3348
+      
+    18 . *
+    19 . *Age*
+    20 . tab agecat5 rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+        agegroup |
+        <1, 1-4, |
+           5-12, |
+          13-18, |
+          19-44, |       (max) rsv
+      45-64, 65+ |         0          1 |     Total
+      -----------+----------------------+----------
+              <1 |         6          7 |        13 
+                 |     46.15      53.85 |    100.00 
+      -----------+----------------------+----------
+             1-4 |        50         56 |       106 
+                 |     47.17      52.83 |    100.00 
+      -----------+----------------------+----------
+            5-12 |       128         59 |       187 
+                 |     68.45      31.55 |    100.00 
+      -----------+----------------------+----------
+           13-18 |        67         34 |       101 
+                 |     66.34      33.66 |    100.00 
+      -----------+----------------------+----------
+           19-44 |       155         43 |       198 
+                 |     78.28      21.72 |    100.00 
+      -----------+----------------------+----------
+           45-64 |        59         26 |        85 
+                 |     69.41      30.59 |    100.00 
+      -----------+----------------------+----------
+             65+ |        23          4 |        27 
+                 |     85.19      14.81 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(6) =  37.5340   Pr = 0.000
+      
+    21 . mepoisson rsv b4.agecat5 || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(6)      =      24.36
+      Log likelihood = -478.24518                     Prob > chi2       =     0.0004
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           agecat5 |
+               <1  |   2.479428   1.010539     2.23   0.026     1.115393     5.51157
+              1-4  |   2.432646   .4932513     4.38   0.000     1.634882     3.61969
+             5-12  |   1.452805   .2913044     1.86   0.063     .9806889    2.152202
+            13-18  |   1.550081   .3557345     1.91   0.056     .9885724    2.430525
+            45-64  |   1.408482   .3499088     1.38   0.168     .8655405    2.292002
+              65+  |   .6821708    .356597    -0.73   0.464     .2448709    1.900418
+                   |
+             _cons |   .2171717   .0331184   -10.01   0.000     .1610632    .2928264
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.61e-37   1.77e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   3.41e-32   1.07e-16                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chi2(0) = 0.00                 Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+    22 . *
+    23 . *Sex*
+    24 . tab sex rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |       (max) rsv
+             Sex |         0          1 |     Total
+      -----------+----------------------+----------
+            Male |       186         90 |       276 
+                 |     67.39      32.61 |    100.00 
+      -----------+----------------------+----------
+          Female |       302        139 |       441 
+                 |     68.48      31.52 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(1) =   0.0927   Pr = 0.761
+      
+    25 . mepoisson rsv i.sex || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.07
+      Log likelihood = -490.25065                     Prob > chi2       =     0.7943
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+               sex |
+           Female  |   .9652182   .1310726    -0.26   0.794     .7396664    1.259549
+             _cons |   .3215757   .0360982   -10.11   0.000     .2580668    .4007136
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.17e-33   2.27e-17                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0321183   .0792184                      .0002554    4.038366
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.18         Prob >= chibar2 = 0.3375
+      
+    26 . *
+    27 . *HIV*
+    28 . tab hivfinal rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |       (max) rsv
+        hivfinal |         0          1 |     Total
+      -----------+----------------------+----------
+        Negative |       382        196 |       578 
+                 |     66.09      33.91 |    100.00 
+      -----------+----------------------+----------
+        Positive |        89         27 |       116 
+                 |     76.72      23.28 |    100.00 
+      -----------+----------------------+----------
+           Total |       471        223 |       694 
+                 |     67.87      32.13 |    100.00 
+      
+                Pearson chi2(1) =   5.0099   Pr = 0.025
+      
+    29 . mepoisson rsv i.hivfinal || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        694
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        328      347.0        366
+                         hhid |        151          1        4.6         19
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       3.33
+      Log likelihood = -474.25188                     Prob > chi2       =     0.0678
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          hivfinal |
+         Positive  |   .6862531   .1414972    -1.83   0.068     .4581173    1.027997
+             _cons |   .3344242   .0274725   -13.33   0.000     .2846902    .3928465
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   4.13e-34   2.26e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0305401   .0820631                      .0001576    5.917003
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.15         Prob >= chibar2 = 0.3507
+      
+    30 . *
+    31 . *UMC*
+    32 . tab underill rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+             any |
+      underlying |       (max) rsv
+         illness |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       480        222 |       702 
+                 |     68.38      31.62 |    100.00 
+      -----------+----------------------+----------
+             Yes |         8          7 |        15 
+                 |     53.33      46.67 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(1) =   1.5288   Pr = 0.216
+      
+    33 . mepoisson rsv i.underill || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.98
+      Log likelihood = -489.84906                     Prob > chi2       =     0.3230
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          underill |
+              Yes  |   1.466225   .5676904     0.99   0.323     .6864894    3.131607
+             _cons |   .3122753   .0242479   -14.99   0.000     .2681899    .3636074
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   1.04e-33   6.42e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|    .027536   .0786981                      .0001017     7.45835
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.13         Prob >= chibar2 = 0.3595
+      
+    34 . *
+    35 . *BMI*
+    36 . tab bmicat rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                    |       (max) rsv
+             bmicat |         0          1 |     Total
+      --------------+----------------------+----------
+        Underweight |        42         16 |        58 
+                    |     72.41      27.59 |    100.00 
+      --------------+----------------------+----------
+      Normal weight |       270        152 |       422 
+                    |     63.98      36.02 |    100.00 
+      --------------+----------------------+----------
+         Overweight |        81         22 |       103 
+                    |     78.64      21.36 |    100.00 
+      --------------+----------------------+----------
+              Obese |        95         39 |       134 
+                    |     70.90      29.10 |    100.00 
+      --------------+----------------------+----------
+              Total |       488        229 |       717 
+                    |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(3) =   9.5360   Pr = 0.023
+      
+    37 . mepoisson rsv i.bmicat || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =       6.30
+      Log likelihood = -486.90239                     Prob > chi2       =     0.0980
+      -------------------------------------------------------------------------------
+      -
+                 rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+              bmicat |
+      Normal weight  |   1.302238   .3437142     1.00   0.317      .776289    2.18452
+      > 8
+         Overweight  |   .7739405     .25478    -0.78   0.436     .4059694    1.47544
+      > 1
+              Obese  |   1.051225   .3137052     0.17   0.867     .5857081    1.88673
+      > 2
+                     |
+               _cons |    .275012   .0691629    -5.13   0.000     .1679897    .450215
+      > 6
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   2.60e-36   1.00e-19                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   .0116179   .0766999                      2.79e-08    4837.89
+      > 9
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.02         Prob >= chibar2 = 0.4379
+      
+    38 . *
+    39 . *Cotinine*
+    40 . tab cotinine rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+              cotinine |
+              exposure |       (max) rsv
+            categories |         0          1 |     Total
+      -----------------+----------------------+----------
+           No exposure |       193         97 |       290 
+                       |     66.55      33.45 |    100.00 
+      -----------------+----------------------+----------
+      Passive exposure |       199         97 |       296 
+                       |     67.23      32.77 |    100.00 
+      -----------------+----------------------+----------
+       Active exposure |        75         24 |        99 
+                       |     75.76      24.24 |    100.00 
+      -----------------+----------------------+----------
+                 Total |       467        218 |       685 
+                       |     68.18      31.82 |    100.00 
+      
+                Pearson chi2(2) =   3.0976   Pr = 0.213
+      
+    41 . mepoisson rsv i.cotinine || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        685
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        325      342.5        360
+                         hhid |        151          1        4.5         19
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       2.08
+      Log likelihood = -466.38002                     Prob > chi2       =     0.3529
+      -------------------------------------------------------------------------------
+      ----
+                    rsv |        IRR   Std. err.      z    P>|z|     [95% conf. inter
+      > val]
+      ------------------+------------------------------------------------------------
+      ----
+               cotinine |
+      Passive exposure  |   .9833425   .1431487    -0.12   0.908     .7392517    1.30
+      > 8029
+       Active exposure  |   .7244986   .1668029    -1.40   0.162     .4613851    1.13
+      > 7657
+                        |
+                  _cons |   .3290357   .0368942    -9.91   0.000     .2641187    .409
+      > 9085
+      ------------------+------------------------------------------------------------
+      ----
+      site              |
+              var(_cons)|   1.63e-33   1.15e-17                             .        
+      >    .
+      ------------------+------------------------------------------------------------
+      ----
+      site>hhid         |
+              var(_cons)|   .0319492   .0830356                       .000196    5.20
+      > 8621
+      -------------------------------------------------------------------------------
+      ----
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.16         Prob >= chibar2 = 0.3455
+      
+    42 . *
+    43 . *Smoking*
+    44 . tab cigsmokenow rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          Smokes |
+      cigarettes |
+       currently |
+         in >=15 |       (max) rsv
+           years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       251         78 |       329 
+                 |     76.29      23.71 |    100.00 
+      -----------+----------------------+----------
+             Yes |        31         18 |        49 
+                 |     63.27      36.73 |    100.00 
+      -----------+----------------------+----------
+       <15 years |       206        133 |       339 
+                 |     60.77      39.23 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(2) =  19.0686   Pr = 0.000
+      
+    45 . mepoisson rsv i.cigsmokenow || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      12.65
+      Log likelihood = -483.69303                     Prob > chi2       =     0.0018
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+       cigsmokenow |
+              Yes  |   1.543896   .4062763     1.65   0.099     .9217739      2.5859
+        <15 years  |   1.654704   .2364136     3.52   0.000     1.250564    2.189448
+                   |
+             _cons |   .2347286   .0279831   -12.16   0.000     .1858191    .2965117
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   8.26e-33   4.11e-17                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0225919   .0780784                      .0000258    19.75779
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.09         Prob >= chibar2 = 0.3836
+      
+    46 . *
+    47 . *Alcohol*
+    48 . tab alcohol rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+            Uses |
+      alcohol in |       (max) rsv
+      >=15 years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       191         58 |       249 
+                 |     76.71      23.29 |    100.00 
+      -----------+----------------------+----------
+             Yes |        91         38 |       129 
+                 |     70.54      29.46 |    100.00 
+      -----------+----------------------+----------
+       <15 years |       206        133 |       339 
+                 |     60.77      39.23 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(2) =  17.2248   Pr = 0.000
+      
+    49 . mepoisson rsv i.alcohol || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      11.51
+      Log likelihood = -484.29532                     Prob > chi2       =     0.0032
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           alcohol |
+              Yes  |   1.270958   .2673519     1.14   0.254     .8415444    1.919488
+        <15 years  |    1.68848   .2665107     3.32   0.001     1.239201    2.300648
+                   |
+             _cons |   .2289417   .0317114   -10.64   0.000     .1745107    .3003499
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   1.38e-36   5.11e-20                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0335394   .0787162                      .0003371    3.336618
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.19         Prob >= chibar2 = 0.3295
+      
+    50 . *
+    51 . *Education*
+    52 . tab educlevel rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+         Highest level of |       (max) rsv
+                education |         0          1 |     Total
+      --------------------+----------------------+----------
+                <18 years |       246        156 |       402 
+                          |     61.19      38.81 |    100.00 
+      --------------------+----------------------+----------
+             No schooling |        18          8 |        26 
+                          |     69.23      30.77 |    100.00 
+      --------------------+----------------------+----------
+                  Primary |        52         18 |        70 
+                          |     74.29      25.71 |    100.00 
+      --------------------+----------------------+----------
+           Some secondary |        95         30 |       125 
+                          |     76.00      24.00 |    100.00 
+      --------------------+----------------------+----------
+      Secondary completed |        67         15 |        82 
+                          |     81.71      18.29 |    100.00 
+      --------------------+----------------------+----------
+           Post secondary |        10          2 |        12 
+                          |     83.33      16.67 |    100.00 
+      --------------------+----------------------+----------
+                    Total |       488        229 |       717 
+                          |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(5) =  21.9211   Pr = 0.001
+      
+    53 . mepoisson rsv i.educlevel || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(5)      =      14.42
+      Log likelihood = -482.36684                     Prob > chi2       =     0.0132
+      -------------------------------------------------------------------------------
+      -------
+                       rsv |        IRR   Std. err.      z    P>|z|     [95% conf. in
+      > terval]
+      ---------------------+---------------------------------------------------------
+      -------
+                 educlevel |
+             No schooling  |   .7982719   .2910271    -0.62   0.537     .3906854    1
+      > .631077
+                  Primary  |   .6619896   .1653494    -1.65   0.099     .4057337    1
+      > .080093
+           Some secondary  |   .6180332   .1236019    -2.41   0.016     .4176169    .
+      > 9146302
+      Secondary completed  |   .4707899   .1275767    -2.78   0.005     .2767992     
+      > .800736
+           Post secondary  |   .4314921   .3082795    -1.18   0.239     .1063732    1
+      > .750305
+                           |
+                     _cons |   .3838159   .0339318   -10.83   0.000     .3227538    .
+      > 4564304
+      ---------------------+---------------------------------------------------------
+      -------
+      site                 |
+                 var(_cons)|   7.11e-38   1.87e-20                             .     
+      >       .
+      ---------------------+---------------------------------------------------------
+      -------
+      site>hhid            |
+                 var(_cons)|   .0248688   .0772931                      .0000562    1
+      > 0.99572
+      -------------------------------------------------------------------------------
+      -------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.11         Prob >= chibar2 = 0.3705
+      
+    54 . *
+    55 . *Employment*
+    56 . tab employed rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      Ever employed |
+            or ever |
+            student |       (max) rsv
+       during study |         0          1 |     Total
+      --------------+----------------------+----------
+         Unemployed |       128         47 |       175 
+                    |     73.14      26.86 |    100.00 
+      --------------+----------------------+----------
+      Ever Employed |        99         24 |       123 
+                    |     80.49      19.51 |    100.00 
+      --------------+----------------------+----------
+       Ever Student |        15          2 |        17 
+                    |     88.24      11.76 |    100.00 
+      --------------+----------------------+----------
+                  4 |       246        156 |       402 
+                    |     61.19      38.81 |    100.00 
+      --------------+----------------------+----------
+              Total |       488        229 |       717 
+                    |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(3) =  22.7204   Pr = 0.000
+      
+    57 . mepoisson rsv i.employed || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =      14.81
+      Log likelihood = -481.90271                     Prob > chi2       =     0.0020
+      -------------------------------------------------------------------------------
+      -
+                 rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+            employed |
+      Ever Employed  |   .7249679    .182515    -1.28   0.201     .4426125    1.18744
+      > 6
+       Ever Student  |   .4375599   .3163694    -1.14   0.253       .10607    1.80502
+      > 2
+                  4  |   1.443836   .2408251     2.20   0.028     1.041218     2.0021
+      > 4
+                     |
+               _cons |    .265852   .0399637    -8.81   0.000     .1980089    .356939
+      > 8
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   2.53e-35   1.16e-18                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   .0245697    .077093                      .0000524    11.5143
+      > 2
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.11         Prob >= chibar2 = 0.3717
+      
+    58 . *
+    59 . *Household size*
+    60 . tab hh_size rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |       (max) rsv
+         hh_size |         0          1 |     Total
+      -----------+----------------------+----------
+             3-5 |       328        154 |       482 
+                 |     68.05      31.95 |    100.00 
+      -----------+----------------------+----------
+            6-10 |       145         70 |       215 
+                 |     67.44      32.56 |    100.00 
+      -----------+----------------------+----------
+             >10 |        15          5 |        20 
+                 |     75.00      25.00 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(2) =   0.4809   Pr = 0.786
+      
+    61 . mepoisson rsv i.hh_size || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       0.29
+      Log likelihood = -490.13405                     Prob > chi2       =     0.8659
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           hh_size |
+             6-10  |   1.020043   .1508472     0.13   0.893     .7633786    1.363003
+              >10  |   .7835894   .3787836    -0.50   0.614     .3038236     2.02095
+                   |
+             _cons |   .3153249   .0286467   -12.70   0.000     .2638931    .3767805
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.04e-33   5.45e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0265941   .0789121                      .0000793    8.923607
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.12         Prob >= chibar2 = 0.3644
+      
+    62 . *
+    63 . *Number of sleeping rooms*
+    64 . tab numroomsleep rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numroomsle |       (max) rsv
+              ep |         0          1 |     Total
+      -----------+----------------------+----------
+             1-2 |       295        137 |       432 
+                 |     68.29      31.71 |    100.00 
+      -----------+----------------------+----------
+             3-4 |       178         87 |       265 
+                 |     67.17      32.83 |    100.00 
+      -----------+----------------------+----------
+             >=5 |        15          5 |        20 
+                 |     75.00      25.00 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(2) =   0.5500   Pr = 0.760
+      
+    65 . mepoisson rsv i.numroomsleep || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       0.33
+      Log likelihood = -490.11295                     Prob > chi2       =     0.8474
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+      numroomsleep |
+              3-4  |   1.035041   .1451146     0.25   0.806     .7863532    1.362378
+              >=5  |   .7891078   .3817007    -0.49   0.624     .3057737    2.036444
+                   |
+             _cons |   .3131814   .0297152   -12.24   0.000     .2600354    .3771894
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   3.58e-34   2.23e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0260883   .0788199                      .0000699    9.730985
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.12         Prob >= chibar2 = 0.3668
+      
+    66 . *
+    67 . *Crowding*
+    68 . tab crowding rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numhhmembe |
+      rs/numslee |       (max) rsv
+          prooms |         0          1 |     Total
+      -----------+----------------------+----------
+             <=2 |       238        112 |       350 
+                 |     68.00      32.00 |    100.00 
+      -----------+----------------------+----------
+              >2 |       250        117 |       367 
+                 |     68.12      31.88 |    100.00 
+      -----------+----------------------+----------
+           Total |       488        229 |       717 
+                 |     68.06      31.94 |    100.00 
+      
+                Pearson chi2(1) =   0.0012   Pr = 0.973
+      
+    69 . mepoisson rsv i.crowding || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.00
+      Log likelihood = -490.28455                     Prob > chi2       =     0.9990
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          crowding |
+               >2  |    .999831   .1359823    -0.00   0.999     .7658764    1.305252
+             _cons |   .3148017   .0330534   -11.01   0.000     .2562495    .3867329
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   3.75e-34   3.70e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0315509   .0791971                      .0002303    4.321576
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 0.17         Prob >= chibar2 = 0.3400
+      
+    70 . *
+    71 . *Household income*
+    72 . tab hh_income rsv, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                  |       (max) rsv
+        hh_income |         0          1 |     Total
+      ------------+----------------------+----------
+           0-R800 |        45         38 |        83 
+                  |     54.22      45.78 |    100.00 
+      ------------+----------------------+----------
+        R801-1600 |       146         65 |       211 
+                  |     69.19      30.81 |    100.00 
+      ------------+----------------------+----------
+       R1601-3200 |       155         67 |       222 
+                  |     69.82      30.18 |    100.00 
+      ------------+----------------------+----------
+       R3201-6400 |        88         41 |       129 
+                  |     68.22      31.78 |    100.00 
+      ------------+----------------------+----------
+      R6401-12800 |        29         11 |        40 
+                  |     72.50      27.50 |    100.00 
+      ------------+----------------------+----------
+          >R12801 |        10          1 |        11 
+                  |     90.91       9.09 |    100.00 
+      ------------+----------------------+----------
+            Total |       473        223 |       696 
+                  |     67.96      32.04 |    100.00 
+      
+                Pearson chi2(5) =  10.7429   Pr = 0.057
+      
+    73 . mepoisson rsv i.hh_income || site: || hhid:, irr  nolog
+      
+      Mixed-effects Poisson regression                Number of obs     =        696
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        335      348.0        361
+                         hhid |        146          3        4.8         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(5)      =       6.91
+      Log likelihood = -473.08055                     Prob > chi2       =     0.2277
+      ------------------------------------------------------------------------------
+               rsv |        IRR   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+         hh_income |
+        R801-1600  |   .6725931   .1381107    -1.93   0.053     .4497448    1.005863
+       R1601-3200  |   .6589655   .1345445    -2.04   0.041     .4416399    .9832343
+       R3201-6400  |    .693838   .1571386    -1.61   0.107     .4451231    1.081524
+      R6401-12800  |   .6009477   .2074033    -1.48   0.140     .3055371    1.181978
+          >R12801  |   .1984443   .2012446    -1.59   0.111      .027191    1.448277
+                   |
+             _cons |   .4568934   .0758775    -4.72   0.000     .3299541    .6326686
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   5.82e-34   5.03e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0050661   .0757299                      9.57e-16    2.68e+10
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to incidence-rate
+            ratios.
+      Note: _cons estimates baseline incidence rate (conditional on zero random
+            effects).
+      LR test vs. Poisson model: chibar2(01) = 4.6e-03      Prob >= chibar2 = 0.4731
+      
+    74 . 
+    75 . *Multivariable analysis*
+    76 . 
+    77 . 
+    78 . *********************************************************
+    79 . *********************************************************
+    80 . *PHIRST: RSV Index vs Comunity - Risk Factors - Analysis*
+    81 . *********************************************************
+    82 . *********************************************************
+    83 . 
+    84 . *Univariate analysis*
+    85 . *
+    86 . *Year*
+    87 . tab year ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |      (max) ixall
+            year |         0          1 |     Total
+      -----------+----------------------+----------
+            2017 |       256         62 |       318 
+                 |     80.50      19.50 |    100.00 
+      -----------+----------------------+----------
+            2018 |       299        100 |       399 
+                 |     74.94      25.06 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(1) =   3.1345   Pr = 0.077
+      
+    88 . melogit ixall i.year || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       3.12
+      Log likelihood = -381.53054                     Prob > chi2       =     0.0773
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2018  |   1.380942   .2522997     1.77   0.077     .9652946    1.975563
+                   |
+             _cons |   .2421885   .0342808   -10.02   0.000     .1835141    .3196227
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   4.69e-31   4.63e-16                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   1.46e-35   5.50e-18                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+    89 . *
+    90 . *Site*
+    91 . tab site ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          site 0 |
+          Agin 1 |      (max) ixall
+      Klerksdorp |         0          1 |     Total
+      -----------+----------------------+----------
+       Agincourt |       281         92 |       373 
+                 |     75.34      24.66 |    100.00 
+      -----------+----------------------+----------
+      Klerksdorp |       274         70 |       344 
+                 |     79.65      20.35 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(1) =   1.9061   Pr = 0.167
+      
+    92 . melogit ixall i.site || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       1.90
+      Log likelihood = -382.1555                      Prob > chi2       =     0.1679
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              site |
+       Klerksdorp  |   .7803071   .1403765    -1.38   0.168     .5484477    1.110186
+             _cons |   .3274018   .0393268    -9.30   0.000     .2587239    .4143101
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   4.35e-35   1.45e-17                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   3.10e-32   7.24e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+    93 . *
+    94 . *Age*
+    95 . tab agecat5 ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+        agegroup |
+        <1, 1-4, |
+           5-12, |
+          13-18, |
+          19-44, |      (max) ixall
+      45-64, 65+ |         0          1 |     Total
+      -----------+----------------------+----------
+              <1 |         7          6 |        13 
+                 |     53.85      46.15 |    100.00 
+      -----------+----------------------+----------
+             1-4 |        57         49 |       106 
+                 |     53.77      46.23 |    100.00 
+      -----------+----------------------+----------
+            5-12 |       143         44 |       187 
+                 |     76.47      23.53 |    100.00 
+      -----------+----------------------+----------
+           13-18 |        77         24 |       101 
+                 |     76.24      23.76 |    100.00 
+      -----------+----------------------+----------
+           19-44 |       174         24 |       198 
+                 |     87.88      12.12 |    100.00 
+      -----------+----------------------+----------
+           45-64 |        72         13 |        85 
+                 |     84.71      15.29 |    100.00 
+      -----------+----------------------+----------
+             65+ |        25          2 |        27 
+                 |     92.59       7.41 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(6) =  56.7153   Pr = 0.000
+      
+    96 . melogit ixall b4.agecat5 || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(6)      =      51.03
+      Log likelihood = -356.16931                     Prob > chi2       =     0.0000
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           agecat5 |
+               <1  |   6.214262   3.712665     3.06   0.002      1.92684    20.04166
+              1-4  |   6.232433   1.820956     6.26   0.000     3.515268    11.04986
+             5-12  |   2.230761   .6195496     2.89   0.004     1.294341    3.844655
+            13-18  |   2.259732   .7219391     2.55   0.011     1.208134    4.226674
+            45-64  |   1.309023   .4866781     0.72   0.469      .631657    2.712771
+              65+  |   .5799976   .4445275    -0.71   0.477     .1291338    2.605029
+                   |
+             _cons |   .1379313   .0300341    -9.10   0.000     .0900153    .2113534
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.43e-37   1.12e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   6.24e-34   1.42e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+    97 . *
+    98 . *Sex*
+    99 . tab sex ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |      (max) ixall
+             Sex |         0          1 |     Total
+      -----------+----------------------+----------
+            Male |       207         69 |       276 
+                 |     75.00      25.00 |    100.00 
+      -----------+----------------------+----------
+          Female |       348         93 |       441 
+                 |     78.91      21.09 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(1) =   1.4851   Pr = 0.223
+      
+   100 . melogit ixall i.sex || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       1.48
+      Log likelihood = -382.37436                     Prob > chi2       =     0.2237
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+               sex |
+           Female  |    .801317   .1458592    -1.22   0.224     .5608735    1.144837
+             _cons |   .3333163   .0467073    -7.84   0.000     .2532669    .4386666
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|    .000616   .0167071                      5.04e-27    7.52e+19
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   3.93e-34   4.56e-18                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 1.4e-03     Prob >= chibar2 = 0.4849
+      
+   101 . *
+   102 . *HIV*
+   103 . tab hivfinal ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |      (max) ixall
+        hivfinal |         0          1 |     Total
+      -----------+----------------------+----------
+        Negative |       439        139 |       578 
+                 |     75.95      24.05 |    100.00 
+      -----------+----------------------+----------
+        Positive |        96         20 |       116 
+                 |     82.76      17.24 |    100.00 
+      -----------+----------------------+----------
+           Total |       535        159 |       694 
+                 |     77.09      22.91 |    100.00 
+      
+                Pearson chi2(1) =   2.5346   Pr = 0.111
+      
+   104 . melogit ixall i.hivfinal || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        694
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        328      347.0        366
+                         hhid |        151          1        4.6         19
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       2.50
+      Log likelihood = -372.17097                     Prob > chi2       =     0.1138
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          hivfinal |
+         Positive  |   .6583292    .174025    -1.58   0.114     .3921332     1.10523
+             _cons |   .3165575   .0308107   -11.82   0.000       .26158    .3830898
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.23e-35   1.16e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   7.50e-33   2.87e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   105 . *
+   106 . *UMC*
+   107 . tab underill ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+             any |
+      underlying |      (max) ixall
+         illness |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       544        158 |       702 
+                 |     77.49      22.51 |    100.00 
+      -----------+----------------------+----------
+             Yes |        11          4 |        15 
+                 |     73.33      26.67 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(1) =   0.1453   Pr = 0.703
+      
+   108 . melogit ixall i.underill || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.14
+      Log likelihood = -383.04131                     Prob > chi2       =     0.7059
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          underill |
+              Yes  |   1.255442   .7569218     0.38   0.706     .3851203    4.092576
+             _cons |   .2903609   .0267845   -13.41   0.000     .2423363    .3479027
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   .0003817   .0167291                      1.90e-41    7.67e+33
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   7.65e-33   3.90e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 5.3e-04     Prob >= chibar2 = 0.4908
+      
+   109 . *
+   110 . *BMI*
+   111 . tab bmicat ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                    |      (max) ixall
+             bmicat |         0          1 |     Total
+      --------------+----------------------+----------
+        Underweight |        48         10 |        58 
+                    |     82.76      17.24 |    100.00 
+      --------------+----------------------+----------
+      Normal weight |       308        114 |       422 
+                    |     72.99      27.01 |    100.00 
+      --------------+----------------------+----------
+         Overweight |        88         15 |       103 
+                    |     85.44      14.56 |    100.00 
+      --------------+----------------------+----------
+              Obese |       111         23 |       134 
+                    |     82.84      17.16 |    100.00 
+      --------------+----------------------+----------
+              Total |       555        162 |       717 
+                    |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(3) =  11.7219   Pr = 0.008
+      
+   112 . melogit ixall i.bmicat || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =      11.48
+      Log likelihood = -377.04409                     Prob > chi2       =     0.0094
+      -------------------------------------------------------------------------------
+      -
+               ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+              bmicat |
+      Normal weight  |   1.776586   .6475417     1.58   0.115     .8696304    3.62942
+      > 4
+         Overweight  |   .8181645   .3648519    -0.45   0.653     .3413942    1.96076
+      > 3
+              Obese  |   .9945735   .4140569    -0.01   0.990      .439813    2.24908
+      > 5
+                     |
+               _cons |   .2083375   .0724199    -4.51   0.000     .1054101    .411767
+      > 8
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   1.87e-34   3.42e-18                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   4.11e-34   6.54e-18                             .           
+      > .
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   113 . *
+   114 . *Cotinine*
+   115 . tab cotinine ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+              cotinine |
+              exposure |      (max) ixall
+            categories |         0          1 |     Total
+      -----------------+----------------------+----------
+           No exposure |       221         69 |       290 
+                       |     76.21      23.79 |    100.00 
+      -----------------+----------------------+----------
+      Passive exposure |       221         75 |       296 
+                       |     74.66      25.34 |    100.00 
+      -----------------+----------------------+----------
+       Active exposure |        90          9 |        99 
+                       |     90.91       9.09 |    100.00 
+      -----------------+----------------------+----------
+                 Total |       532        153 |       685 
+                       |     77.66      22.34 |    100.00 
+      
+                Pearson chi2(2) =  11.9046   Pr = 0.003
+      
+   116 . melogit ixall i.cotinine || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        685
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        325      342.5        360
+                         hhid |        151          1        4.5         19
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      10.81
+      Log likelihood = -356.81797                     Prob > chi2       =     0.0045
+      -------------------------------------------------------------------------------
+      ----
+                  ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. inter
+      > val]
+      ------------------+------------------------------------------------------------
+      ----
+               cotinine |
+      Passive exposure  |   1.086956   .2087292     0.43   0.664     .7460279    1.58
+      > 3686
+       Active exposure  |   .3202898   .1203709    -3.03   0.002     .1533364    .669
+      > 0225
+                        |
+                  _cons |   .3122173   .0430562    -8.44   0.000     .2382717    .409
+      > 1113
+      ------------------+------------------------------------------------------------
+      ----
+      site              |
+              var(_cons)|   2.18e-38   1.81e-20                             .        
+      >    .
+      ------------------+------------------------------------------------------------
+      ----
+      site>hhid         |
+              var(_cons)|   1.62e-34   4.27e-18                             .        
+      >    .
+      -------------------------------------------------------------------------------
+      ----
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   117 . *
+   118 . *Smoking*
+   119 . tab cigsmokenow ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          Smokes |
+      cigarettes |
+       currently |
+         in >=15 |      (max) ixall
+           years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       284         45 |       329 
+                 |     86.32      13.68 |    100.00 
+      -----------+----------------------+----------
+             Yes |        40          9 |        49 
+                 |     81.63      18.37 |    100.00 
+      -----------+----------------------+----------
+       <15 years |       231        108 |       339 
+                 |     68.14      31.86 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(2) =  32.0921   Pr = 0.000
+      
+   120 . melogit ixall i.cigsmokenow || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      30.65
+      Log likelihood = -366.80887                     Prob > chi2       =     0.0000
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+       cigsmokenow |
+              Yes  |       1.42   .5712788     0.87   0.383     .6454201    3.124168
+        <15 years  |   2.950597   .5851656     5.46   0.000     2.000316    4.352323
+                   |
+             _cons |   .1584537   .0254233   -11.48   0.000     .1156992    .2170073
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   1.30e-37   1.53e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   1.17e-32   6.10e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   121 . *
+   122 . *Alcohol*
+   123 . tab alcohol ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+            Uses |
+      alcohol in |      (max) ixall
+      >=15 years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |       219         30 |       249 
+                 |     87.95      12.05 |    100.00 
+      -----------+----------------------+----------
+             Yes |       105         24 |       129 
+                 |     81.40      18.60 |    100.00 
+      -----------+----------------------+----------
+       <15 years |       231        108 |       339 
+                 |     68.14      31.86 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(2) =  33.6445   Pr = 0.000
+      
+   124 . *melogit ixall i.alcohol || site: || hhid:, or  nolog
+   125 . svy linearized: logit rsv i.alcohol, or nolog
+      (running logit on estimation sample)
+      
+      Survey: Logistic regression
+      
+      Number of strata =   2                                Number of obs   =    717
+      Number of PSUs   = 151                                Population size =    717
+                                                            Design df       =    149
+                                                            F(2, 148)       =   8.73
+                                                            Prob > F        = 0.0003
+      
+      ------------------------------------------------------------------------------
+                   |             Linearized
+               rsv | Odds ratio   std. err.      t    P>|t|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           alcohol |
+              Yes  |   1.375142   .3500186     1.25   0.213     .8316007    2.273947
+        <15 years  |    2.12613   .3943106     4.07   0.000     1.473784    3.067225
+                   |
+             _cons |   .3036649   .0513814    -7.04   0.000     .2173644    .4242295
+      ------------------------------------------------------------------------------
+      Note: _cons estimates baseline odds.
+      
+   126 . *
+   127 . *Education*
+   128 . tab educlevel ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+         Highest level of |      (max) ixall
+                education |         0          1 |     Total
+      --------------------+----------------------+----------
+                <18 years |       279        123 |       402 
+                          |     69.40      30.60 |    100.00 
+      --------------------+----------------------+----------
+             No schooling |        23          3 |        26 
+                          |     88.46      11.54 |    100.00 
+      --------------------+----------------------+----------
+                  Primary |        60         10 |        70 
+                          |     85.71      14.29 |    100.00 
+      --------------------+----------------------+----------
+           Some secondary |       109         16 |       125 
+                          |     87.20      12.80 |    100.00 
+      --------------------+----------------------+----------
+      Secondary completed |        74          8 |        82 
+                          |     90.24       9.76 |    100.00 
+      --------------------+----------------------+----------
+           Post secondary |        10          2 |        12 
+                          |     83.33      16.67 |    100.00 
+      --------------------+----------------------+----------
+                    Total |       555        162 |       717 
+                          |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(5) =  34.1260   Pr = 0.000
+      
+   129 . melogit ixall i.educlevel || site: || hhid:, or  nolog
+      convergence not achieved
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(5)      =      31.89
+      Log likelihood = -365.01567                     Prob > chi2       =     0.0000
+      -------------------------------------------------------------------------------
+      -------
+                     ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. in
+      > terval]
+      ---------------------+---------------------------------------------------------
+      -------
+                 educlevel |
+             No schooling  |   .2958643   .1844177    -1.95   0.051     .0872013    1
+      > .003835
+                  Primary  |   .3780488    .135456    -2.71   0.007     .1873095    .
+      > 7630198
+           Some secondary  |   .3329604   .0961493    -3.81   0.000      .189056    .
+      > 5864011
+      Secondary completed  |   .2452208   .0950457    -3.63   0.000     .1147197    .
+      > 5241753
+           Post secondary  |   .4536585   .3548162    -1.01   0.312     .0979458    2
+      > .101224
+                           |
+                     _cons |   .4408602   .0477155    -7.57   0.000     .3565932    .
+      > 5450404
+      ---------------------+---------------------------------------------------------
+      -------
+      site                 |
+                 var(_cons)|   6.08e-35          .                             .     
+      >       .
+      ---------------------+---------------------------------------------------------
+      -------
+      site>hhid            |
+                 var(_cons)|   9.89e-33          .                             .     
+      >       .
+      -------------------------------------------------------------------------------
+      -------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      convergence not achieved
+      r(430);
+      
+      end of do-file
+      r(430);
+      
+      end of do-file
+      
+      r(430);
+      
+   130 . do "C:\Users\jackiel\AppData\Local\Temp\STD318c_000000.tmp"
+      
+   131 . melogit ixall i.educlevel || site: || hhid:, or  nolog
+      convergence not achieved
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(5)      =      31.89
+      Log likelihood = -365.01567                     Prob > chi2       =     0.0000
+      -------------------------------------------------------------------------------
+      -------
+                     ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. in
+      > terval]
+      ---------------------+---------------------------------------------------------
+      -------
+                 educlevel |
+             No schooling  |   .2958643   .1844177    -1.95   0.051     .0872013    1
+      > .003835
+                  Primary  |   .3780488    .135456    -2.71   0.007     .1873095    .
+      > 7630198
+           Some secondary  |   .3329604   .0961493    -3.81   0.000      .189056    .
+      > 5864011
+      Secondary completed  |   .2452208   .0950457    -3.63   0.000     .1147197    .
+      > 5241753
+           Post secondary  |   .4536585   .3548162    -1.01   0.312     .0979458    2
+      > .101224
+                           |
+                     _cons |   .4408602   .0477155    -7.57   0.000     .3565932    .
+      > 5450404
+      ---------------------+---------------------------------------------------------
+      -------
+      site                 |
+                 var(_cons)|   6.08e-35          .                             .     
+      >       .
+      ---------------------+---------------------------------------------------------
+      -------
+      site>hhid            |
+                 var(_cons)|   9.89e-33          .                             .     
+      >       .
+      -------------------------------------------------------------------------------
+      -------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      convergence not achieved
+      r(430);
+      
+      end of do-file
+      
+      r(430);
+      
+   132 . do "C:\Users\jackiel\AppData\Local\Temp\STD318c_000000.tmp"
+      
+   133 . *Employment*
+   134 . tab employed ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      Ever employed |
+            or ever |
+            student |      (max) ixall
+       during study |         0          1 |     Total
+      --------------+----------------------+----------
+         Unemployed |       151         24 |       175 
+                    |     86.29      13.71 |    100.00 
+      --------------+----------------------+----------
+      Ever Employed |       109         14 |       123 
+                    |     88.62      11.38 |    100.00 
+      --------------+----------------------+----------
+       Ever Student |        16          1 |        17 
+                    |     94.12       5.88 |    100.00 
+      --------------+----------------------+----------
+                  4 |       279        123 |       402 
+                    |     69.40      30.60 |    100.00 
+      --------------+----------------------+----------
+              Total |       555        162 |       717 
+                    |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(3) =  34.1672   Pr = 0.000
+      
+   135 . melogit ixall i.employed || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =      31.75
+      Log likelihood = -364.92014                     Prob > chi2       =     0.0000
+      -------------------------------------------------------------------------------
+      -
+               ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+            employed |
+      Ever Employed  |   .8080977   .2901196    -0.59   0.553     .3998244    1.63327
+      > 2
+       Ever Student  |   .3932251   .4144367    -0.89   0.376     .0498338    3.10283
+      > 6
+                  4  |   2.773726   .6794405     4.16   0.000     1.716156    4.48301
+      > 7
+                     |
+               _cons |    .158941   .0349269    -8.37   0.000     .1033205    .244503
+      > 8
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   5.63e-36   8.57e-19                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   3.82e-31   9.57e-16                             .           
+      > .
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   136 . *
+   137 . 
+      end of do-file
+      
+   138 . do "C:\Users\jackiel\AppData\Local\Temp\STD318c_000000.tmp"
+      
+   139 . *Household size*
+   140 . tab hh_size ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |      (max) ixall
+         hh_size |         0          1 |     Total
+      -----------+----------------------+----------
+             3-5 |       365        117 |       482 
+                 |     75.73      24.27 |    100.00 
+      -----------+----------------------+----------
+            6-10 |       172         43 |       215 
+                 |     80.00      20.00 |    100.00 
+      -----------+----------------------+----------
+             >10 |        18          2 |        20 
+                 |     90.00      10.00 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(2) =   3.4187   Pr = 0.181
+      
+   141 . melogit ixall i.hh_size || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       3.43
+      Log likelihood = -381.14127                     Prob > chi2       =     0.1800
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           hh_size |
+             6-10  |   .7735411   .1562753    -1.27   0.204     .5206174    1.149339
+              >10  |   .3295902    .251416    -1.46   0.146     .0739037    1.469883
+                   |
+             _cons |   .3205157   .0392854    -9.28   0.000     .2520681    .4075497
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   .0074333   .0239257                      .0000135    4.082736
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   3.16e-34   4.51e-18                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.16        Prob >= chibar2 = 0.3454
+      
+   142 . *
+   143 . *Number of sleeping rooms*
+   144 . tab numroomsleep ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numroomsle |      (max) ixall
+              ep |         0          1 |     Total
+      -----------+----------------------+----------
+             1-2 |       326        106 |       432 
+                 |     75.46      24.54 |    100.00 
+      -----------+----------------------+----------
+             3-4 |       211         54 |       265 
+                 |     79.62      20.38 |    100.00 
+      -----------+----------------------+----------
+             >=5 |        18          2 |        20 
+                 |     90.00      10.00 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(2) =   3.4909   Pr = 0.175
+      
+   145 . melogit ixall i.numroomsleep || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       3.48
+      Log likelihood = -381.12112                     Prob > chi2       =     0.1755
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+      numroomsleep |
+              3-4  |   .7826371   .1485495    -1.29   0.197     .5395068    1.135335
+              >=5  |   .3260831   .2489923    -1.47   0.142     .0730068    1.456442
+                   |
+             _cons |   .3250891   .0410588    -8.90   0.000     .2538023    .4163987
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   .0068596   .0233294                      8.74e-06    5.385607
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   8.95e-34   1.57e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.14        Prob >= chibar2 = 0.3556
+      
+   146 . *
+   147 . *Crowding*
+   148 . tab crowding ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numhhmembe |
+      rs/numslee |      (max) ixall
+          prooms |         0          1 |     Total
+      -----------+----------------------+----------
+             <=2 |       269         81 |       350 
+                 |     76.86      23.14 |    100.00 
+      -----------+----------------------+----------
+              >2 |       286         81 |       367 
+                 |     77.93      22.07 |    100.00 
+      -----------+----------------------+----------
+           Total |       555        162 |       717 
+                 |     77.41      22.59 |    100.00 
+      
+                Pearson chi2(1) =   0.1177   Pr = 0.732
+      
+   149 . melogit ixall i.crowding || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        717
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        344      358.5        373
+                         hhid |        151          3        4.7         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.12
+      Log likelihood = -383.05248                     Prob > chi2       =     0.7339
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          crowding |
+               >2  |   .9400164   .1710565    -0.34   0.734     .6580225    1.342858
+             _cons |   .3011558   .0384079    -9.41   0.000     .2345488    .3866776
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   .0002723   .0165873                      3.82e-56    1.94e+48
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   4.47e-34   1.04e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 2.8e-04     Prob >= chibar2 = 0.4934
+      
+   150 . *
+   151 . *Household income*
+   152 . tab hh_income ixall, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                  |      (max) ixall
+        hh_income |         0          1 |     Total
+      ------------+----------------------+----------
+           0-R800 |        62         21 |        83 
+                  |     74.70      25.30 |    100.00 
+      ------------+----------------------+----------
+        R801-1600 |       161         50 |       211 
+                  |     76.30      23.70 |    100.00 
+      ------------+----------------------+----------
+       R1601-3200 |       177         45 |       222 
+                  |     79.73      20.27 |    100.00 
+      ------------+----------------------+----------
+       R3201-6400 |        97         32 |       129 
+                  |     75.19      24.81 |    100.00 
+      ------------+----------------------+----------
+      R6401-12800 |        33          7 |        40 
+                  |     82.50      17.50 |    100.00 
+      ------------+----------------------+----------
+          >R12801 |        10          1 |        11 
+                  |     90.91       9.09 |    100.00 
+      ------------+----------------------+----------
+            Total |       540        156 |       696 
+                  |     77.59      22.41 |    100.00 
+      
+                Pearson chi2(5) =   3.2869   Pr = 0.656
+      
+   153 . melogit ixall i.hh_income || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        696
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        335      348.0        361
+                         hhid |        146          3        4.8         20
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(5)      =       3.14
+      Log likelihood = -368.55569                     Prob > chi2       =     0.6790
+      ------------------------------------------------------------------------------
+             ixall | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+         hh_income |
+        R801-1600  |   .9176668   .2753712    -0.29   0.775     .5096341    1.652386
+       R1601-3200  |   .7480524   .2274737    -0.95   0.340     .4121847    1.357601
+       R3201-6400  |    .978691   .3201092    -0.07   0.947     .5155082    1.858043
+      R6401-12800  |   .6177713   .3088319    -0.96   0.335     .2319001    1.645714
+          >R12801  |   .3000297   .3262267    -1.11   0.268     .0356156    2.527482
+                   |
+             _cons |   .3384582   .0862415    -4.25   0.000      .205406    .5576955
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   .0022171   .0202617                      3.69e-11    133235.5
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   6.13e-34   1.32e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.01        Prob >= chibar2 = 0.4529
+      
+   154 . 
+   155 . *Multivariable analysis*
+   156 . 
+   157 . 
+   158 . qui log off
+      
+   159 . 
+   160 . 
+   161 . ***************************************************************************
+   162 . ***************************************************************************
+   163 . *PHIRST: RSV Index vs Positive Household Members - Risk Factors - Analysis*
+   164 . ***************************************************************************
+   165 . ***************************************************************************
+   166 . 
+   167 . *Univariate analysis*
+   168 . *
+   169 . *Year*
+   170 . tab year ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |         ixpos
+            year |         0          1 |     Total
+      -----------+----------------------+----------
+            2017 |        37         67 |       104 
+                 |     35.58      64.42 |    100.00 
+      -----------+----------------------+----------
+            2018 |        45        112 |       157 
+                 |     28.66      71.34 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(1) =   1.3881   Pr = 0.239
+      
+   171 . melogit ixpos i.year || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       1.31
+      Log likelihood = -161.71268                     Prob > chi2       =     0.2532
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              year |
+             2018  |   1.377183   .3857616     1.14   0.253      .795357     2.38463
+                   |
+             _cons |   1.871163   .4501667     2.60   0.009     1.167693    2.998436
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.48e-41   1.81e-21                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0786579   .2804393                      .0000726    85.21863
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.09        Prob >= chibar2 = 0.3827
+      
+   172 . *
+   173 . *Site*
+   174 . tab site ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          site 0 |
+          Agin 1 |         ixpos
+      Klerksdorp |         0          1 |     Total
+      -----------+----------------------+----------
+       Agincourt |        45        101 |       146 
+                 |     30.82      69.18 |    100.00 
+      -----------+----------------------+----------
+      Klerksdorp |        37         78 |       115 
+                 |     32.17      67.83 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(1) =   0.0546   Pr = 0.815
+      
+   175 . melogit ixpos i.site || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.06
+      Log likelihood = -162.32559                     Prob > chi2       =     0.8062
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+              site |
+       Klerksdorp  |   .9330717   .2634626    -0.25   0.806     .5364995    1.622784
+             _cons |   2.364131   .5347993     3.80   0.000     1.517462    3.683199
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   7.04e-38   4.35e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .1155706   .2901591                      .0008429    15.84635
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.19        Prob >= chibar2 = 0.3323
+      
+   176 . *
+   177 . *Age*
+   178 . tab agecat5 ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+        agegroup |
+        <1, 1-4, |
+           5-12, |
+          13-18, |
+          19-44, |         ixpos
+      45-64, 65+ |         0          1 |     Total
+      -----------+----------------------+----------
+              <1 |         2          6 |         8 
+                 |     25.00      75.00 |    100.00 
+      -----------+----------------------+----------
+             1-4 |        12         54 |        66 
+                 |     18.18      81.82 |    100.00 
+      -----------+----------------------+----------
+            5-12 |        16         51 |        67 
+                 |     23.88      76.12 |    100.00 
+      -----------+----------------------+----------
+           13-18 |        14         26 |        40 
+                 |     35.00      65.00 |    100.00 
+      -----------+----------------------+----------
+           19-44 |        22         24 |        46 
+                 |     47.83      52.17 |    100.00 
+      -----------+----------------------+----------
+           45-64 |        13         15 |        28 
+                 |     46.43      53.57 |    100.00 
+      -----------+----------------------+----------
+             65+ |         3          3 |         6 
+                 |     50.00      50.00 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(6) =  17.1612   Pr = 0.009
+      
+   179 . melogit ixpos b4.agecat5 || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(6)      =      15.12
+      Log likelihood = -153.40485                     Prob > chi2       =     0.0193
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           agecat5 |
+               <1  |   3.268411   3.065037     1.26   0.207     .5201161     20.5387
+              1-4  |   4.748443   2.316436     3.19   0.001     1.825194     12.3536
+             5-12  |   3.135281   1.391852     2.57   0.010     1.313411    7.484319
+            13-18  |   1.823217   .8698334     1.26   0.208     .7157169    4.644465
+            45-64  |   1.041774   .5341722     0.08   0.936     .3813451    2.845963
+              65+  |   1.004241   .9593546     0.00   0.996     .1544126    6.531206
+                   |
+             _cons |   1.147195   .3711394     0.42   0.671     .6084952    2.162804
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   3.58e-34   5.65e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .3081627   .3905685                      .0257015    3.694888
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.90        Prob >= chibar2 = 0.1710
+      
+   180 . *
+   181 . *Sex*
+   182 . tab sex ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |         ixpos
+             Sex |         0          1 |     Total
+      -----------+----------------------+----------
+            Male |        27         77 |       104 
+                 |     25.96      74.04 |    100.00 
+      -----------+----------------------+----------
+          Female |        55        102 |       157 
+                 |     35.03      64.97 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(1) =   2.3886   Pr = 0.122
+      
+   183 . melogit ixpos i.sex || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       2.33
+      Log likelihood = -161.16551                     Prob > chi2       =     0.1267
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+               sex |
+           Female  |   .6466335   .1846039    -1.53   0.127      .369533    1.131522
+             _cons |   2.983971   .7798341     4.18   0.000      1.78789     4.98022
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   9.88e-39   3.17e-21                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0998095   .2854679                       .000367    27.14673
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.14        Prob >= chibar2 = 0.3536
+      
+   184 . *
+   185 . *HIV*
+   186 . tab hivfinal ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |         ixpos
+        hivfinal |         0          1 |     Total
+      -----------+----------------------+----------
+        Negative |        69        155 |       224 
+                 |     30.80      69.20 |    100.00 
+      -----------+----------------------+----------
+        Positive |        10         21 |        31 
+                 |     32.26      67.74 |    100.00 
+      -----------+----------------------+----------
+           Total |        79        176 |       255 
+                 |     30.98      69.02 |    100.00 
+      
+                Pearson chi2(1) =   0.0269   Pr = 0.870
+      
+   187 . melogit ixpos i.hivfinal || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        255
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        111      127.5        144
+                         hhid |        111          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.03
+      Log likelihood = -157.75398                     Prob > chi2       =     0.8588
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          hivfinal |
+         Positive  |   .9281108   .3891168    -0.18   0.859     .4080634    2.110921
+             _cons |   2.338888   .4458419     4.46   0.000     1.609727    3.398338
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   5.43e-35   1.67e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0947858   .2853684                      .0002595    34.62803
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.13        Prob >= chibar2 = 0.3610
+      
+   188 . *
+   189 . *UMC*
+   190 . tab underill ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+             any |
+      underlying |         ixpos
+         illness |         0          1 |     Total
+      -----------+----------------------+----------
+              No |        78        174 |       252 
+                 |     30.95      69.05 |    100.00 
+      -----------+----------------------+----------
+             Yes |         4          5 |         9 
+                 |     44.44      55.56 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(1) =   0.7341   Pr = 0.392
+      
+   191 . melogit ixpos i.underill || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.76
+      Log likelihood = -161.9819                      Prob > chi2       =     0.3835
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          underill |
+              Yes  |   .5348622   .3840539    -0.87   0.384     .1309311    2.184947
+             _cons |   2.360291   .4441762     4.56   0.000     1.632226    3.413113
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   5.18e-35   9.85e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .1306869   .2949336                      .0015676    10.89482
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.24        Prob >= chibar2 = 0.3136
+      
+   192 . *
+   193 . *BMI*
+   194 . tab bmicat ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                    |         ixpos
+             bmicat |         0          1 |     Total
+      --------------+----------------------+----------
+        Underweight |         7         11 |        18 
+                    |     38.89      61.11 |    100.00 
+      --------------+----------------------+----------
+      Normal weight |        49        126 |       175 
+                    |     28.00      72.00 |    100.00 
+      --------------+----------------------+----------
+         Overweight |         7         17 |        24 
+                    |     29.17      70.83 |    100.00 
+      --------------+----------------------+----------
+              Obese |        19         25 |        44 
+                    |     43.18      56.82 |    100.00 
+      --------------+----------------------+----------
+              Total |        82        179 |       261 
+                    |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(3) =   4.2975   Pr = 0.231
+      
+   195 . melogit ixpos i.bmicat || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =       4.14
+      Log likelihood = -160.29336                     Prob > chi2       =     0.2467
+      -------------------------------------------------------------------------------
+      -
+               ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+              bmicat |
+      Normal weight  |     1.6234   .8579596     0.92   0.359     .5761949    4.57384
+      > 8
+         Overweight  |    1.48104   1.019078     0.57   0.568     .3844767    5.70510
+      > 5
+              Obese  |   .8128228   .4827231    -0.35   0.727     .2537933    2.60322
+      > 4
+                     |
+               _cons |   1.668097    .872981     0.98   0.328     .5980727    4.65252
+      > 5
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   3.19e-37   4.72e-20                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   .1069464   .2934584                      .0004937    23.1656
+      > 1
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.15        Prob >= chibar2 = 0.3470
+      
+   196 . *
+   197 . *Cotinine*
+   198 . tab cotinine ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+              cotinine |
+              exposure |         ixpos
+            categories |         0          1 |     Total
+      -----------------+----------------------+----------
+           No exposure |        36         76 |       112 
+                       |     32.14      67.86 |    100.00 
+      -----------------+----------------------+----------
+      Passive exposure |        26         82 |       108 
+                       |     24.07      75.93 |    100.00 
+      -----------------+----------------------+----------
+       Active exposure |        16         10 |        26 
+                       |     61.54      38.46 |    100.00 
+      -----------------+----------------------+----------
+                 Total |        78        168 |       246 
+                       |     31.71      68.29 |    100.00 
+      
+                Pearson chi2(2) =  13.6010   Pr = 0.001
+      
+   199 . melogit ixpos i.cotinine || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        246
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        106      123.0        140
+                         hhid |        108          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      10.89
+      Log likelihood = -146.76062                     Prob > chi2       =     0.0043
+      -------------------------------------------------------------------------------
+      ----
+                  ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. inter
+      > val]
+      ------------------+------------------------------------------------------------
+      ----
+               cotinine |
+      Passive exposure  |   1.489854   .4918933     1.21   0.227     .7800267    2.84
+      > 5629
+       Active exposure  |   .2380671   .1316785    -2.59   0.009     .0805169    .703
+      > 9013
+                        |
+                  _cons |   2.467582   .7034399     3.17   0.002     1.411294    4.31
+      > 4454
+      ------------------+------------------------------------------------------------
+      ----
+      site              |
+              var(_cons)|   5.65e-34   1.16e-17                             .        
+      >    .
+      ------------------+------------------------------------------------------------
+      ----
+      site>hhid         |
+              var(_cons)|   .3463024   .4217659                      .0318249    3.76
+      > 8288
+      -------------------------------------------------------------------------------
+      ----
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 1.00        Prob >= chibar2 = 0.1585
+      
+   200 . *
+   201 . *Smoking*
+   202 . tab cigsmokenow ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+          Smokes |
+      cigarettes |
+       currently |
+         in >=15 |         ixpos
+           years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |        37         50 |        87 
+                 |     42.53      57.47 |    100.00 
+      -----------+----------------------+----------
+             Yes |        11          9 |        20 
+                 |     55.00      45.00 |    100.00 
+      -----------+----------------------+----------
+       <15 years |        34        120 |       154 
+                 |     22.08      77.92 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(2) =  16.3813   Pr = 0.000
+      
+   203 . melogit ixpos i.cigsmokenow || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      14.22
+      Log likelihood = -153.89347                     Prob > chi2       =     0.0008
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+       cigsmokenow |
+              Yes  |   .5449972    .299667    -1.10   0.270     .1855071    1.601135
+        <15 years  |   2.844426   .9136863     3.25   0.001     1.515555    5.338479
+                   |
+             _cons |    1.46064   .3698031     1.50   0.135     .8892765    2.399105
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   1.26e-34   3.12e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|    .309518   .3765235                      .0285242    3.358602
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.99        Prob >= chibar2 = 0.1602
+      
+   204 . *
+   205 . *Alcohol*
+   206 . tab alcohol ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+            Uses |
+      alcohol in |         ixpos
+      >=15 years |         0          1 |     Total
+      -----------+----------------------+----------
+              No |        31         31 |        62 
+                 |     50.00      50.00 |    100.00 
+      -----------+----------------------+----------
+             Yes |        17         28 |        45 
+                 |     37.78      62.22 |    100.00 
+      -----------+----------------------+----------
+       <15 years |        34        120 |       154 
+                 |     22.08      77.92 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(2) =  17.0152   Pr = 0.000
+      
+   207 . melogit ixpos i.alcohol || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =      15.18
+      Log likelihood = -153.82433                     Prob > chi2       =     0.0005
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           alcohol |
+              Yes  |   1.650306   .6982509     1.18   0.236     .7201416     3.78191
+        <15 years  |   3.782359   1.317429     3.82   0.000     1.911093    7.485895
+                   |
+             _cons |   1.047232    .292345     0.17   0.869     .6059286    1.809939
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   5.71e-35   4.26e-18                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|    .222763   .3439119                      .0108073     4.59164
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.56        Prob >= chibar2 = 0.2273
+      
+   208 . *
+   209 . *Education*
+   210 . tab educlevel ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+         Highest level of |         ixpos
+                education |         0          1 |     Total
+      --------------------+----------------------+----------
+                <18 years |        44        137 |       181 
+                          |     24.31      75.69 |    100.00 
+      --------------------+----------------------+----------
+             No schooling |         5          3 |         8 
+                          |     62.50      37.50 |    100.00 
+      --------------------+----------------------+----------
+                  Primary |        11         11 |        22 
+                          |     50.00      50.00 |    100.00 
+      --------------------+----------------------+----------
+           Some secondary |        15         18 |        33 
+                          |     45.45      54.55 |    100.00 
+      --------------------+----------------------+----------
+      Secondary completed |         7          8 |        15 
+                          |     46.67      53.33 |    100.00 
+      --------------------+----------------------+----------
+           Post secondary |         0          2 |         2 
+                          |      0.00     100.00 |    100.00 
+      --------------------+----------------------+----------
+                    Total |        82        179 |       261 
+                          |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(5) =  16.9097   Pr = 0.005
+      
+   211 . melogit ixpos i.educlevel || site: || hhid:, or  nolog
+      note: 5.educlevel != 0 predicts success perfectly;
+            5.educlevel omitted and 2 obs not used.
+      
+      
+      Mixed-effects logistic regression               Number of obs     =        259
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        114      129.5        145
+                         hhid |        112          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(4)      =      14.07
+      Log likelihood = -153.76935                     Prob > chi2       =     0.0071
+      -------------------------------------------------------------------------------
+      -------
+                     ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. in
+      > terval]
+      ---------------------+---------------------------------------------------------
+      -------
+                 educlevel |
+             No schooling  |   .1853919   .1466959    -2.13   0.033     .0393149    .
+      > 8742282
+                  Primary  |   .2939634   .1469354    -2.45   0.014     .1103638    .
+      > 7829967
+           Some secondary  |   .3567285   .1522435    -2.42   0.016     .1545485    .
+      > 8234002
+      Secondary completed  |   .3512942   .2027643    -1.81   0.070      .113335    1
+      > .088875
+           Post secondary  |          1  (empty)
+                           |
+                     _cons |   3.467379   .8468921     5.09   0.000     2.148321    5
+      > .596333
+      ---------------------+---------------------------------------------------------
+      -------
+      site                 |
+                 var(_cons)|   1.09e-37   1.10e-20                             .     
+      >       .
+      ---------------------+---------------------------------------------------------
+      -------
+      site>hhid            |
+                 var(_cons)|   .2158852   .3434857                       .009548    4
+      > .881274
+      -------------------------------------------------------------------------------
+      -------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.52        Prob >= chibar2 = 0.2355
+      
+   212 . *
+   213 . *Employment*
+   214 . tab employed ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      Ever employed |
+            or ever |
+            student |         ixpos
+       during study |         0          1 |     Total
+      --------------+----------------------+----------
+         Unemployed |        26         27 |        53 
+                    |     49.06      50.94 |    100.00 
+      --------------+----------------------+----------
+      Ever Employed |        11         14 |        25 
+                    |     44.00      56.00 |    100.00 
+      --------------+----------------------+----------
+       Ever Student |         1          1 |         2 
+                    |     50.00      50.00 |    100.00 
+      --------------+----------------------+----------
+                  4 |        44        137 |       181 
+                    |     24.31      75.69 |    100.00 
+      --------------+----------------------+----------
+              Total |        82        179 |       261 
+                    |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(3) =  14.0549   Pr = 0.003
+      
+   215 . melogit ixpos i.employed || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(3)      =      12.76
+      Log likelihood = -155.22235                     Prob > chi2       =     0.0052
+      -------------------------------------------------------------------------------
+      -
+               ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval
+      > ]
+      ---------------+---------------------------------------------------------------
+      -
+            employed |
+      Ever Employed  |   1.286291   .6746575     0.48   0.631      .460135    3.59577
+      > 9
+       Ever Student  |   .8474979   1.296208    -0.11   0.914     .0422928    16.9828
+      > 6
+                  4  |   3.322499   1.207817     3.30   0.001      1.62941    6.77484
+      > 4
+                     |
+               _cons |   1.078641   .3245901     0.25   0.801     .5980385    1.94547
+      > 1
+      ---------------+---------------------------------------------------------------
+      -
+      site           |
+           var(_cons)|   8.48e-33   1.20e-16                             .           
+      > .
+      ---------------+---------------------------------------------------------------
+      -
+      site>hhid      |
+           var(_cons)|   .2827804   .3651256                      .0225102    3.55238
+      > 1
+      -------------------------------------------------------------------------------
+      -
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.85        Prob >= chibar2 = 0.1781
+      
+   216 . *
+   217 . *Household size*
+   218 . tab hh_size ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                 |         ixpos
+         hh_size |         0          1 |     Total
+      -----------+----------------------+----------
+             3-5 |        48        128 |       176 
+                 |     27.27      72.73 |    100.00 
+      -----------+----------------------+----------
+            6-10 |        31         49 |        80 
+                 |     38.75      61.25 |    100.00 
+      -----------+----------------------+----------
+             >10 |         3          2 |         5 
+                 |     60.00      40.00 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(2) =   5.2952   Pr = 0.071
+      
+   219 . melogit ixpos i.hh_size || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       4.68
+      Log likelihood = -159.85058                     Prob > chi2       =     0.0965
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+           hh_size |
+             6-10  |   .5802192    .176629    -1.79   0.074     .3195003     1.05369
+              >10  |   .2383769   .2364154    -1.45   0.148     .0341245    1.665182
+                   |
+             _cons |   2.776179   .6031168     4.70   0.000     1.813537      4.2498
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   4.23e-41   2.16e-22                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .0820805    .272227                      .0001234    54.61642
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.10        Prob >= chibar2 = 0.3742
+      
+   220 . *
+   221 . *Number of sleeping rooms*
+   222 . tab numroomsleep ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numroomsle |         ixpos
+              ep |         0          1 |     Total
+      -----------+----------------------+----------
+             1-2 |        40        117 |       157 
+                 |     25.48      74.52 |    100.00 
+      -----------+----------------------+----------
+             3-4 |        39         60 |        99 
+                 |     39.39      60.61 |    100.00 
+      -----------+----------------------+----------
+             >=5 |         3          2 |         5 
+                 |     60.00      40.00 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(2) =   7.3898   Pr = 0.025
+      
+   223 . melogit ixpos i.numroomsleep || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(2)      =       7.11
+      Log likelihood = -158.84341                     Prob > chi2       =     0.0286
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+      numroomsleep |
+              3-4  |   .5263127    .144959    -2.33   0.020     .3067629    .9029941
+              >=5  |   .2279575   .2122414    -1.59   0.112     .0367567    1.413745
+                   |
+             _cons |   2.924728   .5356763     5.86   0.000     2.042604    4.187807
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   3.32e-42   1.69e-23                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   1.02e-34   5.92e-18                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   224 . *
+   225 . *Crowding*
+   226 . tab crowding ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+      numhhmembe |
+      rs/numslee |         ixpos
+          prooms |         0          1 |     Total
+      -----------+----------------------+----------
+             <=2 |        38         89 |       127 
+                 |     29.92      70.08 |    100.00 
+      -----------+----------------------+----------
+              >2 |        44         90 |       134 
+                 |     32.84      67.16 |    100.00 
+      -----------+----------------------+----------
+           Total |        82        179 |       261 
+                 |     31.42      68.58 |    100.00 
+      
+                Pearson chi2(1) =   0.2571   Pr = 0.612
+      
+   227 . melogit ixpos i.crowding || site: || hhid:, or  nolog
+      
+      Mixed-effects logistic regression               Number of obs     =        261
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        115      130.5        146
+                         hhid |        113          1        2.3          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(1)      =       0.26
+      Log likelihood = -162.22335                     Prob > chi2       =     0.6079
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+          crowding |
+               >2  |   .8653715    .243911    -0.51   0.608     .4980643    1.503556
+             _cons |   2.470911   .5930238     3.77   0.000     1.543714    3.955007
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.81e-36   1.94e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   .1163148   .2906702                      .0008679    15.58775
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chibar2(01) = 0.19        Prob >= chibar2 = 0.3316
+      
+   228 . *
+   229 . *Household income*
+   230 . tab hh_income ixpos, row chi
+      
+      +----------------+
+      | Key            |
+      |----------------|
+      |   frequency    |
+      | row percentage |
+      +----------------+
+      
+                  |         ixpos
+        hh_income |         0          1 |     Total
+      ------------+----------------------+----------
+           0-R800 |        19         23 |        42 
+                  |     45.24      54.76 |    100.00 
+      ------------+----------------------+----------
+        R801-1600 |        18         55 |        73 
+                  |     24.66      75.34 |    100.00 
+      ------------+----------------------+----------
+       R1601-3200 |        28         51 |        79 
+                  |     35.44      64.56 |    100.00 
+      ------------+----------------------+----------
+       R3201-6400 |        13         36 |        49 
+                  |     26.53      73.47 |    100.00 
+      ------------+----------------------+----------
+      R6401-12800 |         4          7 |        11 
+                  |     36.36      63.64 |    100.00 
+      ------------+----------------------+----------
+          >R12801 |         0          1 |         1 
+                  |      0.00     100.00 |    100.00 
+      ------------+----------------------+----------
+            Total |        82        173 |       255 
+                  |     32.16      67.84 |    100.00 
+      
+                Pearson chi2(5) =   6.8414   Pr = 0.233
+      
+   231 . melogit ixpos i.hh_income || site: || hhid:, or  nolog
+      note: 5.hh_income != 0 predicts success perfectly;
+            5.hh_income omitted and 1 obs not used.
+      
+      
+      Mixed-effects logistic regression               Number of obs     =        254
+      
+              Grouping information
+              -------------------------------------------------------------
+                              |     No. of       Observations per group
+               Group variable |     groups    Minimum    Average    Maximum
+              ----------------+--------------------------------------------
+                         site |          2        112      127.0        142
+                         hhid |        108          1        2.4          7
+              -------------------------------------------------------------
+      
+      Integration method: mvaghermite                 Integration pts.  =          7
+      
+                                                      Wald chi2(4)      =       6.23
+      Log likelihood = -156.61496                     Prob > chi2       =     0.1829
+      ------------------------------------------------------------------------------
+             ixpos | Odds ratio   Std. err.      z    P>|z|     [95% conf. interval]
+      -------------+----------------------------------------------------------------
+         hh_income |
+        R801-1600  |   2.524157   1.040269     2.25   0.025      1.12542    5.661327
+       R1601-3200  |   1.504657   .5855264     1.05   0.294     .7017764     3.22609
+       R3201-6400  |   2.287625   1.025129     1.85   0.065     .9504846    5.505853
+      R6401-12800  |   1.445651   1.010889     0.53   0.598     .3671561    5.692151
+          >R12801  |          1  (empty)
+                   |
+             _cons |   1.210529   .3752834     0.62   0.538     .6593095      2.2226
+      -------------+----------------------------------------------------------------
+      site         |
+         var(_cons)|   2.96e-36   5.06e-19                             .           .
+      -------------+----------------------------------------------------------------
+      site>hhid    |
+         var(_cons)|   6.32e-33   7.72e-17                             .           .
+      ------------------------------------------------------------------------------
+      Note: Estimates are transformed only in the first equation to odds ratios.
+      Note: _cons estimates baseline odds (conditional on zero random effects).
+      LR test vs. logistic model: chi2(0) = 0.00                Prob > chi2 =      .
+      
+      Note: LR test is conservative and provided only for reference.
+      
+   232 . 
+   233 . *Multivariable analysis*
+   234 . 
+   235 . 
+   236 . qui log close
